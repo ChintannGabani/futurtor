@@ -28,7 +28,7 @@ export default function HeaderView({ navLinks, isScrolled, mobileMenuOpen, setMo
         }`}>
             {/* Top Bar */}
             <div className={`w-full bg-[#0B1121] text-white hidden md:block transition-all duration-500 overflow-hidden ${isScrolled ? 'max-h-0 opacity-0 py-0' : 'max-h-14 opacity-100'}`}>
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex justify-between items-center text-xs font-medium tracking-wide">
+                <div className="max-w-7xl mx-auto py-2 flex justify-between items-center text-xs font-medium tracking-wide">
                     <div className="flex items-center gap-6">
                         {FOOTER_DATA.phones.map((phone, i) => (
                             <a key={i} href={`tel:${phone.replace(/\s/g, '')}`} className="flex items-center gap-1.5 hover:text-orange-400 transition-colors">
@@ -48,22 +48,22 @@ export default function HeaderView({ navLinks, isScrolled, mobileMenuOpen, setMo
             </div>
 
             {/* Main Nav */}
-            <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center transition-all duration-300 ${isScrolled ? 'py-2' : 'py-3'}`}>
+            <div className={`max-w-7xl mx-auto flex justify-between items-center transition-all duration-300 ${isScrolled ? 'py-2' : 'py-3'}`}>
                 {/* Logo - no bg via mix-blend-mode */}
                 <Link to="/" className="flex items-center z-50 shrink-0">
                     <img
                         src={logoLight}
                         alt="FutureTor — Study Abroad & Immigration Consultancy"
-                        className={`w-auto object-contain transition-all duration-300 mix-blend-darken ${isScrolled ? 'h-11' : 'h-14 sm:h-16'}`}
+                        className={`w-auto object-contain transition-all duration-300 mix-blend-darken ${isScrolled ? 'h-10' : 'h-12 sm:h-14'}`}
                     />
                 </Link>
 
-                {/* Desktop Nav - text-[15px] (+2px from 13px) */}
-                <nav className="hidden lg:flex items-center gap-1">
+                {/* Desktop Nav - centered with flex-1 */}
+                <nav className="hidden lg:flex items-center gap-1 flex-1 justify-center">
                     {navLinks.map((link, idx) => {
                         const isActive = link.href === '/' ? location.pathname === '/' : location.pathname.startsWith(link.href);
                         return (
-                            <div key={idx} className="nav-item invisible relative group">
+                            <div key={idx} className="nav-item relative group">
                                 {link.subLinks ? (
                                     <button className={`flex items-center gap-1 px-4 py-2.5 rounded-lg font-semibold text-[15px] transition-all duration-300 ${
                                         isActive ? 'text-orange-600' : 'text-stone-600 hover:text-orange-600'
@@ -96,13 +96,15 @@ export default function HeaderView({ navLinks, isScrolled, mobileMenuOpen, setMo
                             </div>
                         );
                     })}
-                    <Link to="/contact-us" className="nav-cta invisible ml-4">
-                        <button className="btn-premium px-7 py-2.5 rounded-full bg-orange-500 text-white font-bold text-[15px] flex items-center gap-2 shadow-lg shadow-orange-500/20 hover:bg-orange-600 hover:-translate-y-0.5 transition-all duration-300">
-                            <Icon icon="mdi:airplane-takeoff" width={18} />
-                            Get Started
-                        </button>
-                    </Link>
                 </nav>
+
+                {/* Get Started Button - right side */}
+                <Link to="/contact-us" className="ml-4 shrink-0">
+                    <button className="btn-premium px-7 py-2.5 rounded-full bg-orange-500 text-white font-bold text-[15px] flex items-center gap-2 shadow-lg shadow-orange-500/20 hover:bg-orange-600 hover:-translate-y-0.5 transition-all duration-300">
+                        <Icon icon="mdi:airplane-takeoff" width={18} />
+                        Get Started
+                    </button>
+                </Link>
 
                 <button className="lg:hidden text-stone-800 z-50 p-2 rounded-lg hover:bg-stone-100 transition-colors" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
                     {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

@@ -1,21 +1,11 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @media (pointer: fine) {
     a, button, [role="button"], input, textarea {
         cursor: pointer;
     }
-}
-
-@theme {
-  --color-background: #fafaf9;
-  --color-foreground: #1c1917;
-  --color-primary: #f97316;
-  --color-primary-foreground: #ffffff;
-
-  /* Premium immigration-themed font pairing */
-  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-  --font-display: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
-  --font-accent: 'Sora', 'Plus Jakarta Sans', system-ui, sans-serif;
 }
 
 :root {

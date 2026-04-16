@@ -122,17 +122,7 @@ export default function AboutView({ data }) {
                                 <p className="text-stone-500 text-xs italic text-center">A large stone building with columns and statues — Brandenburg Gate, Germany</p>
                             </div>
                             {/* Floating stats badge */}
-                            <div className="absolute -bottom-6 -right-4 sm:right-6 bg-white rounded-xl p-4 sm:p-5 shadow-xl border border-orange-100 z-20">
-                                <div className="flex items-center gap-3">
-                                    <div className="w-12 h-12 rounded-xl bg-orange-500 flex items-center justify-center">
-                                        <Icon icon="mdi:account-group" width={24} className="text-white" />
-                                    </div>
-                                    <div>
-                                        <div className="text-2xl font-black text-stone-900">500+</div>
-                                        <div className="text-stone-500 text-xs font-semibold">Students Trusted Us</div>
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
 

@@ -133,20 +133,7 @@ export default function HomeView({ data }) {
                         </div>
 
                         {/* Trusted by strip */}
-                        <div className="hero-element invisible flex flex-wrap items-center gap-5 mt-10 pt-8 border-t border-white/10 justify-center lg:justify-start">
-                            <span className="text-stone-500 text-xs uppercase tracking-wider font-semibold">Trusted for</span>
-                            {[
-                                { icon: 'twemoji:flag-germany', label: 'Germany' },
-                                { icon: 'twemoji:flag-canada', label: 'Canada' },
-                                { icon: 'twemoji:flag-australia', label: 'Australia' },
-                                { icon: 'twemoji:flag-united-kingdom', label: 'UK' },
-                            ].map((c, i) => (
-                                <div key={i} className="flex items-center gap-1.5 bg-white/5 rounded-full px-3 py-1.5 border border-white/10">
-                                    <Icon icon={c.icon} width={18} />
-                                    <span className="text-stone-300 text-xs font-medium">{c.label}</span>
-                                </div>
-                            ))}
-                        </div>
+                       
                     </div>
                 </div>
 

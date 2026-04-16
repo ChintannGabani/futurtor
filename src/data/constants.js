@@ -5,7 +5,9 @@ export const NAV_LINKS = [
         href: '/languages',
         subLinks: [
             { label: 'German', href: '/languages/german' },
-            { label: 'IELTS/TOEFL/PTE', href: '/languages/ielts-toefl-pte' },
+            { label: 'IELTS', href: '/languages/ielts' },
+            { label: 'TOEFL', href: '/languages/toefl' },
+            { label: 'PTE', href: '/languages/pte' },
         ],
     },
     {
@@ -18,6 +20,20 @@ export const NAV_LINKS = [
             { label: 'Admission Advices', href: '/services/admission-advices' },
             { label: 'Visa Services', href: '/services/visa-services' },
             { label: 'After Arrival Support', href: '/services/after-arrival-support' },
+        ],
+    },
+    {
+        label: 'Study Abroad',
+        href: '/study-abroad',
+        subLinks: [
+            { label: 'Germany', href: '/study-abroad/germany' },
+            { label: 'Finland', href: '/study-abroad/finland' },
+            { label: 'Switzerland', href: '/study-abroad/switzerland' },
+            { label: 'Ireland', href: '/study-abroad/ireland' },
+            { label: 'Austria', href: '/study-abroad/austria' },
+            { label: 'France', href: '/study-abroad/france' },
+            { label: 'Sweden', href: '/study-abroad/sweden' },
+            { label: 'Netherlands', href: '/study-abroad/netherlands' },
         ],
     },
     { label: 'About Us', href: '/about-us' },
