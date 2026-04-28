@@ -6,8 +6,6 @@ export const NAV_LINKS = [
         subLinks: [
             { label: 'German', href: '/languages/german' },
             { label: 'IELTS', href: '/languages/ielts' },
-            { label: 'TOEFL', href: '/languages/toefl' },
-            { label: 'PTE', href: '/languages/pte' },
         ],
     },
     {
@@ -26,14 +24,15 @@ export const NAV_LINKS = [
         label: 'Study Abroad',
         href: '/study-abroad',
         subLinks: [
-            { label: 'Germany', href: '/study-abroad/germany' },
-            { label: 'Finland', href: '/study-abroad/finland' },
-            { label: 'Switzerland', href: '/study-abroad/switzerland' },
-            { label: 'Ireland', href: '/study-abroad/ireland' },
-            { label: 'Austria', href: '/study-abroad/austria' },
-            { label: 'France', href: '/study-abroad/france' },
-            { label: 'Sweden', href: '/study-abroad/sweden' },
-            { label: 'Netherlands', href: '/study-abroad/netherlands' },
+            { label: 'Germany', href: '/study-abroad/germany', icon: 'flag:de-4x3' },
+            { label: 'Finland', href: '/study-abroad/finland', icon: 'flag:fi-4x3', comingSoon: true },
+            { label: 'Switzerland', href: '/study-abroad/switzerland', icon: 'flag:ch-4x3', comingSoon: true },
+            { label: 'Ireland', href: '/study-abroad/ireland', icon: 'flag:ie-4x3', comingSoon: true },
+            { label: 'Austria', href: '/study-abroad/austria', icon: 'flag:at-4x3', comingSoon: true },
+            { label: 'France', href: '/study-abroad/france', icon: 'flag:fr-4x3', comingSoon: true },
+            { label: 'Sweden', href: '/study-abroad/sweden', icon: 'flag:se-4x3', comingSoon: true },
+            { label: 'Netherlands', href: '/study-abroad/netherlands', icon: 'flag:nl-4x3', comingSoon: true },
+            { label: 'Australia', href: '/study-abroad/australia', icon: 'flag:au-4x3', comingSoon: true },
         ],
     },
     { label: 'About Us', href: '/about-us' },
@@ -51,7 +50,7 @@ export const HOME_DATA = {
     },
     whatWeDo: {
         heading: 'What We Do',
-        description: "Our vision at FutureTor Immigration & Consultancy is to help India's aspiring youth carve a successful path in the global landscape",
+        description: "Our vision at Futuretor Immigration & Consultancy is to help India's aspiring youth carve a successful path in the global landscape",
         services: [
             {
                 title: 'Visa Services',
@@ -76,9 +75,9 @@ export const HOME_DATA = {
     vision: {
         heading: 'Our Vision',
         paragraphs: [
-            'If studying abroad has always been your dream, FutureTor provides a one-stop solution for all your questions. Overseas education can be a complex and overwhelming journey, requiring dedication and careful attention. Our professional, certified team of international education and immigration experts is committed to ensuring a smooth and hassle-free relocation process for students pursuing higher education abroad. With years of experience, FutureTor has become a trusted and respected service provider for students aspiring to study overseas.',
-            'FutureTor Language Academy and Consultancy was founded with the vision of empowering India’s youth to achieve success on the global stage. Our mission is to turn the dream of global education into reality through trusted immigration and consultancy services, along with the best visa solutions. We offer top-quality overseas education guidance to help aspiring students reach their goals.',
-            'FutureTor aims to be the most trusted name in Education & Career, providing comprehensive 24/7 support and a hassle-free immigration and consultancy process, free from financial concerns.'
+            'If studying abroad has always been your dream, Futuretor provides a one-stop solution for all your questions. Overseas education can be a complex and overwhelming journey, requiring dedication and careful attention. Our professional, certified team of international education and immigration experts is committed to ensuring a smooth and hassle-free relocation process for students pursuing higher education abroad. With years of experience, Futuretor has become a trusted and respected service provider for students aspiring to study overseas.',
+            'Futuretor Language Academy and Consultancy was founded with the vision of empowering India’s youth to achieve success on the global stage. Our mission is to turn the dream of global education into reality through trusted immigration and consultancy services, along with the best visa solutions. We offer top-quality overseas education guidance to help aspiring students reach their goals.',
+            'Futuretor aims to be the most trusted name in Education & Career, providing comprehensive 24/7 support and a hassle-free immigration and consultancy process, free from financial concerns.'
         ],
     },
     testimonials: {
@@ -89,31 +88,31 @@ export const HOME_DATA = {
                 name: 'Smit Bhadiyadara',
                 role: 'Master Student at TU Kaiserslautern',
                 rating: '★★★★★',
-                quote: "FutureTor is the best German class in Surat for anyone wanting to study in Germany. The professors are incredibly friendly and provide personalized guidance. The teaching quality aligns perfectly with Goethe examinations."
+                quote: "Futuretor is the best German class in Surat for anyone wanting to study in Germany. The professors are incredibly friendly and provide personalized guidance. The teaching quality aligns perfectly with Goethe examinations."
             },
             {
                 name: 'Hardik Rangani',
                 role: 'Master Student at KIT Karlsruhe',
                 rating: '★★★★★',
-                quote: "FutureTor is one of the most trusted institutes for learning German. You'll feel confident and stand out among others. The faculty is humble and approachable, creating a welcoming learning environment."
+                quote: "Futuretor is one of the most trusted institutes for learning German. You'll feel confident and stand out among others. The faculty is humble and approachable, creating a welcoming learning environment."
             },
             {
                 name: 'Priya Shah',
                 role: 'Bachelor at TU Munich',
                 rating: '★★★★★',
-                quote: "From A1 to C1, FutureTor walked me through every step. The visa process was seamless and the after-arrival support in Germany made my transition stress-free. Highly recommended!"
+                quote: "From A1 to C1, Futuretor walked me through every step. The visa process was seamless and the after-arrival support in Germany made my transition stress-free. Highly recommended!"
             },
             {
                 name: 'Aakash Patel',
                 role: 'IELTS 8.5 Bands · UK Visa',
                 rating: '★★★★★',
-                quote: "Cracked IELTS with 8.5 bands thanks to FutureTor's coaching. The speaking practice from day one built real confidence. Got admission to my dream UK university within 3 months."
+                quote: "Cracked IELTS with 8.5 bands thanks to Futuretor's coaching. The speaking practice from day one built real confidence. Got admission to my dream UK university within 3 months."
             },
             {
                 name: 'Riya Mehta',
                 role: 'Master Student at RWTH Aachen',
                 rating: '★★★★★',
-                quote: "The Germany branch office is a real game-changer. Real on-ground support, accommodation guidance, bank account help — everything was handled. FutureTor truly cares."
+                quote: "The Germany branch office is a real game-changer. Real on-ground support, accommodation guidance, bank account help — everything was handled. Futuretor truly cares."
             },
             {
                 name: 'Karan Sharma',
@@ -125,7 +124,7 @@ export const HOME_DATA = {
                 name: 'Neha Desai',
                 role: 'Bachelor at University of Stuttgart',
                 rating: '★★★★★',
-                quote: "Beyond just language coaching, FutureTor helped me with university selection, SOP writing, and visa interview prep. Their end-to-end approach is unmatched in Surat."
+                quote: "Beyond just language coaching, Futuretor helped me with university selection, SOP writing, and visa interview prep. Their end-to-end approach is unmatched in Surat."
             },
             {
                 name: 'Vivek Patel',
@@ -187,14 +186,14 @@ export const IELTS_DATA = {
 export const SERVICES_DATA = {
     'education-consultancy': {
         title: "Education Consultancy",
-        description1: "FutureTor is an independent and Top Study Visa Consultant that helps students/parents with educational planning and awareness program about your course and career.",
+        description1: "Futuretor is an independent and Top Study Visa Consultant that helps students/parents with educational planning and awareness program about your course and career.",
         adviceBasis: [
             "Popular courses in that country",
             "Students caliber and interest",
             "Budget and financial requirement",
             "Latest trending Professional course"
         ],
-        description2: "Our team of professional experts is here to answer all your career and college-related queries. Students can ask questions, participate in discussions, and stay updated with the latest news and articles related to their education interests. FutureTor is India’s smartest college gateway, combining deep domain knowledge in higher education with technology, innovation, and credibility."
+        description2: "Our team of professional experts is here to answer all your career and college-related queries. Students can ask questions, participate in discussions, and stay updated with the latest news and articles related to their education interests. Futuretor is India’s smartest college gateway, combining deep domain knowledge in higher education with technology, innovation, and credibility."
     },
     'application-services': {
         title: "Application Services",
@@ -208,7 +207,7 @@ export const SERVICES_DATA = {
     },
     'educational-loan-guidance': {
         title: "Educational Loan Guidance",
-        description: "With FutureTor by your side, financial concerns won’t hinder your career aspirations. We provide a dedicated approach to help secure the most feasible financial support.",
+        description: "With Futuretor by your side, financial concerns won’t hinder your career aspirations. We provide a dedicated approach to help secure the most feasible financial support.",
         services: [
             "Education Loan related complete information and guidance",
             "Recommending Scholarship beneficial study abroad programs and Universities",
@@ -219,7 +218,7 @@ export const SERVICES_DATA = {
     },
     'admission-advices': {
         title: "Admission Advices",
-        description: "At FutureTor, we understand that applying to study abroad can be overwhelming. Every detail matters. Our expert team offers end-to-end application services.",
+        description: "At Futuretor, we understand that applying to study abroad can be overwhelming. Every detail matters. Our expert team offers end-to-end application services.",
         points: [
             { title: "University Selection", desc: "Helping you choose the best-fit institutions based on your goals, interests, and budget." },
             { title: "Course Recommendation", desc: "Assisting you in selecting the right course to align with your career aspirations." },
@@ -230,7 +229,7 @@ export const SERVICES_DATA = {
     },
     'visa-services': {
         title: "Visa Services",
-        description: "Obtaining a visa for studying abroad can be challenging. FutureTor boasts a 100% success rate in visa clearance for study abroad programs.",
+        description: "Obtaining a visa for studying abroad can be challenging. Futuretor boasts a 100% success rate in visa clearance for study abroad programs.",
         services: [
             "Getting your Visa file ready",
             "Helping you in Visa Interview preparation",
@@ -252,7 +251,7 @@ export const SERVICES_DATA = {
 
 export const ABOUT_DATA = {
     title: "About Us",
-    description: "FutureTor is one of those countless immigration companies in India, and we may not always appear on the first page of search results. However, you’ve likely come to us through a recommendation. Our work speaks for itself.",
+    description: "Futuretor is one of those countless immigration companies in India, and we may not always appear on the first page of search results. However, you’ve likely come to us through a recommendation. Our work speaks for itself.",
     promise: {
         heading: "Our Promise",
         text: "We put YOU first. We put ourselves in your shoes. We see the dreams you see; we consider all your limitations and we have full care for your pocket. We are here to simplify the immigration and global education process.",
@@ -284,12 +283,12 @@ export const CONTACT_DATA = {
 };
 
 export const FOOTER_DATA = {
-    vision: "FutureTor evolved with the vision to empower the aspiring youth of India to position themselves successfully in the global landscape.",
+    vision: "Futuretor evolved with the vision to empower the aspiring youth of India to position themselves successfully in the global landscape.",
     address: "406, AR Mall, Opp. Panvel Point, Mota Varachha, 394105, Surat",
     consultancy: "Consultancy",
     location: "LOCATION",
     email: "info@futuretor.com",
-    phones: ["+91 9824939425", "+49 1590 2054603"]
+    phones: ["+91 98249 39425", "+49 15902 054603"]
 };
 
 export const LANGUAGES_DATA = {

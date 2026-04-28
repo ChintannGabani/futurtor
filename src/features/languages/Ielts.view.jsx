@@ -225,42 +225,7 @@ export default function IeltsView({ data = IELTS_DATA }) {
                 </div>
             </section>
 
-            {/* DATES & FEES */}
-            <section className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 w-full bg-stone-50 z-10">
-                <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    {/* Upcoming Test Dates */}
-                    <div>
-                        <div className="flex items-center gap-2 mb-6">
-                            <Calendar className="text-orange-500" size={24} />
-                            <h3 className="text-2xl font-bold text-stone-900">Upcoming Test Dates</h3>
-                        </div>
-                        <div className="space-y-3">
-                            {IELTS_DATA.upcomingDates.map((dateObj, idx) => (
-                                <div key={idx} className="ielts-section invisible bg-white rounded-lg p-4 border border-stone-200">
-                                    <p className="font-bold text-stone-900">{dateObj.month}</p>
-                                    <p className="text-orange-600 font-semibold text-sm mt-1">{dateObj.dates}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Fees */}
-                    <div>
-                        <div className="flex items-center gap-2 mb-6">
-                            <Zap className="text-orange-500" size={24} />
-                            <h3 className="text-2xl font-bold text-stone-900">Test Fees</h3>
-                        </div>
-                        <div className="space-y-3">
-                            {Object.entries(IELTS_DATA.fees).map(([key, value]) => (
-                                <div key={key} className="ielts-section invisible bg-white rounded-lg p-4 border border-stone-200 flex justify-between items-center">
-                                    <p className="font-medium text-stone-700">{key.replace(/([A-Z])/g, ' $1').trim()}</p>
-                                    <p className="font-bold text-orange-600">{value}</p>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
-                </div>
-            </section>
+           
 
             {/* CTA */}
             <section className="relative py-16 sm:py-20 px-4 bg-gradient-to-r from-[#0B1121] to-[#131d35] overflow-hidden">

@@ -13,7 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function VisaServicesView({ data }) {
     useSeo({
         title: 'Visa Services - 100% Student Visa Success Rate',
-        description: 'FutureTor offers complete student visa services with a 100% success rate. Visa file preparation, interview coaching, financial guidance, and timely document submission.',
+        description: 'Futuretor offers complete student visa services with a 100% success rate. Visa file preparation, interview coaching, financial guidance, and timely document submission.',
         keywords: 'student visa services, study visa India, visa interview preparation, visa file preparation, 100% visa success rate',
         path: '/services/visa-services',
     });

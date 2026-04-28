@@ -15,8 +15,8 @@ gsap.registerPlugin(ScrollTrigger);
 export default function ContactView({ data }) {
     useSeo({
         title: 'Contact Us',
-        description: 'Get in touch with FutureTor for personalized study abroad and immigration consultation. Visit our Surat office or call +91 9824939425. Free consultation available.',
-        keywords: 'contact FutureTor, study abroad consultancy contact, immigration consultant Surat, FutureTor phone number, FutureTor address',
+        description: 'Get in touch with Futuretor for personalized study abroad and immigration consultation. Visit our Surat office or call +91 9824939425. Free consultation available.',
+        keywords: 'contact Futuretor, study abroad consultancy contact, immigration consultant Surat, Futuretor phone number, Futuretor address',
         path: '/contact-us',
     });
     if (!data) return null;
@@ -50,7 +50,6 @@ export default function ContactView({ data }) {
 
                 <div className="relative max-w-5xl mx-auto z-20 text-center w-full">
                     <div className="ct-hero-el invisible inline-flex items-center gap-2 px-5 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6 text-sm text-orange-400 font-semibold backdrop-blur-sm">
-                        <MessageSquare size={14} /><span>Ready to Help 24/7</span>
                     </div>
                     <h1 className="ct-hero-el invisible text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-5 text-white leading-[1.08]">
                         Let's Start Your <span className="text-orange-500">Journey</span> Together
@@ -72,11 +71,11 @@ export default function ContactView({ data }) {
                 <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5">
                     {[
                         { icon: <Phone size={22} />, label: 'Call Us', value: FOOTER_DATA.phones[0] || '', sub: FOOTER_DATA.phones[1] || '', color: 'bg-orange-500', href: `tel:${(FOOTER_DATA.phones[0] || '').replace(/\s/g, '')}` },
-                        { icon: <Mail size={22} />, label: 'Email Us', value: FOOTER_DATA.email, sub: 'We reply within 2 hours', color: 'bg-blue-500', href: `mailto:${FOOTER_DATA.email}` },
+                        { icon: <Mail size={22} />, label: 'Email Us', value: FOOTER_DATA.email, sub: '', color: 'bg-blue-500', href: `mailto:${FOOTER_DATA.email}` },
                         { icon: <MapPin size={22} />, label: 'Visit Us', value: FOOTER_DATA.address.split(',')[0] + ',' + (FOOTER_DATA.address.split(',')[1] || ''), sub: FOOTER_DATA.address.split(',').slice(2).join(',').trim(), color: 'bg-emerald-500' },
                     ].map((card, idx) => (
                         <a key={idx} href={card.href || '#'} className="ct-info-card invisible bg-white rounded-2xl p-6 border border-stone-100 shadow-xl shadow-stone-900/5 hover:shadow-2xl hover:border-orange-200 hover:-translate-y-1 transition-all duration-500 group block">
-                            <div className="flex items-start gap-4">
+                            <div className="flex items-center gap-4">
                                 <div className={`w-12 h-12 rounded-xl ${card.color} flex items-center justify-center text-white shadow-lg shrink-0 group-hover:scale-110 transition-transform`}>
                                     {card.icon}
                                 </div>
@@ -137,7 +136,6 @@ export default function ContactView({ data }) {
                                 <button type="submit" className="btn-premium w-full bg-orange-500 text-white font-bold py-4 rounded-xl text-base hover:bg-orange-600 transition-all shadow-lg shadow-orange-500/20 flex items-center justify-center gap-2">
                                     Submit Your Inquiry <ArrowRight size={18} />
                                 </button>
-                                <p className="text-center text-stone-400 text-sm">We typically respond within 2 hours during business hours.</p>
                             </form>
                         </div>
                     </div>
@@ -154,7 +152,6 @@ export default function ContactView({ data }) {
                                     </div>
                                     <div>
                                         <h3 className="text-white font-bold text-base">Quick Connect</h3>
-                                        <p className="text-stone-400 text-sm">Available 24/7</p>
                                     </div>
                                 </div>
                                 <div className="space-y-3 mt-5">
@@ -163,7 +160,6 @@ export default function ContactView({ data }) {
                                             <Icon icon="mdi:phone" width={18} className="text-orange-400" />
                                             <div>
                                                 <p className="text-white text-sm font-medium">{phone}</p>
-                                                <p className="text-stone-500 text-xs">{phone.startsWith('+91') ? 'India Office' : 'Germany Office'}</p>
                                             </div>
                                         </a>
                                     ))}
@@ -184,14 +180,14 @@ export default function ContactView({ data }) {
                                 <iframe
                                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.597!2d72.87!3d21.22!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjHCsDEzJzEyLjAiTiA3MsKwNTInMTIuMCJF!5e0!3m2!1sen!2sin!4v1"
                                     width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy"
-                                    referrerPolicy="no-referrer-when-downgrade" title="FutureTor Location"
+                                    referrerPolicy="no-referrer-when-downgrade" title="Futuretor Location"
                                 />
                             </div>
                             <div className="p-5">
                                 <div className="flex items-start gap-3">
                                     <MapPin size={18} className="text-orange-500 shrink-0 mt-0.5" />
                                     <div>
-                                        <p className="text-stone-900 font-bold text-[15px]">FutureTor Immigration</p>
+                                        <p className="text-stone-900 font-bold text-[15px]">Futuretor Immigration</p>
                                         <p className="text-stone-500 text-sm">{FOOTER_DATA.address}</p>
                                     </div>
                                 </div>
@@ -199,24 +195,13 @@ export default function ContactView({ data }) {
                         </div>
 
                         {/* Trust badges */}
-                        <div className="flex flex-wrap gap-3">
-                            {[
-                                { icon: 'mdi:shield-check', text: '100% Success Rate' },
-                                { icon: 'mdi:clock-outline', text: '24/7 Support' },
-                                { icon: 'mdi:office-building', text: 'Germany Office' },
-                            ].map((badge, i) => (
-                                <div key={i} className="flex items-center gap-2 px-4 py-2.5 bg-orange-50 border border-orange-100 rounded-full">
-                                    <Icon icon={badge.icon} width={16} className="text-orange-500" />
-                                    <span className="text-orange-700 text-sm font-semibold">{badge.text}</span>
-                                </div>
-                            ))}
-                        </div>
+
                     </div>
                 </div>
             </section>
 
             {/* ===== FAQ SECTION ===== */}
-            <section className="ct-faq-section relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 w-full z-10 bg-white overflow-hidden">
+            {/* <section className="ct-faq-section relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 w-full z-10 bg-white overflow-hidden">
                 <div className="max-w-4xl mx-auto">
                     <div className="text-center mb-14">
                         <span className="text-orange-500 font-bold uppercase tracking-widest text-xs mb-3 block">Common Questions</span>
@@ -248,7 +233,7 @@ export default function ContactView({ data }) {
                         ))}
                     </div>
                 </div>
-            </section>
+            </section> */}
 
             {/* ===== CTA ===== */}
             <section className="relative py-16 sm:py-20 px-4 bg-gradient-to-r from-orange-500 to-orange-600 overflow-hidden">
@@ -257,7 +242,6 @@ export default function ContactView({ data }) {
                 </div>
                 <div className="max-w-4xl mx-auto text-center relative z-10">
                     <h2 className="text-2xl sm:text-3xl font-black text-white mb-3 tracking-tight">Still Have Questions?</h2>
-                    <p className="text-orange-100 text-base mb-6">Our team is available 24/7 to assist you with any queries.</p>
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                         <a href="tel:+919824939425" className="px-8 py-3.5 rounded-full bg-white text-orange-600 font-bold hover:bg-orange-50 shadow-xl transition-all flex items-center gap-2">
                             <Phone size={18} /> Call Now

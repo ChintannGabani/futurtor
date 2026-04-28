@@ -12,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function CountryPageView({ data }) {
     useSeo({
-        title: `Study in ${data.name} - FutureTor Education Consultancy`,
+        title: `Study in ${data.name} - Futuretor Education Consultancy`,
         description: data.hero.description,
         keywords: `study in ${data.name}, higher education, university admissions, visa consultancy`,
         path: `/study-abroad/${data.slug}`,
@@ -51,7 +51,7 @@ export default function CountryPageView({ data }) {
                     </div>
                     <h1 className="country-hero-el invisible text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-5 text-white leading-[1.08]">{data.hero.title}</h1>
                     <p className="country-hero-el invisible text-base sm:text-lg text-stone-300/90 max-w-3xl mx-auto leading-relaxed mb-8">{data.hero.description}</p>
-                    
+
                     {/* CTA Buttons */}
                     <div className="country-hero-el invisible flex flex-wrap gap-4 justify-center">
                         <button onClick={handleConsultationClick} className="px-8 py-3.5 rounded-full bg-orange-500 text-white font-bold hover:bg-orange-600 shadow-xl shadow-orange-500/25 transition-all inline-flex items-center gap-2">
@@ -114,11 +114,14 @@ export default function CountryPageView({ data }) {
                             <div key={idx} className="uni-card invisible bg-white rounded-xl p-6 border border-stone-200 hover:shadow-lg hover:border-orange-300 transition-all">
                                 <div className="flex items-start justify-between mb-4">
                                     <div>
+                                        {university.logo && (
+                                            <img src={university.logo} alt={university.shortName} className="h-12 object-contain mb-4" />
+                                        )}
                                         <h3 className="font-bold text-stone-900">{university.shortName}</h3>
                                         <p className="text-orange-600 font-semibold text-sm mt-1">{university.popularFor}</p>
                                     </div>
                                 </div>
-                                <div className="bg-orange-50 rounded-lg px-3 py-2 inline-block">
+                                <div className="bg-orange-50 rounded-lg px-3 py-2 inline-block mt-2">
                                     <p className="text-xs font-bold text-orange-600">{university.ranking.label}: {university.ranking.value}</p>
                                 </div>
                             </div>
@@ -293,25 +296,7 @@ export default function CountryPageView({ data }) {
                 </div>
             </section>
 
-            {/* RELATED ARTICLES */}
-            <section className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 w-full bg-white z-10">
-                <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-14">
-                        <span className="text-orange-500 font-bold uppercase tracking-widest text-xs mb-3 block">Insights</span>
-                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-stone-900 tracking-tight">Related Articles on Studying in {data.name}</h2>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {data.relatedArticles.slice(0, 6).map((article, idx) => (
-                            <div key={idx} className="country-card invisible bg-gradient-to-br from-orange-50 to-stone-50 rounded-xl p-6 border border-orange-200/30 hover:shadow-lg transition-all cursor-pointer group">
-                                <div className="flex items-start gap-3">
-                                    <BookOpen size={24} className="text-orange-500 shrink-0 mt-1" />
-                                    <h3 className="font-semibold text-stone-900 group-hover:text-orange-600 transition-colors">{article}</h3>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+
 
             {/* SUCCESS STORIES */}
             <section className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 w-full bg-stone-50 z-10">
@@ -375,28 +360,7 @@ export default function CountryPageView({ data }) {
                 </div>
             </section>
 
-            {/* FAQ */}
-            <section className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 w-full bg-stone-50 z-10">
-                <div className="max-w-3xl mx-auto">
-                    <div className="text-center mb-12">
-                        <span className="text-orange-500 font-bold uppercase tracking-widest text-xs mb-3 block">Questions</span>
-                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-stone-900 tracking-tight">Frequently Asked Questions</h2>
-                    </div>
-                    <div className="space-y-4">
-                        {data.faqs.map((item, idx) => (
-                            <details key={idx} className="country-feature invisible bg-white rounded-lg border border-stone-200 overflow-hidden cursor-pointer group hover:border-orange-300 transition-colors">
-                                <summary className="p-6 font-bold text-stone-900 flex justify-between items-center">
-                                    <span>{item.question}</span>
-                                    <span className="text-orange-500 group-open:rotate-180 transition-transform">▼</span>
-                                </summary>
-                                <div className="px-6 pb-6 pt-0 text-stone-600 text-[15px] leading-relaxed border-t border-stone-200">
-                                    {item.answer}
-                                </div>
-                            </details>
-                        ))}
-                    </div>
-                </div>
-            </section>
+
 
             {/* FINAL CTA */}
             <section className="relative py-16 sm:py-20 px-4 bg-gradient-to-r from-[#0B1121] to-[#131d35] overflow-hidden">
@@ -404,7 +368,7 @@ export default function CountryPageView({ data }) {
                 <WorldMapBg className="inset-0 w-full h-full text-white" opacity={0.02} />
                 <div className="max-w-4xl mx-auto text-center relative z-10">
                     <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-4 tracking-tight">Ready to Start Your {data.name} Journey?</h2>
-                    <p className="text-stone-400 text-base sm:text-lg mb-8">FutureTor is here to guide you every step of the way. Let's make your study abroad dreams a reality!</p>
+                    <p className="text-stone-400 text-base sm:text-lg mb-8">Futuretor is here to guide you every step of the way. Let's make your study abroad dreams a reality!</p>
                     <Link to="/contact-us">
                         <button className="btn-premium px-8 py-3.5 rounded-full bg-orange-500 text-white font-bold text-base hover:bg-orange-600 shadow-xl shadow-orange-500/25 transition-all inline-flex items-center gap-3">
                             Start Your Application <ArrowRight size={20} />

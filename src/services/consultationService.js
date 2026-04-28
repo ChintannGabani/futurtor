@@ -1,76 +1,33 @@
-// API service for consultation data
-const API_BASE_URL = 'http://localhost:5000/api';
+// API service for consultation data to save directly to Google Sheets
+
+// Replace this URL with the Google Apps Script Web App URL you generate
+const GOOGLE_SCRIPT_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzHW_VuibaBCmLLuuQtWe7ePS7Qc3FVYOok8vByrH0JGjPNZpUH5dByC-m-Pig4N1pO/exec';
 
 export const consultationService = {
     // Save consultation data
     saveConsultation: async (data) => {
         try {
-            const response = await fetch(`${API_BASE_URL}/save-consultation`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
+            // Using URLSearchParams allows us to send form data and bypass CORS preflight errors in Apps Script
+            const formBody = new URLSearchParams();
+            Object.keys(data).forEach(key => {
+                formBody.append(key, data[key]);
             });
 
-            if (!response.ok) {
-                throw new Error('Failed to save consultation');
-            }
+            // We use 'no-cors' mode so the browser doesn't block the request if Google redirects it
+            await fetch(GOOGLE_SCRIPT_WEBHOOK_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: formBody.toString(),
+            });
 
-            const result = await response.json();
-            return result;
+            // With no-cors, we can't read the response properly, but if fetch didn't throw an error, we assume success
+            return { success: true };
         } catch (error) {
             console.error('Error saving consultation:', error);
             throw error;
         }
-    },
-
-    // Get consultations for a country
-    getConsultations: async (country) => {
-        try {
-            const response = await fetch(`${API_BASE_URL}/consultations/${country}`);
-
-            if (!response.ok) {
-                throw new Error('Failed to fetch consultations');
-            }
-
-            const result = await response.json();
-            return result;
-        } catch (error) {
-            console.error('Error fetching consultations:', error);
-            throw error;
-        }
-    },
-
-    // Download Excel file
-    downloadConsultations: (country) => {
-        window.open(`${API_BASE_URL}/download/${country}`, '_blank');
-    },
-
-    // Get list of all countries with consultations
-    getCountriesList: async () => {
-        try {
-            const response = await fetch(`${API_BASE_URL}/countries-list`);
-
-            if (!response.ok) {
-                throw new Error('Failed to fetch countries list');
-            }
-
-            const result = await response.json();
-            return result;
-        } catch (error) {
-            console.error('Error fetching countries list:', error);
-            throw error;
-        }
-    },
-
-    // Check server health
-    checkHealth: async () => {
-        try {
-            const response = await fetch(`${API_BASE_URL}/health`);
-            return response.ok;
-        } catch (error) {
-            return false;
-        }
-    },
+    }
 };

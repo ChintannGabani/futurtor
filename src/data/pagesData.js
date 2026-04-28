@@ -95,12 +95,12 @@ export const EDUCATION_CONSULTANCY_DATA = {
     title: "Education Consultancy",
     subtitle: "Expert guidance for your international academic journey.",
   },
-  introText: "FutureTor is an independent and Top Study Visa Consultant that helps students/parents with educational planning and awareness program about your course and career. We are keeping a tab on worldwide trend and advice students on the basis of:",
+  introText: "Futuretor is an independent and Top Study Visa Consultant that helps students/parents with educational planning and awareness program about your course and career. We are keeping a tab on worldwide trend and advice students on the basis of:",
   adviceBasis: [
     { text: "Popular courses in that country", icon: Globe },
     { text: "Students caliber and interest", icon: Users },
     { text: "Budget and financial requirement", icon: Briefcase },
     { text: "Latest trending Professional course", icon: Award }
   ],
-  footerText: "Our team of professional experts is here to answer all your career and college-related queries. Students can ask questions, participate in discussions, and stay updated with the latest news and articles related to their education interests. FutureTor is India's smartest college gateway, combining deep domain knowledge in higher education with technology, innovation, and credibility to offer personalized insights, helping students make informed decisions about their career, courses, and college choices."
+  footerText: "Our team of professional experts is here to answer all your career and college-related queries. Students can ask questions, participate in discussions, and stay updated with the latest news and articles related to their education interests. Futuretor is India's smartest college gateway, combining deep domain knowledge in higher education with technology, innovation, and credibility to offer personalized insights, helping students make informed decisions about their career, courses, and college choices."
 };

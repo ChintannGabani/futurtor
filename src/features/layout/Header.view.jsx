@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import gsap from 'gsap';
 import { Icon } from '@iconify/react';
 import { Menu, X, ChevronDown, Phone, Mail } from 'lucide-react';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaFacebook, FaYoutube, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import logoLight from '../../assets/company_logo/logo_light.png';
 import { FOOTER_DATA } from '../../data/constants';
 
@@ -23,9 +23,8 @@ export default function HeaderView({ navLinks, isScrolled, mobileMenuOpen, setMo
     useEffect(() => { setMobileMenuOpen(false); }, [location.pathname]);
 
     return (
-        <header ref={headerRef} className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-            isScrolled ? 'bg-white/95 backdrop-blur-xl shadow-lg shadow-stone-900/5' : 'bg-white shadow-sm border-b border-stone-100'
-        }`}>
+        <header ref={headerRef} className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-white/95 backdrop-blur-xl shadow-lg shadow-stone-900/5' : 'bg-white shadow-sm border-b border-stone-100'
+            }`}>
             {/* Top Bar */}
             <div className={`w-full bg-[#0B1121] text-white hidden md:block transition-all duration-500 overflow-hidden ${isScrolled ? 'max-h-0 opacity-0 py-0' : 'max-h-14 opacity-100'}`}>
                 <div className="max-w-7xl mx-auto py-2 flex justify-between items-center text-xs font-medium tracking-wide">
@@ -40,7 +39,7 @@ export default function HeaderView({ navLinks, isScrolled, mobileMenuOpen, setMo
                         </a>
                     </div>
                     <div className="flex items-center gap-4">
-                        {[FaFacebook, FaTwitter, FaInstagram, FaLinkedin].map((SI, i) => (
+                        {[FaFacebook, FaYoutube, FaInstagram, FaLinkedin].map((SI, i) => (
                             <a key={i} href="#" className="text-stone-400 hover:text-white transition-colors"><SI size={12} /></a>
                         ))}
                     </div>
@@ -53,7 +52,7 @@ export default function HeaderView({ navLinks, isScrolled, mobileMenuOpen, setMo
                 <Link to="/" className="flex items-center z-50 shrink-0">
                     <img
                         src={logoLight}
-                        alt="FutureTor — Study Abroad & Immigration Consultancy"
+                        alt="Futuretor — Study Abroad & Immigration Consultancy"
                         className={`w-auto object-contain transition-all duration-300 mix-blend-darken ${isScrolled ? 'h-10' : 'h-12 sm:h-14'}`}
                     />
                 </Link>
@@ -65,16 +64,14 @@ export default function HeaderView({ navLinks, isScrolled, mobileMenuOpen, setMo
                         return (
                             <div key={idx} className="nav-item relative group">
                                 {link.subLinks ? (
-                                    <button className={`flex items-center gap-1 px-4 py-2.5 rounded-lg font-semibold text-[15px] transition-all duration-300 ${
-                                        isActive ? 'text-orange-600' : 'text-stone-600 hover:text-orange-600'
-                                    }`}>
+                                    <button className={`flex items-center gap-1 px-4 py-2.5 rounded-lg font-semibold text-[15px] transition-all duration-300 ${isActive ? 'text-orange-600' : 'text-stone-600 hover:text-orange-600'
+                                        }`}>
                                         {link.label}
                                         <ChevronDown size={14} className="group-hover:rotate-180 transition-transform duration-300" />
                                     </button>
                                 ) : (
-                                    <Link to={link.href} className={`px-4 py-2.5 rounded-lg font-semibold text-[15px] transition-all duration-300 block relative ${
-                                        isActive ? 'text-orange-600' : 'text-stone-600 hover:text-orange-600'
-                                    }`}>
+                                    <Link to={link.href} className={`px-4 py-2.5 rounded-lg font-semibold text-[15px] transition-all duration-300 block relative ${isActive ? 'text-orange-600' : 'text-stone-600 hover:text-orange-600'
+                                        }`}>
                                         {link.label}
                                         {isActive && <span className="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-5 h-0.5 bg-orange-500 rounded-full" />}
                                     </Link>
@@ -83,11 +80,19 @@ export default function HeaderView({ navLinks, isScrolled, mobileMenuOpen, setMo
                                     <div className="absolute top-full left-0 mt-1 w-64 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-3 group-hover:translate-y-0 pt-2">
                                         <div className="bg-white rounded-xl p-1.5 flex flex-col gap-0.5 border border-stone-100 shadow-xl shadow-stone-900/8">
                                             {link.subLinks.map((sub, sIdx) => (
-                                                <Link key={sIdx} to={sub.href} className={`px-4 py-3 text-[14px] rounded-lg transition-all font-medium flex items-center gap-2.5 ${
-                                                    location.pathname === sub.href ? 'text-orange-600 bg-orange-50' : 'text-stone-600 hover:text-orange-600 hover:bg-stone-50'
-                                                }`}>
-                                                    <span className="w-1.5 h-1.5 rounded-full bg-orange-400/50" />
-                                                    {sub.label}
+                                                <Link key={sIdx} to={sub.href} className={`px-4 py-3 text-[14px] rounded-lg transition-all font-medium flex items-center gap-2.5 ${location.pathname === sub.href ? 'text-orange-600 bg-orange-50' : 'text-stone-600 hover:text-orange-600 hover:bg-stone-50'
+                                                    }`}>
+                                                    {sub.icon ? (
+                                                        <Icon icon={sub.icon} width={18} className="shrink-0 rounded-[2px] shadow-[0_1px_2px_rgba(0,0,0,0.1)]" />
+                                                    ) : (
+                                                        <span className="w-1.5 h-1.5 rounded-full bg-orange-400/50 shrink-0" />
+                                                    )}
+                                                    <span className="whitespace-nowrap">{sub.label}</span>
+                                                    {sub.comingSoon && (
+                                                        <span className="ml-auto flex shrink-0 items-center justify-center text-[9px] leading-none font-bold uppercase tracking-widest text-orange-600 bg-orange-100 border border-orange-200 px-2 py-1 rounded-full animate-pulse shadow-sm">
+                                                            Soon
+                                                        </span>
+                                                    )}
                                                 </Link>
                                             ))}
                                         </div>
@@ -123,7 +128,17 @@ export default function HeaderView({ navLinks, isScrolled, mobileMenuOpen, setMo
                                 <div className="mt-2 pl-4 flex flex-col gap-0.5 border-l-2 border-orange-200 ml-2">
                                     {link.subLinks.map((sub, sIdx) => (
                                         <Link key={sIdx} to={sub.href} className="text-stone-500 text-[15px] hover:text-orange-600 font-medium transition-colors py-1.5 flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
-                                            <span className="w-1 h-1 rounded-full bg-orange-400" />{sub.label}
+                                            {sub.icon ? (
+                                                <Icon icon={sub.icon} width={16} className="shrink-0 rounded-[2px] shadow-[0_1px_2px_rgba(0,0,0,0.1)]" />
+                                            ) : (
+                                                <span className="w-1 h-1 rounded-full bg-orange-400 shrink-0" />
+                                            )}
+                                            <span>{sub.label}</span>
+                                            {sub.comingSoon && (
+                                                <span className="ml-auto flex shrink-0 items-center justify-center text-[9px] leading-none font-bold uppercase tracking-widest text-orange-600 bg-orange-100 border border-orange-200 px-2 py-1 rounded-full animate-pulse shadow-sm">
+                                                    Soon
+                                                </span>
+                                            )}
                                         </Link>
                                     ))}
                                 </div>

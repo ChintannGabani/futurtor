@@ -39,8 +39,8 @@ function CountUp({ target, suffix = '' }) {
 export default function HomeView({ data }) {
     useSeo({
         title: 'Study Abroad & Immigration Consultancy in Surat',
-        description: "FutureTor — India's trusted overseas education & immigration consultancy. Expert German, IELTS, PTE training, visa services, and 100% visa success rate. Step beyond borders today.",
-        keywords: 'study abroad consultancy, immigration consultancy Surat, German classes Surat, IELTS coaching, PTE training, student visa, overseas education India, FutureTor',
+        description: "Futuretor — India's trusted overseas education & immigration consultancy. Expert German, IELTS, PTE training, visa services, and 100% visa success rate. Step beyond borders today.",
+        keywords: 'study abroad consultancy, immigration consultancy Surat, German classes Surat, IELTS coaching, PTE training, student visa, overseas education India, Futuretor',
         path: '/',
     });
     if (!data) return null;
@@ -133,7 +133,7 @@ export default function HomeView({ data }) {
                         </div>
 
                         {/* Trusted by strip */}
-                       
+
                     </div>
                 </div>
 

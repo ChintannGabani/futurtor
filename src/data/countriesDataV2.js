@@ -1,3 +1,11 @@
+import germanyUni1 from '../assets/universities/germany/Mediadesign-Hochschule.webp';
+import germanyUni2 from '../assets/universities/germany/EU-Business-School-logo.webp';
+import germanyUni3 from '../assets/universities/germany/mdh-university-of-applied-sciences.webp';
+import germanyUni4 from '../assets/universities/germany/Munich-Business-School-logo.webp';
+import germanyUni5 from '../assets/universities/germany/GISMA.webp';
+import germanyUni6 from '../assets/universities/germany/Arden-University.webp';
+import germanyUni7 from '../assets/universities/germany/IUBH-logo.webp';
+
 export const COUNTRIES_DATA_ENHANCED = {
     germany: {
         // Basic Info
@@ -9,7 +17,7 @@ export const COUNTRIES_DATA_ENHANCED = {
         hero: {
             title: 'Study in Germany for Indian Students: Education in the Land of Ideas',
             subtitle: 'Join thousands of Indian students pursuing excellence in Germany',
-            description: 'Germany offers world-class education with low tuition fees and unparalleled career opportunities. FutureTor helps you navigate every step of your German education journey.',
+            description: 'Germany offers world-class education with low tuition fees and unparalleled career opportunities. Futuretor helps you navigate every step of your German education journey.',
         },
 
         // CTA Buttons
@@ -78,42 +86,49 @@ export const COUNTRIES_DATA_ENHANCED = {
                 shortName: 'Mediadesign Hochschule',
                 popularFor: 'Art & Design',
                 ranking: { label: 'QS World Ranking', value: '3' },
+                logo: germanyUni1,
             },
             {
                 name: 'EU Business School, Germany',
                 shortName: 'EU Business School',
                 popularFor: 'MBA',
                 ranking: { label: 'QS World Ranking', value: '151' },
+                logo: germanyUni2,
             },
             {
                 name: 'mdh University of Applied Sciences, Germany',
                 shortName: 'mdh University of Applied Sciences',
                 popularFor: 'Media, Design, and Management',
                 ranking: { label: 'QS World Ranking', value: '164' },
+                logo: germanyUni3,
             },
             {
                 name: 'Munich Business School, Germany',
                 shortName: 'Munich Business School',
                 popularFor: 'Innovation and Entrepreneurship',
                 ranking: { label: 'QS World Ranking', value: '91' },
+                logo: germanyUni4,
             },
             {
                 name: 'GISMA, Germany',
                 shortName: 'GISMA',
                 popularFor: 'MBA',
                 ranking: { label: 'QS World Ranking', value: '123' },
+                logo: germanyUni5,
             },
             {
                 name: 'Arden University, Germany',
                 shortName: 'Arden University',
                 popularFor: 'Accounting & Finance',
                 ranking: { label: 'QS World Ranking', value: '5' },
+                logo: germanyUni6,
             },
             {
                 name: 'IUBH University of Applied Sciences, Germany',
                 shortName: 'IUBH University of Applied Sciences',
                 popularFor: 'MBA',
                 ranking: { label: 'QS World Ranking', value: '76' },
+                logo: germanyUni7,
             },
         ],
 
@@ -131,6 +146,7 @@ export const COUNTRIES_DATA_ENHANCED = {
         costOfStudying: {
             heading: 'Cost of Studying in Germany',
             tuitionFees: [
+                { degree: 'Public Universities', cost: 'Free Education (No Tuition Fees)' },
                 { degree: 'Bachelor\'s', cost: 'EUR 8,000 – 10,000' },
                 { degree: 'Master\'s', cost: 'EUR 10,000 – 12,000' },
             ],
@@ -273,7 +289,7 @@ export const COUNTRIES_DATA_ENHANCED = {
             },
             {
                 question: 'What is the best way to pursue a Master\'s in Germany for Indian students?',
-                answer: 'The best way is to start with language preparation, then apply to universities 6-9 months before your intended start date. FutureTor can guide you through profile assessment, university selection, and application process.',
+                answer: 'The best way is to start with language preparation, then apply to universities 6-9 months before your intended start date. Futuretor can guide you through profile assessment, university selection, and application process.',
             },
             {
                 question: 'Is it compulsory to be proficient in the German language to study in Germany?',
@@ -516,7 +532,7 @@ export const COUNTRIES_DATA_ENHANCED = {
             {
                 name: 'Neha Desai',
                 university: 'University of Helsinki, Finland',
-                review: 'FutureTor\'s support was exceptional throughout my Finnish education journey. Best decision of my life! The university experience is world-class.',
+                review: 'Futuretor\'s support was exceptional throughout my Finnish education journey. Best decision of my life! The university experience is world-class.',
             },
             {
                 name: 'Arjun Patel',

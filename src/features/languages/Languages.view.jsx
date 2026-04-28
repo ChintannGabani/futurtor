@@ -43,11 +43,11 @@ export default function LanguagesView({ title, description }) {
             features: ['A1 to C1 Levels', 'Goethe-Aligned', 'Technical Vocabulary', '24/7 Support'],
         },
         {
-            title: 'IELTS / TOEFL / PTE',
-            desc: 'Expert coaching for all major English proficiency tests with focus on Reading, Listening, Writing & Speaking.',
+            title: 'IELTS',
+            desc: 'Expert coaching for the IELTS English proficiency test with focus on Reading, Listening, Writing & Speaking.',
             icon: 'twemoji:flag-united-kingdom',
             stats: '4 Modules',
-            link: '/languages/ielts-toefl-pte',
+            link: '/languages/ielts',
             gradient: 'from-blue-600 via-red-500 to-blue-800',
             features: ['Band 7+ Target', '500+ Students', 'Mock Tests', 'Speaking Focus'],
         }

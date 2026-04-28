@@ -17,7 +17,7 @@ gsap.registerPlugin(ScrollTrigger);
 export default function GermanView({ heroData, whyChooseUs, benefits, testimonials }) {
     useSeo({
         title: 'German Language Classes - A1 to C1 Goethe Aligned',
-        description: 'Learn German from A1 to C1 with FutureTor — Goethe-aligned curriculum, small batches, technical vocabulary focus, and 24/7 support. Best German classes in Surat.',
+        description: 'Learn German from A1 to C1 with Futuretor — Goethe-aligned curriculum, small batches, technical vocabulary focus, and 24/7 support. Best German classes in Surat.',
         keywords: 'German language classes Surat, learn German A1 C1, Goethe institute aligned, German for engineers, study in Germany, German classes India',
         path: '/languages/german',
     });
@@ -262,42 +262,42 @@ export default function GermanView({ heroData, whyChooseUs, benefits, testimonia
                                 'noto:laptop',
                             ];
                             return (
-                            <div
-                                key={idx}
-                                className={`de-benefit-item invisible group ${idx % 2 === 1 ? 'md:mt-8' : ''}`}
-                            >
-                                <div className="relative bg-white/[0.04] border border-white/[0.08] rounded-2xl p-7 sm:p-8 hover:bg-white/[0.08] hover:border-yellow-400/30 transition-all duration-500 h-full">
-                                    {/* Large number watermark */}
-                                    <div className="absolute top-4 right-6 text-6xl font-black text-white/[0.04] group-hover:text-yellow-400/10 transition-colors duration-500 select-none">
-                                        {String(idx + 1).padStart(2, '0')}
-                                    </div>
-
-                                    {/* Floating illustration */}
-                                    <div className="absolute -top-4 -right-2 w-20 h-20 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 group-hover:-rotate-6 transition-all duration-500">
-                                        <Icon icon={benefitIllustrations[idx % benefitIllustrations.length]} width={48} className="drop-shadow-xl" />
-                                    </div>
-
-                                    <div className="relative z-10">
-                                        <div className="flex gap-1 mb-5">
-                                            <div className="h-1 w-4 rounded-full bg-black/60" />
-                                            <div className="h-1 w-4 rounded-full bg-red-600" />
-                                            <div className="h-1 w-4 rounded-full bg-yellow-400" />
+                                <div
+                                    key={idx}
+                                    className={`de-benefit-item invisible group ${idx % 2 === 1 ? 'md:mt-8' : ''}`}
+                                >
+                                    <div className="relative bg-white/[0.04] border border-white/[0.08] rounded-2xl p-7 sm:p-8 hover:bg-white/[0.08] hover:border-yellow-400/30 transition-all duration-500 h-full">
+                                        {/* Large number watermark */}
+                                        <div className="absolute top-4 right-6 text-6xl font-black text-white/[0.04] group-hover:text-yellow-400/10 transition-colors duration-500 select-none">
+                                            {String(idx + 1).padStart(2, '0')}
                                         </div>
 
-                                        <h4 className="text-lg sm:text-xl font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors duration-300 pr-20">
-                                            {point.title}
-                                        </h4>
-                                        <p className="text-stone-400 text-[15px] leading-relaxed">
-                                            {point.desc}
-                                        </p>
+                                        {/* Floating illustration */}
+                                        <div className="absolute -top-4 -right-2 w-20 h-20 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center backdrop-blur-sm group-hover:scale-110 group-hover:-rotate-6 transition-all duration-500">
+                                            <Icon icon={benefitIllustrations[idx % benefitIllustrations.length]} width={48} className="drop-shadow-xl" />
+                                        </div>
 
-                                        <div className="mt-5 flex items-center gap-2 text-yellow-400/60 group-hover:text-yellow-400 transition-colors text-sm font-semibold">
-                                            <CheckCircle2 size={15} />
-                                            <span>Included in all levels</span>
+                                        <div className="relative z-10">
+                                            <div className="flex gap-1 mb-5">
+                                                <div className="h-1 w-4 rounded-full bg-black/60" />
+                                                <div className="h-1 w-4 rounded-full bg-red-600" />
+                                                <div className="h-1 w-4 rounded-full bg-yellow-400" />
+                                            </div>
+
+                                            <h4 className="text-lg sm:text-xl font-bold text-white mb-3 group-hover:text-yellow-400 transition-colors duration-300 pr-20">
+                                                {point.title}
+                                            </h4>
+                                            <p className="text-stone-400 text-[15px] leading-relaxed">
+                                                {point.desc}
+                                            </p>
+
+                                            <div className="mt-5 flex items-center gap-2 text-yellow-400/60 group-hover:text-yellow-400 transition-colors text-sm font-semibold">
+                                                <CheckCircle2 size={15} />
+                                                <span>Included in all levels</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                             );
                         })}
                     </div>

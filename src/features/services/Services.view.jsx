@@ -16,7 +16,7 @@ export default function ServicesView({ data }) {
     useSeo({
         title: 'Our Services - Visa, Education Consulting & Loan Guidance',
         description: 'Complete overseas education services: Education Consultancy, Application Services, Visa Services, Loan Guidance, Admission Advice & After-Arrival Support. 100% visa success rate.',
-        keywords: 'study abroad services, visa consultancy, education loan guidance, application services, admission advice, after arrival support, FutureTor services',
+        keywords: 'study abroad services, visa consultancy, education loan guidance, application services, admission advice, after arrival support, Futuretor services',
         path: '/services',
     });
     if (!data) return null;
@@ -30,14 +30,18 @@ export default function ServicesView({ data }) {
 
             gsap.fromTo('.svc-card',
                 { y: 50, autoAlpha: 0, scale: 0.95 },
-                { y: 0, autoAlpha: 1, scale: 1, duration: 0.6, stagger: 0.1, ease: 'power3.out',
-                    scrollTrigger: { trigger: cardsRef.current, start: 'top 80%', once: true } }
+                {
+                    y: 0, autoAlpha: 1, scale: 1, duration: 0.6, stagger: 0.1, ease: 'power3.out',
+                    scrollTrigger: { trigger: cardsRef.current, start: 'top 80%', once: true }
+                }
             );
 
             gsap.fromTo('.trust-el',
                 { y: 40, autoAlpha: 0 },
-                { y: 0, autoAlpha: 1, duration: 0.6, stagger: 0.1, ease: 'power3.out',
-                    scrollTrigger: { trigger: trustRef.current, start: 'top 80%', once: true } }
+                {
+                    y: 0, autoAlpha: 1, duration: 0.6, stagger: 0.1, ease: 'power3.out',
+                    scrollTrigger: { trigger: trustRef.current, start: 'top 80%', once: true }
+                }
             );
         });
         return () => ctx.revert();

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const SITE_NAME = 'FutureTor';
+const SITE_NAME = 'Futuretor';
 const SITE_URL = 'https://www.futuretor.com';
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.jpg`;
 

@@ -5,7 +5,7 @@ import useSeo from '../../lib/useSeo';
 export default function EducationalLoanGuidanceView({ data }) {
     useSeo({
         title: 'Educational Loan Guidance - Study Abroad Financing',
-        description: 'Get hassle-free education loan guidance for studying abroad. FutureTor partners with reputed banks, recommends scholarships, and helps with financial documentation.',
+        description: 'Get hassle-free education loan guidance for studying abroad. Futuretor partners with reputed banks, recommends scholarships, and helps with financial documentation.',
         keywords: 'education loan guidance, study abroad loan, abroad scholarship, education loan India, bank tie-up loan',
         path: '/services/educational-loan-guidance',
     });
@@ -24,7 +24,7 @@ export default function EducationalLoanGuidanceView({ data }) {
             title="Loan Guidance"
             badge="Financial Support"
             badgeIcon="mdi:bank-outline"
-            description="With FutureTor by your side, financial concerns won't hinder your career aspirations. For parents worried about arranging funds for their child's study abroad dreams, we provide a dedicated approach to help secure the most feasible financial support."
+            description="With Futuretor by your side, financial concerns won't hinder your career aspirations. For parents worried about arranging funds for their child's study abroad dreams, we provide a dedicated approach to help secure the most feasible financial support."
             pointsTitle="Financial Services"
             points={points}
             variant="checklist"

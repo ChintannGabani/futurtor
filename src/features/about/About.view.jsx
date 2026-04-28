@@ -37,8 +37,8 @@ function CountUp({ target, suffix = '' }) {
 export default function AboutView({ data }) {
     useSeo({
         title: 'About Us',
-        description: 'Learn about FutureTor — India\'s trusted overseas education and immigration consultancy. Our certified team has been guiding students to global success since 2019.',
-        keywords: 'about FutureTor, immigration consultancy India, overseas education experts, study abroad consultants Surat, certified immigration team',
+        description: 'Learn about Futuretor — India\'s trusted overseas education and immigration consultancy. Our certified team has been guiding students to global success since 2019.',
+        keywords: 'about Futuretor, immigration consultancy India, overseas education experts, study abroad consultants Surat, certified immigration team',
         path: '/about-us',
     });
     if (!data) return null;
@@ -81,10 +81,10 @@ export default function AboutView({ data }) {
                         <Icon icon="mdi:hand-heart-outline" width={16} /><span>Experts Since 2019</span>
                     </div>
                     <h1 className="ab-hero-el invisible text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-5 text-white leading-[1.08]">
-                        About <span className="text-orange-500">FutureTor</span>
+                        About <span className="text-orange-500">Futuretor</span>
                     </h1>
                     <p className="ab-hero-el invisible text-base sm:text-lg text-stone-300/90 max-w-3xl mx-auto leading-relaxed">
-                        When candidates like you, eager to build a prosperous career abroad and achieve success, search for terms like <span className="text-orange-300 italic">"India's Leading Language Academy and consultant,"</span> you are faced with millions of results in just a few seconds. FutureTor is one of those countless immigration companies in India, and we may not always appear on the first page of search results. However, you're here now, pursuing your dream of studying and working abroad.
+                        When candidates like you, eager to build a prosperous career abroad and achieve success, search for terms like <span className="text-orange-300 italic">"India's Leading Language Academy and consultant,"</span> you are faced with millions of results in just a few seconds. Futuretor is one of those countless immigration companies in India, and we may not always appear on the first page of search results. However, you're here now, pursuing your dream of studying and working abroad.
                     </p>
                 </div>
 
@@ -122,7 +122,7 @@ export default function AboutView({ data }) {
                                 <p className="text-stone-500 text-xs italic text-center">A large stone building with columns and statues — Brandenburg Gate, Germany</p>
                             </div>
                             {/* Floating stats badge */}
-                            
+
                         </div>
                     </div>
 
@@ -133,7 +133,7 @@ export default function AboutView({ data }) {
                             Built on <span className="text-orange-500">Trust</span>, Driven by Results
                         </h2>
                         <p className="text-stone-600 text-[15px] leading-relaxed mb-5">
-                            This isn't by chance. You've likely come to us through a recommendation from a friend, relative, or colleague who has already benefitted from our expert Immigration and Education Consulting services. FutureTor has helped countless students realize their dreams and <span className="font-semibold text-stone-700">"Worth the World."</span>
+                            This isn't by chance. You've likely come to us through a recommendation from a friend, relative, or colleague who has already benefitted from our expert Immigration and Education Consulting services. Futuretor has helped countless students realize their dreams and <span className="font-semibold text-stone-700">"Worth the World."</span>
                         </p>
                         <p className="text-stone-600 text-[15px] leading-relaxed mb-8">
                             It's this proven track record that differentiates us from the millions of companies out there — our work speaks for itself. We don't just process applications, we build futures.
@@ -282,24 +282,24 @@ export default function AboutView({ data }) {
                         ].map((item, idx) => (
                             <MagneticCard key={idx} intensity={5} className="ab-team-card invisible">
                                 <div className="bg-white rounded-2xl overflow-hidden border border-stone-100 hover:shadow-xl hover:border-orange-200 transition-all duration-500 group">
-                                <div className="relative h-48 overflow-hidden bg-gradient-to-br from-orange-50 via-white to-amber-50 flex items-center justify-center">
-                                    {/* Decorative dotted ring */}
-                                    <div className="absolute w-40 h-40 rounded-full border-2 border-dashed border-orange-500/15 group-hover:border-orange-500/30 transition-colors duration-500" />
-                                    <div className="absolute w-28 h-28 rounded-full bg-orange-500/10 blur-2xl" />
-                                    {/* Center illustration */}
-                                    <Icon icon={item.illustration} width={100} className="relative z-10 drop-shadow-xl group-hover:scale-110 group-hover:-rotate-6 transition-all duration-500" />
-                                    {/* Floating accents */}
-                                    <Icon icon={item.accents[0]} width={36} className="absolute top-5 right-6 z-10 drop-shadow-lg group-hover:-translate-y-1 transition-transform duration-500" />
-                                    <Icon icon={item.accents[1]} width={36} className="absolute bottom-5 left-6 z-10 drop-shadow-lg group-hover:translate-y-1 transition-transform duration-500" />
-                                    {/* Bottom-left icon badge */}
-                                    <div className="absolute bottom-4 right-4 w-11 h-11 rounded-xl bg-orange-500 flex items-center justify-center shadow-lg z-20">
-                                        <Icon icon={item.icon} width={22} className="text-white" />
+                                    <div className="relative h-48 overflow-hidden bg-gradient-to-br from-orange-50 via-white to-amber-50 flex items-center justify-center">
+                                        {/* Decorative dotted ring */}
+                                        <div className="absolute w-40 h-40 rounded-full border-2 border-dashed border-orange-500/15 group-hover:border-orange-500/30 transition-colors duration-500" />
+                                        <div className="absolute w-28 h-28 rounded-full bg-orange-500/10 blur-2xl" />
+                                        {/* Center illustration */}
+                                        <Icon icon={item.illustration} width={100} className="relative z-10 drop-shadow-xl group-hover:scale-110 group-hover:-rotate-6 transition-all duration-500" />
+                                        {/* Floating accents */}
+                                        <Icon icon={item.accents[0]} width={36} className="absolute top-5 right-6 z-10 drop-shadow-lg group-hover:-translate-y-1 transition-transform duration-500" />
+                                        <Icon icon={item.accents[1]} width={36} className="absolute bottom-5 left-6 z-10 drop-shadow-lg group-hover:translate-y-1 transition-transform duration-500" />
+                                        {/* Bottom-left icon badge */}
+                                        <div className="absolute bottom-4 right-4 w-11 h-11 rounded-xl bg-orange-500 flex items-center justify-center shadow-lg z-20">
+                                            <Icon icon={item.icon} width={22} className="text-white" />
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="p-6">
-                                    <h3 className="text-lg font-bold text-stone-900 mb-2 group-hover:text-orange-600 transition-colors">{item.title}</h3>
-                                    <p className="text-stone-500 text-[15px] leading-relaxed">{item.desc}</p>
-                                </div>
+                                    <div className="p-6">
+                                        <h3 className="text-lg font-bold text-stone-900 mb-2 group-hover:text-orange-600 transition-colors">{item.title}</h3>
+                                        <p className="text-stone-500 text-[15px] leading-relaxed">{item.desc}</p>
+                                    </div>
                                 </div>
                             </MagneticCard>
                         ))}

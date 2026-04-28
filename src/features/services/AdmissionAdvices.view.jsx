@@ -5,8 +5,8 @@ import useSeo from '../../lib/useSeo';
 export default function AdmissionAdvicesView({ data }) {
     useSeo({
         title: 'Admission Advice - University Selection & Application',
-        description: 'Personalized admission advice from FutureTor experts. University selection, course recommendation, document review, SOP help, and visa application support.',
-        keywords: 'admission advice, university selection, study abroad admission, course recommendation, document review, FutureTor admission consultant',
+        description: 'Personalized admission advice from Futuretor experts. University selection, course recommendation, document review, SOP help, and visa application support.',
+        keywords: 'admission advice, university selection, study abroad admission, course recommendation, document review, Futuretor admission consultant',
         path: '/services/admission-advices',
     });
     if (!data) return null;
@@ -24,7 +24,7 @@ export default function AdmissionAdvicesView({ data }) {
             title="Admission Advices"
             badge="Expert Guidance"
             badgeIcon="mdi:lightbulb-outline"
-            description="At FutureTor, we understand that applying to study abroad can be overwhelming, and every detail matters. Our expert team offers end-to-end application services to ensure your application is prepared meticulously and submitted on time."
+            description="At Futuretor, we understand that applying to study abroad can be overwhelming, and every detail matters. Our expert team offers end-to-end application services to ensure your application is prepared meticulously and submitted on time."
             pointsTitle="Our Guidance Areas"
             points={points}
             variant="cards-alt"

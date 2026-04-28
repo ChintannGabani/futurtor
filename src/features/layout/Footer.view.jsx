@@ -4,7 +4,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Icon } from '@iconify/react';
 import { Phone, Mail, MapPin, ArrowRight, Send } from 'lucide-react';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaFacebook, FaYoutube, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import { FOOTER_DATA } from '../../data/constants';
 import logoDark from '../../assets/company_logo/logo_dark.png';
 
@@ -17,8 +17,10 @@ export default function FooterView() {
         const ctx = gsap.context(() => {
             gsap.fromTo('.footer-col',
                 { y: 40, autoAlpha: 0 },
-                { y: 0, autoAlpha: 1, duration: 0.7, stagger: 0.15, ease: 'power3.out',
-                    scrollTrigger: { trigger: footerRef.current, start: 'top 85%', once: true } }
+                {
+                    y: 0, autoAlpha: 1, duration: 0.7, stagger: 0.15, ease: 'power3.out',
+                    scrollTrigger: { trigger: footerRef.current, start: 'top 85%', once: true }
+                }
             );
         }, footerRef);
         return () => ctx.revert();
@@ -39,7 +41,7 @@ export default function FooterView() {
                     {/* Brand */}
                     <div className="footer-col invisible flex flex-col gap-6">
                         <Link to="/" className="flex items-center">
-                            <img src={logoDark} alt="FutureTor — Study Abroad & Immigration Consultancy" className="h-12 w-auto object-contain mix-blend-lighten" />
+                            <img src={logoDark} alt="Futuretor — Study Abroad & Immigration Consultancy" className="h-12 w-auto object-contain mix-blend-lighten" />
                         </Link>
                         <p className="text-stone-400 leading-relaxed text-[15px]">
                             {FOOTER_DATA.vision}
@@ -47,7 +49,7 @@ export default function FooterView() {
                         <div className="flex gap-3">
                             {[
                                 { Icon: FaFacebook, label: 'Facebook' },
-                                { Icon: FaTwitter, label: 'Twitter' },
+                                { Icon: FaYoutube, label: 'YouTube' },
                                 { Icon: FaInstagram, label: 'Instagram' },
                                 { Icon: FaLinkedin, label: 'LinkedIn' },
                             ].map(({ Icon: SocialIcon, label }, i) => (
@@ -68,7 +70,7 @@ export default function FooterView() {
                                 { label: 'Visa Services', href: '/services/visa-services' },
                                 { label: 'Loan Guidance', href: '/services/educational-loan-guidance' },
                                 { label: 'German Language', href: '/languages/german' },
-                                { label: 'IELTS Training', href: '/languages/ielts-toefl-pte' },
+                                { label: 'IELTS Training', href: '/languages/ielts' },
                             ].map((item, i) => (
                                 <li key={i}>
                                     <Link to={item.href} className="text-stone-400 hover:text-white transition-colors text-[15px] flex items-center gap-2 group">
@@ -127,7 +129,7 @@ export default function FooterView() {
 
                 {/* Bottom */}
                 <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-stone-500 text-sm">
-                    <p>&copy; {new Date().getFullYear()} FutureTor Immigration & Consultancy. All rights reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} Futuretor Immigration & Consultancy. All rights reserved.</p>
                     <div className="flex gap-6">
                         <a href="#" className="hover:text-orange-500 transition-colors">Privacy Policy</a>
                         <a href="#" className="hover:text-orange-500 transition-colors">Terms of Service</a>

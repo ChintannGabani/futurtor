@@ -11,10 +11,7 @@ import ServicesContainer from './features/services/Services.container';
 import AboutContainer from './features/about/About.container';
 import ContactContainer from './features/contact/Contact.container';
 import GermanContainer from './features/languages/German.container';
-import IeltsToeflPteContainer from './features/languages/IeltsToeflPte.container';
 import IeltsContainer from './features/languages/Ielts.container';
-import ToeflContainer from './features/languages/Toefl.container';
-import PteContainer from './features/languages/Pte.container';
 import EducationConsultancyContainer from './features/services/EducationConsultancy.container';
 import VisaServicesContainer from './features/services/VisaServicesContainer';
 import ApplicationServicesContainer from './features/services/ApplicationServicesContainer';
@@ -47,9 +44,6 @@ function App() {
                         <Route path="/languages" element={<LanguagesContainer title="Our Languages" />} />
                         <Route path="/languages/german" element={<GermanContainer />} />
                         <Route path="/languages/ielts" element={<IeltsContainer />} />
-                        <Route path="/languages/toefl" element={<ToeflContainer />} />
-                        <Route path="/languages/pte" element={<PteContainer />} />
-                        <Route path="/languages/ielts-toefl-pte" element={<IeltsToeflPteContainer />} />
                         <Route path="/services" element={<ServicesContainer />} />
                         <Route path="/services/education-consultancy" element={<EducationConsultancyContainer />} />
                         <Route path="/services/application-services" element={<ApplicationServicesContainer />} />

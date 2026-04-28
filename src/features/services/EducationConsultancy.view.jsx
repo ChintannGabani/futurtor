@@ -13,8 +13,8 @@ gsap.registerPlugin(ScrollTrigger);
 export default function EducationConsultancyView({ data }) {
     useSeo({
         title: 'Education Consultancy - Top Study Visa Consultant',
-        description: "FutureTor is India's top study visa consultant offering personalized educational planning, course advice, and career guidance based on your profile, budget, and goals.",
-        keywords: 'education consultancy India, study visa consultant, college gateway, course recommendation, career planning, FutureTor education consultant',
+        description: "Futuretor is India's top study visa consultant offering personalized educational planning, course advice, and career guidance based on your profile, budget, and goals.",
+        keywords: 'education consultancy India, study visa consultant, college gateway, course recommendation, career planning, Futuretor education consultant',
         path: '/services/education-consultancy',
     });
     if (!data) return null;
@@ -87,7 +87,7 @@ export default function EducationConsultancyView({ data }) {
             <section className="ec-features relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 w-full bg-white z-10 overflow-hidden">
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
                     <div>
-                        <span className="text-orange-500 font-bold uppercase tracking-widest text-xs mb-3 block">Why FutureTor</span>
+                        <span className="text-orange-500 font-bold uppercase tracking-widest text-xs mb-3 block">Why Futuretor</span>
                         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-stone-900 tracking-tight mb-6 leading-tight">India's Smartest <span className="text-orange-500">College Gateway</span></h2>
                         <p className="text-stone-500 text-[15px] leading-relaxed mb-8">{data.description2}</p>
                         <div className="space-y-4">

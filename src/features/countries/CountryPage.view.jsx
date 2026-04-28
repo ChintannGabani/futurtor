@@ -13,7 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function CountryPageView({ data }) {
     useSeo({
-        title: `Study in ${data.name} - FutureTor Education Consultancy`,
+        title: `Study in ${data.name} - Futuretor Education Consultancy`,
         description: data.hero.description,
         keywords: `study in ${data.name}, higher education, university admissions, visa consultancy`,
         path: `/study-abroad/${data.slug}`,
@@ -36,6 +36,27 @@ export default function CountryPageView({ data }) {
 
     if (!data) return null;
     const pageRef = useRef(null);
+    const scrollRef = useRef(null);
+    const [isDragging, setIsDragging] = useState(false);
+    const [startX, setStartX] = useState(0);
+    const [scrollLeft, setScrollLeft] = useState(0);
+
+    const handleMouseDown = (e) => {
+        setIsDragging(true);
+        if (scrollRef.current) {
+            setStartX(e.pageX - scrollRef.current.offsetLeft);
+            setScrollLeft(scrollRef.current.scrollLeft);
+        }
+    };
+    const handleMouseLeave = () => setIsDragging(false);
+    const handleMouseUp = () => setIsDragging(false);
+    const handleMouseMove = (e) => {
+        if (!isDragging || !scrollRef.current) return;
+        e.preventDefault();
+        const x = e.pageX - scrollRef.current.offsetLeft;
+        const walk = (x - startX) * 2;
+        scrollRef.current.scrollLeft = scrollLeft - walk;
+    };
 
     useEffect(() => {
         const ctx = gsap.context(() => {
@@ -122,7 +143,7 @@ export default function CountryPageView({ data }) {
                     </div>
                     <h1 className="country-hero-el invisible text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-5 text-white leading-[1.08]">{data.hero.title}</h1>
                     <p className="country-hero-el invisible text-base sm:text-lg text-stone-300/90 max-w-3xl mx-auto leading-relaxed mb-8">{data.hero.description}</p>
-                    
+
                     {/* CTA Buttons */}
                     <div className="country-hero-el invisible flex flex-wrap gap-4 justify-center">
                         <button onClick={handleConsultationClick} className="px-8 py-3.5 rounded-full bg-orange-500 text-white font-bold hover:bg-orange-600 shadow-xl shadow-orange-500/25 transition-all inline-flex items-center gap-2">
@@ -173,57 +194,97 @@ export default function CountryPageView({ data }) {
             </section>
 
             {/* TOP UNIVERSITIES */}
-            <section id="universities" className="universities-grid relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 w-full bg-gradient-to-br from-stone-50 to-stone-100 z-10">
-                <div className="max-w-7xl mx-auto">
+            <section id="universities" className="universities-grid relative py-20 sm:py-28 w-full bg-gradient-to-br from-stone-50 to-stone-100 z-10 overflow-hidden">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-16">
                         <span className="text-orange-500 font-bold uppercase tracking-widest text-xs mb-3 block">Excellence in Education</span>
                         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-stone-900 tracking-tight mb-4">Top Universities in {data.name}</h2>
                         <p className="text-stone-600 mt-4 max-w-2xl mx-auto text-lg">Study at world-renowned institutions where thousands of Indian students have achieved their academic goals</p>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                </div>
+
+                {/* Full Width Horizontal Scroll Container */}
+                <div className="w-full relative group/slider">
+                    <div 
+                        ref={scrollRef}
+                        onMouseDown={handleMouseDown}
+                        onMouseLeave={handleMouseLeave}
+                        onMouseUp={handleMouseUp}
+                        onMouseMove={handleMouseMove}
+                        className={`flex overflow-x-auto gap-8 pb-12 pt-6 px-4 sm:px-6 lg:px-8 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden ${isDragging ? 'cursor-grabbing select-none' : 'cursor-grab'}`}
+                        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none', paddingLeft: 'max(1rem, calc((100vw - 80rem) / 2))', paddingRight: 'max(1rem, calc((100vw - 80rem) / 2))' }}
+                    >
                         {data.topUniversities.map((university, idx) => (
-                            <div key={idx} className="uni-card invisible group bg-white rounded-2xl p-7 border-2 border-stone-200 hover:border-orange-400 hover:shadow-2xl transition-all duration-300 relative overflow-hidden">
+                            <div 
+                                key={idx} 
+                                className="uni-card shrink-0 w-[85vw] sm:w-[420px] snap-center group bg-white rounded-3xl p-6 sm:p-7 border border-stone-200/60 hover:border-orange-400 hover:shadow-2xl transition-all duration-500 relative overflow-hidden invisible"
+                            >
                                 {/* Background gradient on hover */}
-                                <div className="absolute inset-0 bg-gradient-to-br from-orange-50/0 to-orange-50/0 group-hover:from-orange-50/50 group-hover:to-orange-100/30 transition-all duration-300"></div>
-                                
-                                <div className="relative z-10">
-                                    {/* Ranking Badge */}
-                                    <div className="absolute top-6 right-6">
-                                        <div className="flex items-center justify-center w-14 h-14 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full shadow-lg">
-                                            <span className="text-white font-bold text-lg">{university.ranking.value}</span>
-                                        </div>
+                                <div className="absolute inset-0 bg-gradient-to-br from-orange-50/0 to-orange-50/0 group-hover:from-orange-50/80 group-hover:to-orange-100/40 transition-all duration-500"></div>
+
+                                <div className="relative z-10 flex flex-col h-full">
+                                    {/* Unique Bookmark Rank Badge */}
+                                    <div className="absolute top-0 right-6 sm:right-8 bg-gradient-to-b from-orange-500 to-orange-600 text-white px-4 pb-5 pt-4 rounded-b-2xl shadow-lg flex flex-col items-center transform group-hover:translate-y-2 transition-transform duration-500">
+                                        <span className="text-[10px] font-bold uppercase tracking-widest mb-1 opacity-90">Rank</span>
+                                        <span className="text-2xl font-black leading-none">#{university.ranking.value}</span>
+                                    </div>
+
+                                    {/* Logo Place */}
+                                    <div className="h-28 flex items-center justify-start mb-8 pr-20">
+                                        {university.logo ? (
+                                            <img src={university.logo} alt={university.shortName} className="max-h-full max-w-[240px] object-contain filter drop-shadow-sm group-hover:scale-105 transition-transform duration-500 origin-left" />
+                                        ) : (
+                                            <div className="h-16 w-16 bg-stone-100 rounded-full flex items-center justify-center text-stone-400 font-bold text-2xl border border-stone-200">
+                                                {university.shortName.charAt(0)}
+                                            </div>
+                                        )}
                                     </div>
 
                                     {/* University Name and Category */}
-                                    <div className="pr-20 mb-6">
-                                        <h3 className="font-bold text-lg text-stone-900 mb-2">{university.shortName}</h3>
-                                        <div className="inline-flex items-center gap-2 mb-4">
+                                    <div className="pr-10 mb-8 flex-grow">
+                                        <h3 className="font-bold text-2xl text-stone-900 mb-3 leading-tight group-hover:text-orange-600 transition-colors duration-300">{university.shortName}</h3>
+                                        <div className="inline-flex items-center gap-2">
                                             <div className="w-2 h-2 bg-orange-500 rounded-full"></div>
-                                            <p className="text-orange-600 font-semibold text-sm">{university.popularFor}</p>
+                                            <p className="text-stone-600 font-medium text-base">{university.popularFor}</p>
                                         </div>
                                     </div>
 
-                                    {/* Ranking Label */}
-                                    <div className="flex items-center gap-3 pt-4 border-t border-stone-200">
-                                        <svg className="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
-                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
-                                        </svg>
-                                        <span className="text-xs font-medium text-stone-600">{university.ranking.label}</span>
+                                    {/* Ranking Label bottom */}
+                                    <div className="flex items-center gap-3 pt-6 border-t border-stone-100 mt-auto">
+                                        <div className="p-2.5 bg-orange-50 rounded-xl group-hover:bg-orange-100 transition-colors duration-300">
+                                            <svg className="w-6 h-6 text-orange-500" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                            </svg>
+                                        </div>
+                                        <span className="text-base font-semibold text-stone-700">{university.ranking.label}</span>
                                     </div>
                                 </div>
                             </div>
                         ))}
+                        {/* Spacer item to allow scrolling fully to the end */}
+                        <div className="shrink-0 w-4 sm:w-8"></div>
                     </div>
 
+                    {/* Scroll indicators / hint */}
+                    <div className="flex justify-center items-center gap-3 mt-2 text-stone-400">
+                        <ArrowRight size={18} className="animate-pulse text-orange-400" />
+                        <span className="text-sm font-semibold tracking-widest uppercase">Swipe to explore</span>
+                        <ArrowRight size={18} className="animate-pulse text-orange-400" />
+                    </div>
+                </div>
+
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     {/* Info Box */}
-                    <div className="mt-12 bg-white rounded-xl p-6 border border-orange-200 bg-gradient-to-r from-orange-50/50 to-transparent">
-                        <div className="flex gap-4">
-                            <svg className="w-6 h-6 text-orange-500 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
-                                <path fillRule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zm-11-1a1 1 0 11-2 0 1 1 0 012 0z" clipRule="evenodd"></path>
-                            </svg>
+                    <div className="mt-16 bg-white rounded-3xl p-6 md:p-8 border border-orange-100 bg-gradient-to-r from-orange-50/80 to-transparent shadow-sm">
+                        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
+                            <div className="p-4 bg-orange-100 rounded-2xl text-orange-600 shrink-0">
+                                <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fillRule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zm-11-1a1 1 0 11-2 0 1 1 0 012 0z" clipRule="evenodd"></path>
+                                </svg>
+                            </div>
                             <div>
-                                <h4 className="font-bold text-stone-900 mb-1">Study at Top-Ranked Institutions</h4>
-                                <p className="text-sm text-stone-600">All universities listed here are internationally recognized and offer excellent opportunities for Indian students seeking quality education in {data.name}.</p>
+                                <h4 className="font-bold text-stone-900 text-xl mb-2">Study at Top-Ranked Institutions</h4>
+                                <p className="text-stone-600 text-lg leading-relaxed">All universities listed here are internationally recognized and offer excellent opportunities for Indian students seeking quality education in {data.name}.</p>
                             </div>
                         </div>
                     </div>
@@ -396,25 +457,7 @@ export default function CountryPageView({ data }) {
                 </div>
             </section>
 
-            {/* RELATED ARTICLES */}
-            <section className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 w-full bg-white z-10">
-                <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-14">
-                        <span className="text-orange-500 font-bold uppercase tracking-widest text-xs mb-3 block">Insights</span>
-                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-stone-900 tracking-tight">Related Articles on Studying in {data.name}</h2>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {data.relatedArticles.slice(0, 6).map((article, idx) => (
-                            <div key={idx} className="country-card invisible bg-gradient-to-br from-orange-50 to-stone-50 rounded-xl p-6 border border-orange-200/30 hover:shadow-lg transition-all cursor-pointer group">
-                                <div className="flex items-start gap-3">
-                                    <BookOpen size={24} className="text-orange-500 shrink-0 mt-1" />
-                                    <h3 className="font-semibold text-stone-900 group-hover:text-orange-600 transition-colors">{article}</h3>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
+
 
             {/* SUCCESS STORIES */}
             <section className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 w-full bg-stone-50 z-10">
@@ -562,28 +605,7 @@ export default function CountryPageView({ data }) {
                 </div>
             </section>
 
-            {/* FAQ */}
-            <section className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 w-full bg-stone-50 z-10">
-                <div className="max-w-3xl mx-auto">
-                    <div className="text-center mb-12">
-                        <span className="text-orange-500 font-bold uppercase tracking-widest text-xs mb-3 block">Questions</span>
-                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-stone-900 tracking-tight">Frequently Asked Questions</h2>
-                    </div>
-                    <div className="space-y-4">
-                        {data.faqs.map((item, idx) => (
-                            <details key={idx} className="country-feature invisible bg-white rounded-lg border border-stone-200 overflow-hidden cursor-pointer group hover:border-orange-300 transition-colors">
-                                <summary className="p-6 font-bold text-stone-900 flex justify-between items-center">
-                                    <span>{item.question}</span>
-                                    <span className="text-orange-500 group-open:rotate-180 transition-transform">▼</span>
-                                </summary>
-                                <div className="px-6 pb-6 pt-0 text-stone-600 text-[15px] leading-relaxed border-t border-stone-200">
-                                    {item.answer}
-                                </div>
-                            </details>
-                        ))}
-                    </div>
-                </div>
-            </section>
+
 
             {/* FINAL CTA */}
             <section className="relative py-16 sm:py-20 px-4 bg-gradient-to-r from-[#0B1121] to-[#131d35] overflow-hidden">
@@ -591,7 +613,7 @@ export default function CountryPageView({ data }) {
                 <WorldMapBg className="inset-0 w-full h-full text-white" opacity={0.02} />
                 <div className="max-w-4xl mx-auto text-center relative z-10">
                     <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white mb-4 tracking-tight">Ready to Start Your {data.name} Journey?</h2>
-                    <p className="text-stone-400 text-base sm:text-lg mb-8">FutureTor is here to guide you every step of the way. Let's make your study abroad dreams a reality!</p>
+                    <p className="text-stone-400 text-base sm:text-lg mb-8">Futuretor is here to guide you every step of the way. Let's make your study abroad dreams a reality!</p>
                     <Link to="/contact-us">
                         <button className="btn-premium px-8 py-3.5 rounded-full bg-orange-500 text-white font-bold text-base hover:bg-orange-600 shadow-xl shadow-orange-500/25 transition-all inline-flex items-center gap-3">
                             Start Your Application <ArrowRight size={20} />

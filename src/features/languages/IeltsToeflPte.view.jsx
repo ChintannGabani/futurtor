@@ -36,7 +36,7 @@ function CountUp({ target, suffix = '' }) {
 export default function IeltsToeflPteView({ heroData, modules, scoreInfo }) {
     useSeo({
         title: 'IELTS, TOEFL & PTE Coaching - Expert Test Prep',
-        description: 'Ace IELTS, TOEFL & PTE with FutureTor expert coaching. Master Reading, Writing, Listening & Speaking with 550+ happy students and 10+ years of experience.',
+        description: 'Ace IELTS, TOEFL & PTE with Futuretor expert coaching. Master Reading, Writing, Listening & Speaking with 550+ happy students and 10+ years of experience.',
         keywords: 'IELTS coaching Surat, TOEFL preparation, PTE training, IELTS reading writing speaking, English language test prep India',
         path: '/languages/ielts-toefl-pte',
     });
@@ -283,11 +283,10 @@ export default function IeltsToeflPteView({ heroData, modules, scoreInfo }) {
                                 <button
                                     key={idx}
                                     onClick={() => setActiveTab(idx)}
-                                    className={`px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-300 ${
-                                        activeTab === idx
+                                    className={`px-6 py-3 rounded-lg font-semibold text-sm transition-all duration-300 ${activeTab === idx
                                             ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-white shadow-lg shadow-orange-500/25'
                                             : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-                                    }`}
+                                        }`}
                                 >
                                     {tabLabels[idx] || `Info ${idx + 1}`}
                                 </button>

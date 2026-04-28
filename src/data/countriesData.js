@@ -4,9 +4,9 @@ export const COUNTRIES_DATA = {
         slug: 'germany',
         heading: 'Study in Germany — Quality Education, Affordable Costs',
         subHeading: 'Join thousands of Indian students pursuing excellence in Germany',
-        description: 'Germany offers world-class education with low tuition fees and unparalleled career opportunities. FutureTor helps you navigate every step of your German education journey.',
+        description: 'Germany offers world-class education with low tuition fees and unparalleled career opportunities. Futuretor helps you navigate every step of your German education journey.',
         heroIcon: 'noto:flag-germany',
-        
+
         keyHighlights: [
             {
                 icon: 'mdi:school',
@@ -26,7 +26,7 @@ export const COUNTRIES_DATA = {
             {
                 icon: 'mdi:passport',
                 title: 'Easy Visa Process',
-                description: 'Straightforward student visa process with FutureTor\'s expert guidance.'
+                description: 'Straightforward student visa process with Futuretor\'s expert guidance.'
             },
         ],
 
@@ -40,7 +40,7 @@ export const COUNTRIES_DATA = {
         },
 
         whyFutureTor: {
-            heading: 'Why FutureTor for Your German Education Journey?',
+            heading: 'Why Futuretor for Your German Education Journey?',
             features: [
                 'Expert German language training from A1 to C1 level',
                 'Personalized university selection based on your profile',
@@ -158,7 +158,7 @@ export const COUNTRIES_DATA = {
                 name: 'Smit Bhadiyadara',
                 role: 'Master Student at TU Kaiserslautern',
                 image: '👨‍🎓',
-                quote: 'FutureTor guided me through the entire process from German language preparation to final visa approval. The after-arrival support in Germany was phenomenal!'
+                quote: 'Futuretor guided me through the entire process from German language preparation to final visa approval. The after-arrival support in Germany was phenomenal!'
             },
             {
                 name: 'Hardik Rangani',
@@ -170,7 +170,7 @@ export const COUNTRIES_DATA = {
                 name: 'Priya Shah',
                 role: 'Bachelor at TU Munich',
                 image: '👩‍🎓',
-                quote: 'From A1 German to university admission, FutureTor handled everything perfectly. Their on-ground support in Munich made my transition seamless!'
+                quote: 'From A1 German to university admission, Futuretor handled everything perfectly. Their on-ground support in Munich made my transition seamless!'
             },
         ],
 
@@ -231,7 +231,7 @@ export const COUNTRIES_DATA = {
         subHeading: 'Experience world-class education in the land of innovation',
         description: 'Finland offers innovative education, excellent quality of life, and affordable tuition for Indian students. Join leading universities and shape your global career.',
         heroIcon: 'noto:flag-finland',
-        
+
         keyHighlights: [
             {
                 icon: 'mdi:lightbulb',
@@ -265,7 +265,7 @@ export const COUNTRIES_DATA = {
         },
 
         whyFutureTor: {
-            heading: 'Why FutureTor for Your Finnish Education Journey?',
+            heading: 'Why Futuretor for Your Finnish Education Journey?',
             features: [
                 'Expert guidance through Finnish university application process',
                 'Scholarship identification and application support',
@@ -372,7 +372,7 @@ export const COUNTRIES_DATA = {
                 name: 'Neha Desai',
                 role: 'Master Student at University of Helsinki',
                 image: '👩‍🎓',
-                quote: 'FutureTor\'s support was exceptional throughout my Finnish education journey. Best decision of my life!'
+                quote: 'Futuretor\'s support was exceptional throughout my Finnish education journey. Best decision of my life!'
             },
             {
                 name: 'Arjun Patel',
@@ -458,7 +458,7 @@ export const COUNTRIES_DATA = {
         },
 
         whyFutureTor: {
-            heading: 'Why FutureTor for Your Swiss Education Journey?',
+            heading: 'Why Futuretor for Your Swiss Education Journey?',
             features: [
                 'Expert guidance through competitive Swiss university applications',
                 'Comprehensive financial planning and funding support',
@@ -559,7 +559,7 @@ export const COUNTRIES_DATA = {
                 name: 'Rahul Singh',
                 role: 'Master Student at ETH Zurich',
                 image: '👨‍🎓',
-                quote: 'ETH Zurich is truly world-class! The education quality and career opportunities are unmatched. FutureTor made the process seamless.'
+                quote: 'ETH Zurich is truly world-class! The education quality and career opportunities are unmatched. Futuretor made the process seamless.'
             },
             {
                 name: 'Anjali Kumar',
@@ -651,7 +651,7 @@ export const COUNTRIES_DATA = {
         },
 
         whyFutureTor: {
-            heading: 'Why FutureTor for Your Irish Education Journey?',
+            heading: 'Why Futuretor for Your Irish Education Journey?',
             features: [
                 'Expert university selection and application strategy',
                 'IELTS preparation and English proficiency guidance',
@@ -844,7 +844,7 @@ export const COUNTRIES_DATA = {
         },
 
         whyFutureTor: {
-            heading: 'Why FutureTor for Your Austrian Education Journey?',
+            heading: 'Why Futuretor for Your Austrian Education Journey?',
             features: [
                 'Expert guidance through Austrian university application systems',
                 'German or English language proficiency support',
@@ -1036,7 +1036,7 @@ export const COUNTRIES_DATA = {
         },
 
         whyFutureTor: {
-            heading: 'Why FutureTor for Your French Education Journey?',
+            heading: 'Why Futuretor for Your French Education Journey?',
             features: [
                 'Expert guidance through competitive French university applications',
                 'French language preparation and proficiency support',
@@ -1229,7 +1229,7 @@ export const COUNTRIES_DATA = {
         },
 
         whyFutureTor: {
-            heading: 'Why FutureTor for Your Swedish Education Journey?',
+            heading: 'Why Futuretor for Your Swedish Education Journey?',
             features: [
                 'Expert guidance through Swedish university application systems',
                 'English language verification and proficiency support',
@@ -1421,7 +1421,7 @@ export const COUNTRIES_DATA = {
         },
 
         whyFutureTor: {
-            heading: 'Why FutureTor for Your Dutch Education Journey?',
+            heading: 'Why Futuretor for Your Dutch Education Journey?',
             features: [
                 'Expert university selection and application strategy',
                 'English proficiency verification and IELTS preparation',

@@ -5,7 +5,7 @@ import useSeo from '../../lib/useSeo';
 export default function ApplicationServicesView({ data }) {
     useSeo({
         title: 'University Application Services - SOP & Document Help',
-        description: 'Expert university application services from FutureTor. Choose the right universities, complete forms, get a professional SOP, and stay on top of immigration timelines.',
+        description: 'Expert university application services from Futuretor. Choose the right universities, complete forms, get a professional SOP, and stay on top of immigration timelines.',
         keywords: 'university application services, SOP writing, study abroad applications, statement of purpose, university selection',
         path: '/services/application-services',
     });
