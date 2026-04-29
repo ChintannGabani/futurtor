@@ -17,17 +17,7 @@ export const IELTS_DATA = {
         },
     },
     modes: [
-        {
-            title: 'IELTS on Paper',
-            icon: 'mdi:file-document',
-            description: 'Traditional pen and paper format',
-            details: [
-                'Listening, Reading, Writing: At test center',
-                'Speaking: Face-to-face with examiner',
-                'Results: 7 working days',
-            ],
-            color: 'bg-blue-500',
-        },
+
         {
             title: 'IELTS on Computer',
             icon: 'mdi:laptop',

@@ -5,7 +5,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Icon } from '@iconify/react';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import PlaneAnimation from '../../components/PlaneAnimation';
-import HeroRoad from '../../components/HeroRoad';
 import MarqueeTrail from '../../components/MarqueeTrail';
 import ScrollPlane from '../../components/ScrollPlane';
 import useSeo from '../../lib/useSeo';
@@ -65,7 +64,6 @@ export default function ServicesView({ data }) {
                 <div className="absolute inset-0 bg-gradient-to-b from-[#0B1121]/70 to-[#0B1121]" />
                 <div className="absolute inset-0 pattern-grid opacity-30" />
                 <PlaneAnimation />
-                <HeroRoad />
 
                 <div className="relative max-w-5xl mx-auto z-20 text-center w-full">
                     <div className="svc-hero-el invisible inline-flex items-center gap-2 px-5 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-8 text-sm text-orange-400 font-semibold backdrop-blur-sm">

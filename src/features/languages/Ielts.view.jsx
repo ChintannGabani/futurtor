@@ -63,9 +63,9 @@ export default function IeltsView({ data = IELTS_DATA }) {
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                         {Object.entries(IELTS_DATA.overview.testFormat).map(([key, value]) => (
-                            <div key={key} className="ielts-hero-el invisible bg-white rounded-lg p-4 border border-stone-200 text-center">
+                            <div key={key} className="ielts-hero-el invisible bg-white rounded-lg p-4 border border-stone-200 text-center flex flex-col justify-center">
                                 <p className="text-stone-500 text-xs font-semibold uppercase tracking-wider mb-1">{key.replace(/([A-Z])/g, ' $1')}</p>
-                                <p className="text-lg font-bold text-stone-900">{value}</p>
+                                <p className="text-base sm:text-lg font-bold text-stone-900">{Array.isArray(value) ? value.join(', ') : value}</p>
                             </div>
                         ))}
                     </div>
@@ -80,7 +80,7 @@ export default function IeltsView({ data = IELTS_DATA }) {
                         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-stone-900 tracking-tight">Three Flexible Test Modes</h2>
                         <p className="text-stone-600 mt-4 text-base">Select the format that works best for you</p>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {IELTS_DATA.modes.map((mode, idx) => (
                             <div key={idx} className="ielts-mode-card invisible group relative">
                                 <div className={`${mode.color} absolute inset-0 rounded-2xl blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-500`} />

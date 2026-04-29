@@ -39,9 +39,10 @@ export default function HeaderView({ navLinks, isScrolled, mobileMenuOpen, setMo
                         </a>
                     </div>
                     <div className="flex items-center gap-4">
-                        {[FaFacebook, FaYoutube, FaInstagram, FaLinkedin].map((SI, i) => (
-                            <a key={i} href="#" className="text-stone-400 hover:text-white transition-colors"><SI size={12} /></a>
-                        ))}
+                        <a href={FOOTER_DATA.socials.facebook} target="_blank" rel="noopener noreferrer" className="text-stone-400 hover:text-white transition-colors"><FaFacebook size={12} /></a>
+                        <a href={FOOTER_DATA.socials.youtube} target="_blank" rel="noopener noreferrer" className="text-stone-400 hover:text-white transition-colors"><FaYoutube size={12} /></a>
+                        <a href={FOOTER_DATA.socials.instagram} target="_blank" rel="noopener noreferrer" className="text-stone-400 hover:text-white transition-colors"><FaInstagram size={12} /></a>
+                        <a href={FOOTER_DATA.socials.twitter} target="_blank" rel="noopener noreferrer" className="text-stone-400 hover:text-white transition-colors"><Icon icon="ri:twitter-x-fill" width={12} /></a>
                     </div>
                 </div>
             </div>

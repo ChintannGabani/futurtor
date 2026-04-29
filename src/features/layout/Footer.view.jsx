@@ -47,16 +47,18 @@ export default function FooterView() {
                             {FOOTER_DATA.vision}
                         </p>
                         <div className="flex gap-3">
-                            {[
-                                { Icon: FaFacebook, label: 'Facebook' },
-                                { Icon: FaYoutube, label: 'YouTube' },
-                                { Icon: FaInstagram, label: 'Instagram' },
-                                { Icon: FaLinkedin, label: 'LinkedIn' },
-                            ].map(({ Icon: SocialIcon, label }, i) => (
-                                <a key={i} href="#" aria-label={label} className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-orange-500 hover:border-orange-500 transition-all duration-300 group">
-                                    <SocialIcon size={16} className="text-stone-400 group-hover:text-white" />
-                                </a>
-                            ))}
+                            <a href={FOOTER_DATA.socials.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-orange-500 hover:border-orange-500 transition-all duration-300 group">
+                                <FaFacebook size={16} className="text-stone-400 group-hover:text-white" />
+                            </a>
+                            <a href={FOOTER_DATA.socials.youtube} target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-orange-500 hover:border-orange-500 transition-all duration-300 group">
+                                <FaYoutube size={16} className="text-stone-400 group-hover:text-white" />
+                            </a>
+                            <a href={FOOTER_DATA.socials.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-orange-500 hover:border-orange-500 transition-all duration-300 group">
+                                <FaInstagram size={16} className="text-stone-400 group-hover:text-white" />
+                            </a>
+                            <a href={FOOTER_DATA.socials.twitter} target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-orange-500 hover:border-orange-500 transition-all duration-300 group">
+                                <Icon icon="ri:twitter-x-fill" width={16} className="text-stone-400 group-hover:text-white" />
+                            </a>
                         </div>
                     </div>
 

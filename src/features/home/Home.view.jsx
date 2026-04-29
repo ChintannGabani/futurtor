@@ -6,7 +6,6 @@ import { Icon } from '@iconify/react';
 import { ArrowRight, Star, Phone, Mail, MapPin, Send } from 'lucide-react';
 import PlaneAnimation from '../../components/PlaneAnimation';
 import { FlightRoute, WorldMapBg, PassportStamps } from '../../components/SectionDecorations';
-import HeroRoad from '../../components/HeroRoad';
 import TestimonialMarquee from '../../components/TestimonialMarquee';
 import { FOOTER_DATA } from '../../data/constants';
 import MarqueeTrail from '../../components/MarqueeTrail';
@@ -101,7 +100,6 @@ export default function HomeView({ data }) {
                 <div className="absolute inset-0 pattern-grid opacity-20" />
                 <WorldMapBg className="inset-0 w-full h-full text-white" opacity={0.03} />
                 <PlaneAnimation />
-                <HeroRoad />
 
                 <div className="relative max-w-7xl mx-auto z-20 w-full">
                     <div className="max-w-3xl mx-auto text-center lg:text-left lg:mx-0">

@@ -6,7 +6,6 @@ import { Icon } from '@iconify/react';
 import { ArrowRight } from 'lucide-react';
 import PlaneAnimation from '../../components/PlaneAnimation';
 import { FlightRoute } from '../../components/SectionDecorations';
-import HeroRoad from '../../components/HeroRoad';
 import useSeo from '../../lib/useSeo';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -60,7 +59,6 @@ export default function LanguagesView({ title, description }) {
                 <div className="absolute inset-0 pattern-grid opacity-20" />
                 <PlaneAnimation />
                 <FlightRoute className="bottom-[15%] left-0 w-full h-[150px]" color="#f97316" />
-                <HeroRoad />
 
                 <div className="relative max-w-5xl mx-auto z-20 text-center w-full">
                     <div className="lang-hero-el invisible inline-flex items-center gap-2 px-5 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6 text-xs sm:text-sm text-orange-400 font-semibold backdrop-blur-sm">

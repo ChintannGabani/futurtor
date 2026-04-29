@@ -6,7 +6,6 @@ import { Icon } from '@iconify/react';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import PlaneAnimation from '../../components/PlaneAnimation';
 import { FlightRoute, WorldMapBg } from '../../components/SectionDecorations';
-import HeroRoad from '../../components/HeroRoad';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -200,7 +199,6 @@ export default function ServicePageLayout({ title, badge, badgeIcon, description
                 <div className="absolute inset-0 pattern-grid opacity-15" />
                 <PlaneAnimation />
                 <FlightRoute className="bottom-[15%] left-0 w-full h-[150px]" color="#f97316" />
-                <HeroRoad />
 
                 {/* Hero illustrations - sides */}
                 <Icon icon={illustration} width={130} className="absolute left-[6%] top-1/2 -translate-y-1/2 z-10 drop-shadow-2xl hidden lg:block -rotate-6 opacity-90" />

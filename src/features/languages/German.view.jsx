@@ -7,7 +7,6 @@ import { ArrowRight, Star, CheckCircle2 } from 'lucide-react';
 import PlaneAnimation from '../../components/PlaneAnimation';
 import TestimonialMarquee from '../../components/TestimonialMarquee';
 import { FlightRoute, WorldMapBg } from '../../components/SectionDecorations';
-import HeroRoad from '../../components/HeroRoad';
 import MarqueeTrail from '../../components/MarqueeTrail';
 import ScrollPlane from '../../components/ScrollPlane';
 import useSeo from '../../lib/useSeo';
@@ -121,7 +120,6 @@ export default function GermanView({ heroData, whyChooseUs, benefits, testimonia
                 </div>
 
                 <PlaneAnimation />
-                <HeroRoad />
 
                 <div className="relative z-20 flex flex-col items-center text-center max-w-4xl mx-auto w-full">
                     {/* Large flag emblem */}

@@ -1,20 +1,21 @@
 // API service for consultation data to save directly to Google Sheets
 
 // Replace this URL with the Google Apps Script Web App URL you generate
-const GOOGLE_SCRIPT_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbzHW_VuibaBCmLLuuQtWe7ePS7Qc3FVYOok8vByrH0JGjPNZpUH5dByC-m-Pig4N1pO/exec';
+const GOOGLE_SCRIPT_WEBHOOK_URL = 'https://script.google.com/macros/s/AKfycbxe52joLOzF6SGbTyqVf_6NEb29mwvNemN_Xyu2hsI02y509-7gaPE8lAfJEkXhQsV9/exec';
 
 export const consultationService = {
     // Save consultation data
     saveConsultation: async (data) => {
         try {
-            // Using URLSearchParams allows us to send form data and bypass CORS preflight errors in Apps Script
             const formBody = new URLSearchParams();
             Object.keys(data).forEach(key => {
                 formBody.append(key, data[key]);
             });
 
+            const urlWithParams = `${GOOGLE_SCRIPT_WEBHOOK_URL}?${formBody.toString()}`;
+
             // We use 'no-cors' mode so the browser doesn't block the request if Google redirects it
-            await fetch(GOOGLE_SCRIPT_WEBHOOK_URL, {
+            await fetch(urlWithParams, {
                 method: 'POST',
                 mode: 'no-cors',
                 headers: {

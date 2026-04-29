@@ -6,7 +6,6 @@ import { Icon } from '@iconify/react';
 import { Phone, Mail, MapPin, Send, ArrowRight, Clock, MessageSquare } from 'lucide-react';
 import PlaneAnimation from '../../components/PlaneAnimation';
 import { FlightRoute, WorldMapBg } from '../../components/SectionDecorations';
-import HeroRoad from '../../components/HeroRoad';
 import useSeo from '../../lib/useSeo';
 import { FOOTER_DATA } from '../../data/constants';
 
@@ -46,7 +45,6 @@ export default function ContactView({ data }) {
                 <WorldMapBg className="inset-0 w-full h-full text-white" opacity={0.03} />
                 <PlaneAnimation />
                 <FlightRoute className="bottom-[18%] left-0 w-full h-[180px]" color="#f97316" />
-                <HeroRoad />
 
                 <div className="relative max-w-5xl mx-auto z-20 text-center w-full">
                     <div className="ct-hero-el invisible inline-flex items-center gap-2 px-5 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6 text-sm text-orange-400 font-semibold backdrop-blur-sm">

@@ -6,7 +6,6 @@ import { Icon } from '@iconify/react';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import PlaneAnimation from '../../components/PlaneAnimation';
 import { FlightRoute } from '../../components/SectionDecorations';
-import HeroRoad from '../../components/HeroRoad';
 import MarqueeTrail from '../../components/MarqueeTrail';
 import ScrollPlane from '../../components/ScrollPlane';
 import useSeo from '../../lib/useSeo';
@@ -150,7 +149,6 @@ export default function IeltsToeflPteView({ heroData, modules, scoreInfo }) {
                     }}
                 />
                 <PlaneAnimation />
-                <HeroRoad />
 
                 <div className="relative max-w-7xl mx-auto z-20 w-full grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                     {/* Left: Text content */}

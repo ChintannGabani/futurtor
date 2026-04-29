@@ -288,7 +288,13 @@ export const FOOTER_DATA = {
     consultancy: "Consultancy",
     location: "LOCATION",
     email: "info@futuretor.com",
-    phones: ["+91 98249 39425", "+49 15902 054603"]
+    phones: ["+91 98249 39425", "+49 15902 054603"],
+    socials: {
+        twitter: "https://x.com/Futuretor156882",
+        facebook: "https://www.facebook.com/profile.php?id=61582028142856",
+        youtube: "https://www.youtube.com/@Futuretor",
+        instagram: "https://www.instagram.com/futuretor/"
+    }
 };
 
 export const LANGUAGES_DATA = {
