@@ -145,6 +145,7 @@ export const COUNTRIES_DATA_ENHANCED = {
         // Cost of Studying
         costOfStudying: {
             heading: 'Cost of Studying in Germany',
+            description: 'The cost of studying in Germany for international students depends on several factors, including the institution, program of study, location, and available funding opportunities. Additionally, living expenses such as rent, utilities, and recreational activities play a significant role in the overall cost.',
             tuitionFees: [
                 { degree: 'Public Universities', cost: 'Free Education (No Tuition Fees)' },
                 { degree: 'Bachelor\'s', cost: 'EUR 8,000 – 10,000' },
@@ -171,7 +172,7 @@ export const COUNTRIES_DATA_ENHANCED = {
         // Career Prospects
         careerProspects: {
             heading: 'Career Prospects in Germany',
-            description: 'The employment landscape in Germany offers various opportunities across various sectors.',
+            description: 'The employment landscape in Germany offers various opportunities across various sectors. Here are some key sectors and industries that presently offer employment opportunities:',
             sectors: [
                 { name: 'Engineering', icon: 'mdi:hammer-wrench' },
                 { name: 'Mechanical Engineering', icon: 'mdi:gear' },
@@ -582,10 +583,10 @@ export const COUNTRIES_DATA_ENHANCED = {
         },
         ctas: { primary: 'Free Expert Consultation', secondary: 'View & Download Brochure', tertiary: 'Get Started' },
         heroStats: [
-            { label: 'Top Universities', value: '12' },
-            { label: 'Annual Tuition', value: 'CHF 1k-3k' },
-            { label: 'Quality of Life', value: '#1' },
-            { label: 'Post-Study Work', value: '1 Year' },
+            { label: 'Institutions', value: '20+' },
+            { label: 'Annual Tuition', value: 'CHF 700 - 2,000' },
+            { label: 'International Students', value: '76K+' },
+            { label: 'Post-Study Work', value: 'NA' },
         ],
         mainHeading: 'Study in Switzerland for Indian Students with Top Universities',
         whyStudy: {
@@ -608,28 +609,26 @@ export const COUNTRIES_DATA_ENHANCED = {
             { name: 'University of Geneva', shortName: 'University of Geneva', popularFor: 'Life Sciences', ranking: { label: 'QS World Ranking', value: '129' } },
         ],
         popularCourses: [
-            { name: 'Engineering', icon: 'mdi:hammer-wrench' },
-            { name: 'Business & Finance', icon: 'mdi:briefcase' },
-            { name: 'Medicine & Healthcare', icon: 'mdi:hospital-box' },
-            { name: 'Computer Science', icon: 'mdi:laptop' },
-            { name: 'Physics & Science', icon: 'mdi:flask' },
-            { name: 'Architecture & Design', icon: 'mdi:pencil-ruler' },
+            { name: 'Business Management', icon: 'mdi:briefcase' },
+            { name: 'Hospitality Management', icon: 'mdi:silverware' },
+            { name: 'Artificial Intelligence', icon: 'mdi:brain' },
+            { name: 'Banking & Finance', icon: 'mdi:bank' },
+            { name: 'Education', icon: 'mdi:school' },
+            { name: 'International Law', icon: 'mdi:gavel' },
         ],
         costOfStudying: {
             heading: 'Cost of Studying in Switzerland',
+            description: 'Studying in Switzerland is very affordable compared to other popular study abroad destinations. The two main components of the total cost of education are living expenses and tuition fees.',
             tuitionFees: [
-                { degree: 'Bachelor\'s', cost: 'CHF 1,000 - 2,000/year' },
-                { degree: 'Master\'s', cost: 'CHF 1,500 - 3,000/year' },
+                { degree: 'Tuition Fees (Average per annum)', cost: 'CHF 700 - 2,000' },
             ],
             livingExpenses: [
-                { item: 'Accommodation', cost: 'CHF 800 - 1,500/month' },
-                { item: 'Food & Groceries', cost: 'CHF 300 - 500/month' },
-                { item: 'Transport & Utilities', cost: 'CHF 150 - 250/month' },
+                { item: 'Living Expenses (Average per annum)', cost: 'Approx. CHF 16,800' },
             ],
         },
         scholarships: {
             heading: 'Scholarships in Switzerland',
-            description: 'Swiss universities offer various scholarships for international students including merit-based and need-based grants.',
+            description: 'Scholarships in Switzerland for international students includes both governmental and non-governmental scholarships which are available to assist international students in paying for their education. Swiss Excellence Scholarships for Foreign Students and other university-specific grants cover cost of living, tuition fees, and travel costs.',
             organizations: [
                 { name: 'Swiss Gov Scholarships', url: 'eda.admin.ch' },
                 { name: 'ETH Zurich Grants', url: 'eth.ac.ch' },
@@ -638,7 +637,7 @@ export const COUNTRIES_DATA_ENHANCED = {
         },
         careerProspects: {
             heading: 'Career Prospects in Switzerland',
-            description: 'Switzerland has one of the world\'s strongest job markets with excellent opportunities.',
+            description: 'The average salary in Switzerland is among the highest in Europe. Here are some key sectors and industries that presently offer employment opportunities:',
             sectors: [
                 { name: 'Finance & Banking', icon: 'mdi:bank' },
                 { name: 'Pharmaceuticals', icon: 'mdi:pill' },
@@ -650,6 +649,7 @@ export const COUNTRIES_DATA_ENHANCED = {
         },
         documents: {
             heading: 'Documents Required to Study in Switzerland',
+            description: 'Some common documents that international students typically need when applying for a course in Switzerland:',
             items: [
                 'Valid Passport (6+ months validity)',
                 'University admission letter',
@@ -667,6 +667,7 @@ export const COUNTRIES_DATA_ENHANCED = {
         },
         visaProcess: {
             heading: 'Switzerland Student Visa Process',
+            description: 'If you want to study in Switzerland, you need a student visa. This is the procedure to apply for a student visa in Switzerland, step by step.',
             steps: [
                 'Receive admission offer from Swiss university',
                 'Gather all required documents',
@@ -710,9 +711,9 @@ export const COUNTRIES_DATA_ENHANCED = {
         },
         ctas: { primary: 'Free Expert Consultation', secondary: 'View & Download Brochure', tertiary: 'Get Started' },
         heroStats: [
-            { label: 'Universities', value: '7' },
-            { label: 'Annual Fees', value: '€9k-16k' },
-            { label: 'International Students', value: '180K+' },
+            { label: 'Institutions', value: '20+' },
+            { label: 'Annual Fees', value: '€7k-€30k' },
+            { label: 'International Students', value: '30k+' },
             { label: 'Post-Study Work', value: '2 Years' },
         ],
         mainHeading: 'Study in Ireland for Indian Students with Top Universities',
@@ -739,28 +740,26 @@ export const COUNTRIES_DATA_ENHANCED = {
             { name: 'Maynooth University', shortName: 'Maynooth University', popularFor: 'Humanities', ranking: { label: 'QS World Ranking', value: '801-850' } },
         ],
         popularCourses: [
+            { name: 'Business & Management', icon: 'mdi:briefcase' },
             { name: 'Engineering', icon: 'mdi:hammer-wrench' },
-            { name: 'Business & MBA', icon: 'mdi:briefcase' },
-            { name: 'Computer Science', icon: 'mdi:laptop' },
-            { name: 'Law', icon: 'mdi:gavel' },
+            { name: 'Information Technology', icon: 'mdi:laptop' },
+            { name: 'Healthcare', icon: 'mdi:hospital-box' },
             { name: 'Science', icon: 'mdi:flask' },
-            { name: 'Medicine', icon: 'mdi:hospital-box' },
+            { name: 'Social Sciences', icon: 'mdi:account-group' },
         ],
         costOfStudying: {
             heading: 'Cost of Studying in Ireland',
+            description: 'The cost of studying in Ireland for international students depends on several factors, including the institution, program of study, location, and available funding opportunities. Additionally, living expenses such as rent, utilities, and recreational activities play a significant role in the overall cost.',
             tuitionFees: [
-                { degree: 'Master\'s (EU Citizens)', cost: '€0 - 5,000/year' },
-                { degree: 'Master\'s (Non-EU)', cost: '€9,000 - 16,000/year' },
+                { degree: 'Tuition Fees (Average per annum)', cost: 'EUR 10,000 – 51,000' },
             ],
             livingExpenses: [
-                { item: 'Accommodation', cost: '€600 - 1,000/month' },
-                { item: 'Food & Groceries', cost: '€200 - 350/month' },
-                { item: 'Transport & Utilities', cost: '€100 - 200/month' },
+                { item: 'Living expenses (Average per annum)', cost: 'Approx. EUR 12,000' },
             ],
         },
         scholarships: {
             heading: 'Scholarships in Ireland',
-            description: 'Irish universities and government offer various scholarships for international students.',
+            description: 'The scholarships for Indian students in Ireland are offered through the Irish government and other international scholarship programs. There are a small number of Irish scholarships for Indian students that are offered by universities and colleges who set their own eligibility criteria. It is expected that a total of 60 scholarships will be funded by the Government of Ireland as international scholarships.',
             organizations: [
                 { name: 'Irish Gov Scholarship', url: 'irishaid.org' },
                 { name: 'TCD Scholarships', url: 'tcd.ie' },
@@ -769,7 +768,7 @@ export const COUNTRIES_DATA_ENHANCED = {
         },
         careerProspects: {
             heading: 'Career Prospects in Ireland',
-            description: 'Ireland has one of Europe\'s strongest job markets with tech and finance booming.',
+            description: 'The employment landscape in Ireland is diverse, offering opportunities across various sectors. Here are some key sectors and industries that presently offer employment opportunities:',
             sectors: [
                 { name: 'Technology', icon: 'mdi:laptop' },
                 { name: 'Finance & Banking', icon: 'mdi:bank' },
@@ -781,6 +780,7 @@ export const COUNTRIES_DATA_ENHANCED = {
         },
         documents: {
             heading: 'Documents Required to Study in Ireland',
+            description: 'Attested copies of marksheets and other key documents required for admission:',
             items: [
                 'Valid Passport (6+ months)',
                 'University admission letter',
@@ -799,6 +799,7 @@ export const COUNTRIES_DATA_ENHANCED = {
         },
         visaProcess: {
             heading: 'Ireland Student Visa Process',
+            description: 'A minimum of € 6,000 or 50% of tuition fees must be paid in advance to begin the visa process.',
             steps: [
                 'Receive admission offer from Irish university',
                 'Get Confirmation of Enrolment letter',
@@ -973,10 +974,10 @@ export const COUNTRIES_DATA_ENHANCED = {
         },
         ctas: { primary: 'Free Expert Consultation', secondary: 'View & Download Brochure', tertiary: 'Get Started' },
         heroStats: [
-            { label: 'Universities', value: '80+' },
-            { label: 'Annual Fees', value: '€200-2.5k' },
-            { label: 'International Students', value: '330K+' },
-            { label: 'Post-Study Work', value: '1 Year' },
+            { label: 'Institutions', value: '35+' },
+            { label: 'Annual Fees', value: '€11k-€15k' },
+            { label: 'International Students', value: '400K+' },
+            { label: 'Post-Study Work', value: '1 - 2 Years' },
         ],
         mainHeading: 'Study in France for Indian Students with Top Universities',
         whyStudy: {
@@ -1005,28 +1006,26 @@ export const COUNTRIES_DATA_ENHANCED = {
             { name: 'Université Paris 1 Panthéon-Sorbonne', shortName: 'Université Paris 1 Panthéon-Sorbonne', popularFor: 'Economics', ranking: { label: 'QS World Ranking', value: '328' } },
         ],
         popularCourses: [
-            { name: 'Business & Management', icon: 'mdi:briefcase' },
+            { name: 'MBA', icon: 'mdi:briefcase' },
             { name: 'Engineering', icon: 'mdi:hammer-wrench' },
-            { name: 'Medicine & Healthcare', icon: 'mdi:hospital-box' },
-            { name: 'Law', icon: 'mdi:gavel' },
-            { name: 'Computer Science', icon: 'mdi:laptop' },
-            { name: 'Arts & Humanities', icon: 'mdi:palette' },
+            { name: 'Information Technology', icon: 'mdi:laptop' },
+            { name: 'Hospitality & Tourism', icon: 'mdi:silverware' },
+            { name: 'Fashion', icon: 'mdi:hanger' },
+            { name: 'Culinary Arts', icon: 'mdi:chef-hat' },
         ],
         costOfStudying: {
             heading: 'Cost of Studying in France',
+            description: 'The cost of studying in France for international students depends on several factors, including the institution, program of study, location, and available funding opportunities. Additionally, living expenses such as rent, utilities, and recreational activities play a significant role in the overall cost.',
             tuitionFees: [
-                { degree: 'Public Universities', cost: '€200 - 2,500/year' },
-                { degree: 'Business Schools', cost: '€8,000 - 20,000/year' },
+                { degree: 'Tuition Fees (Average per annum)', cost: 'EUR 16,000 – 25,000' },
             ],
             livingExpenses: [
-                { item: 'Accommodation', cost: '€400 - 700/month' },
-                { item: 'Food & Groceries', cost: '€200 - 350/month' },
-                { item: 'Transport & Utilities', cost: '€100 - 200/month' },
+                { item: 'Living Expenses (Average per annum)', cost: 'Approx. EUR 9,300' },
             ],
         },
         scholarships: {
             heading: 'Scholarships in France',
-            description: 'French government and universities offer extensive scholarships for international students.',
+            description: 'The French government funds approximately 22,000 international students each year. Most of the grants are administered by the Ministry of Foreign Affairs. Scholarships for Indian students are made available under Bilateral Assistance Programs between France and foreign governments or under an Annual Scholarship Program. More than 80% of French government scholarships fall into this category. Scholarship programs have been set up to enable French institutions of higher education to attract the finest international students.',
             organizations: [
                 { name: 'Campus France', url: 'campusfrance.org' },
                 { name: 'Sorbonne Scholarships', url: 'sorbonne-universite.fr' },
@@ -1035,7 +1034,7 @@ export const COUNTRIES_DATA_ENHANCED = {
         },
         careerProspects: {
             heading: 'Career Prospects in France',
-            description: 'France offers excellent job opportunities in business, technology, and creative sectors.',
+            description: 'The job market in France is diverse, offering opportunities across various sectors. Here are some key sectors and industries that presently offer employment opportunities:',
             sectors: [
                 { name: 'Business & Finance', icon: 'mdi:briefcase' },
                 { name: 'Technology', icon: 'mdi:laptop' },
@@ -1047,6 +1046,7 @@ export const COUNTRIES_DATA_ENHANCED = {
         },
         documents: {
             heading: 'Documents Required to Study in France',
+            description: 'To study in France as an international student, there are specific requirements for documents that depend on the course of study and the institution. Here is a list of documents that are commonly required to study in France:',
             items: [
                 'Valid Passport (6+ months)',
                 'University admission letter',
@@ -1064,6 +1064,7 @@ export const COUNTRIES_DATA_ENHANCED = {
         },
         visaProcess: {
             heading: 'France Student Visa Process',
+            description: 'France has a very simple procedure for student visas. Students must complete the Campus France visa application process prior to applying for the French visa. An interview will be conducted by Campus France and after getting an NOC, they need to book a visa appointment with the VFS.',
             steps: [
                 'Receive admission offer from French university',
                 'Register through Campus France platform',
@@ -1237,10 +1238,10 @@ export const COUNTRIES_DATA_ENHANCED = {
         },
         ctas: { primary: 'Free Expert Consultation', secondary: 'View & Download Brochure', tertiary: 'Get Started' },
         heroStats: [
-            { label: 'Universities', value: '30+' },
-            { label: 'Annual Fees', value: '€6k-22k' },
-            { label: 'International Students', value: '300K+' },
-            { label: 'Post-Study Work', value: '1-3 Year' },
+            { label: 'Institutions', value: '10+' },
+            { label: 'Annual Fees', value: '€8k-€20k' },
+            { label: 'International Students', value: '100K+' },
+            { label: 'Post-Study Work', value: '1 Year' },
         ],
         mainHeading: 'Study in Netherlands for Indian Students with Top Universities',
         whyStudy: {
@@ -1267,27 +1268,25 @@ export const COUNTRIES_DATA_ENHANCED = {
         ],
         popularCourses: [
             { name: 'Engineering', icon: 'mdi:hammer-wrench' },
-            { name: 'Business & MBA', icon: 'mdi:briefcase' },
-            { name: 'Computer Science', icon: 'mdi:laptop' },
-            { name: 'Medicine & Healthcare', icon: 'mdi:hospital-box' },
-            { name: 'Law', icon: 'mdi:gavel' },
-            { name: 'Water Technology', icon: 'mdi:water' },
+            { name: 'Business Administration', icon: 'mdi:briefcase' },
+            { name: 'Computer Science & IT', icon: 'mdi:laptop' },
+            { name: 'International Relations', icon: 'mdi:earth' },
+            { name: 'Environmental Science', icon: 'mdi:leaf' },
+            { name: 'Finance & Economics', icon: 'mdi:bank' },
         ],
         costOfStudying: {
             heading: 'Cost of Studying in Netherlands',
+            description: 'The cost of studying in the Netherlands for international students depends on several factors, including the institution, program of study, location, and available funding opportunities. Additionally, living expenses such as rent, utilities, and recreational activities play a significant role in the overall cost.',
             tuitionFees: [
-                { degree: 'Public Universities', cost: '€2,000 - 6,000/year' },
-                { degree: 'International Programs', cost: '€6,000 - 22,000/year' },
+                { degree: 'Tuition Fees (Average per annum)', cost: 'EUR 8,000 – 20,000' },
             ],
             livingExpenses: [
-                { item: 'Accommodation', cost: '€600 - 1,000/month' },
-                { item: 'Food & Groceries', cost: '€200 - 400/month' },
-                { item: 'Transport & Utilities', cost: '€100 - 200/month' },
+                { item: 'Living expenses (Average per annum)', cost: 'Approx. EUR 15,000' },
             ],
         },
         scholarships: {
             heading: 'Scholarships in Netherlands',
-            description: 'Dutch universities and organizations offer various scholarships for international students.',
+            description: 'The Netherlands offer several scholarships for international students to help them with financial problems. The scholarships are available for students at different academic levels. Here are some of the scholarships available: Holland Scholarship Orange Knowledge Programme, Radboud University Scholarship Programme, University of Maastricht High Potential Scholarship, Utrecht University Excellence Scholarships, TU Delft Excellence Scholarships, Leiden University Excellence Scholarships, Erik Bleumink Scholarships at the University of Groningen, and University of Twente Scholarships.',
             organizations: [
                 { name: 'Holland Scholarship', url: 'hollandscholarship.org' },
                 { name: 'UvA Fellowship', url: 'uva.nl' },
@@ -1296,7 +1295,7 @@ export const COUNTRIES_DATA_ENHANCED = {
         },
         careerProspects: {
             heading: 'Career Prospects in Netherlands',
-            description: 'Netherlands has excellent job opportunities with competitive salaries and strong worker protections.',
+            description: 'The Dutch market is strong and has many job opportunities under it. Here are some key sectors and industries that presently offer employment opportunities:',
             sectors: [
                 { name: 'Engineering', icon: 'mdi:hammer-wrench' },
                 { name: 'Technology & IT', icon: 'mdi:laptop' },
@@ -1308,6 +1307,7 @@ export const COUNTRIES_DATA_ENHANCED = {
         },
         documents: {
             heading: 'Documents Required to Study in Netherlands',
+            description: 'For studying in the Netherlands, there are certain requirements that have to be fulfilled. Also, the universities in the Netherlands ask for some documents based on the level of study. However, the following is the common list of documents required:',
             items: [
                 'Valid Passport (6+ months)',
                 'University admission letter',
@@ -1325,6 +1325,7 @@ export const COUNTRIES_DATA_ENHANCED = {
         },
         visaProcess: {
             heading: 'Netherlands Student Residence Permit Process',
+            description: 'To get the Netherlands student visa, Indian students will need the Long Study Visa (MVV) or resident permit. The visa is specially for students who are ready to start their study abroad journey in the Netherlands.',
             steps: [
                 'Receive admission offer from Dutch university',
                 'Gather all required documents',

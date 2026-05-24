@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Icon } from '@iconify/react';
-import { ArrowRight, CheckCircle2, MapPin, FileText, Plane, Briefcase, BookOpen, Send, AlertCircle } from 'lucide-react';
+import { ArrowRight, CheckCircle2, FileText, Briefcase, BookOpen, Send, AlertCircle } from 'lucide-react';
 import PlaneAnimation from '../../components/PlaneAnimation';
 import { FlightRoute, WorldMapBg } from '../../components/SectionDecorations';
 import useSeo from '../../lib/useSeo';
@@ -24,7 +24,7 @@ export default function CountryPageView({ data }) {
         name: '',
         email: '',
         mobile: '',
-        course: data.popularCourses[0]?.name || '',
+        course: data?.popularCourses?.[0]?.name || '',
         consent: false,
     });
 
@@ -34,7 +34,6 @@ export default function CountryPageView({ data }) {
         success: false,
     });
 
-    if (!data) return null;
     const pageRef = useRef(null);
     const scrollRef = useRef(null);
     const [isDragging, setIsDragging] = useState(false);
@@ -69,6 +68,8 @@ export default function CountryPageView({ data }) {
         }, pageRef);
         return () => ctx.revert();
     }, []);
+
+    if (!data) return null;
 
     const handleConsultationClick = () => {
         document.getElementById('consultation-form')?.scrollIntoView({ behavior: 'smooth' });
@@ -124,7 +125,7 @@ export default function CountryPageView({ data }) {
                     setFormStatus({ loading: false, error: null, success: false });
                 }, 5000);
             }
-        } catch (error) {
+        } catch {
             setFormStatus({ loading: false, error: 'Failed to save consultation. Please try again.', success: false });
         }
     };
@@ -301,9 +302,14 @@ export default function CountryPageView({ data }) {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {data.popularCourses.map((course, idx) => (
-                            <div key={idx} className="country-card invisible bg-gradient-to-br from-orange-50 to-stone-50 rounded-xl p-8 border border-orange-200/30 hover:shadow-lg transition-all text-center">
+                            <div key={idx} className="country-card invisible bg-gradient-to-br from-orange-50 to-stone-50 rounded-xl p-8 border border-orange-200/30 hover:shadow-lg transition-all text-center flex flex-col h-full">
                                 <Icon icon={course.icon} width={48} className="text-orange-500 mx-auto mb-4" />
-                                <h3 className="font-bold text-stone-900">{course.name}</h3>
+                                <h3 className="font-bold text-stone-900 mb-2">{course.name}</h3>
+                                {course.description && (
+                                    <p className="text-stone-600 text-sm leading-relaxed mt-auto text-left">
+                                        {course.description}
+                                    </p>
+                                )}
                             </div>
                         ))}
                     </div>
@@ -315,7 +321,12 @@ export default function CountryPageView({ data }) {
                 <div className="max-w-5xl mx-auto">
                     <div className="text-center mb-12">
                         <span className="text-orange-500 font-bold uppercase tracking-widest text-xs mb-3 block">Finances</span>
-                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-stone-900 tracking-tight">{data.costOfStudying.heading}</h2>
+                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-stone-900 tracking-tight mb-4">{data.costOfStudying.heading}</h2>
+                        {data.costOfStudying.description && (
+                            <p className="text-stone-600 text-lg max-w-4xl mx-auto leading-relaxed text-left sm:text-center">
+                                {data.costOfStudying.description}
+                            </p>
+                        )}
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {/* Tuition Fees */}
@@ -383,9 +394,14 @@ export default function CountryPageView({ data }) {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {data.careerProspects.sectors.map((sector, idx) => (
-                            <div key={idx} className="country-card invisible bg-white rounded-xl p-8 border border-stone-100 hover:shadow-lg hover:border-orange-300 transition-all text-center">
+                            <div key={idx} className="country-card invisible bg-white rounded-xl p-8 border border-stone-100 hover:shadow-lg hover:border-orange-300 transition-all text-center flex flex-col h-full">
                                 <Icon icon={sector.icon} width={48} className="text-orange-500 mx-auto mb-4" />
-                                <h3 className="font-bold text-stone-900">{sector.name}</h3>
+                                <h3 className="font-bold text-stone-900 mb-2">{sector.name}</h3>
+                                {sector.description && (
+                                    <p className="text-stone-600 text-sm leading-relaxed mt-auto text-left">
+                                        {sector.description}
+                                    </p>
+                                )}
                             </div>
                         ))}
                     </div>
@@ -397,7 +413,12 @@ export default function CountryPageView({ data }) {
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-14">
                         <span className="text-orange-500 font-bold uppercase tracking-widest text-xs mb-3 block">Requirements</span>
-                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-stone-900 tracking-tight">{data.documents.heading}</h2>
+                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-stone-900 tracking-tight mb-4">{data.documents.heading}</h2>
+                        {data.documents.description && (
+                            <p className="text-stone-600 text-lg max-w-4xl mx-auto leading-relaxed text-left sm:text-center">
+                                {data.documents.description}
+                            </p>
+                        )}
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {/* General Documents */}
@@ -440,7 +461,12 @@ export default function CountryPageView({ data }) {
                 <div className="max-w-7xl mx-auto">
                     <div className="text-center mb-14">
                         <span className="text-orange-500 font-bold uppercase tracking-widest text-xs mb-3 block">Immigration</span>
-                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-stone-900 tracking-tight">{data.visaProcess.heading}</h2>
+                        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-stone-900 tracking-tight mb-4">{data.visaProcess.heading}</h2>
+                        {data.visaProcess.description && (
+                            <p className="text-stone-600 text-lg max-w-4xl mx-auto leading-relaxed text-left sm:text-center">
+                                {data.visaProcess.description}
+                            </p>
+                        )}
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {data.visaProcess.steps.map((step, idx) => (
@@ -484,6 +510,33 @@ export default function CountryPageView({ data }) {
                     </div>
                 </div>
             </section>
+
+            {/* FAQS */}
+            {data.faqs && data.faqs.length > 0 && (
+                <section className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 w-full bg-white z-10">
+                    <div className="max-w-4xl mx-auto">
+                        <div className="text-center mb-14">
+                            <span className="text-orange-500 font-bold uppercase tracking-widest text-xs mb-3 block">Got Questions?</span>
+                            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-stone-900 tracking-tight">Frequently Asked Questions</h2>
+                        </div>
+                        <div className="space-y-4">
+                            {data.faqs.map((faq, idx) => (
+                                <details key={idx} className="group bg-stone-50 rounded-2xl border border-stone-200 open:bg-white open:border-orange-300 open:ring-2 open:ring-orange-500/20 transition-all duration-300">
+                                    <summary className="flex justify-between items-center font-bold cursor-pointer list-none p-6 sm:p-8 text-stone-900 pr-12 relative">
+                                        <span className="text-lg pr-4">{faq.question}</span>
+                                        <span className="transition group-open:rotate-180 absolute right-6 sm:right-8 top-6 sm:top-8 text-orange-500 bg-orange-100 rounded-full p-1">
+                                            <svg fill="none" height="20" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" viewBox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg>
+                                        </span>
+                                    </summary>
+                                    <div className="text-stone-600 px-6 sm:px-8 pb-6 sm:pb-8 pt-0 leading-relaxed text-[15px]">
+                                        {faq.answer}
+                                    </div>
+                                </details>
+                            ))}
+                        </div>
+                    </div>
+                </section>
+            )}
 
             {/* CONSULTATION FORM */}
             <section id="consultation-form" className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 w-full bg-white z-10">

@@ -39,8 +39,6 @@ export default function IeltsToeflPteView({ heroData, modules, scoreInfo }) {
         keywords: 'IELTS coaching Surat, TOEFL preparation, PTE training, IELTS reading writing speaking, English language test prep India',
         path: '/languages/ielts-toefl-pte',
     });
-    if (!heroData) return null;
-
     const [activeTab, setActiveTab] = useState(0);
     const statsRef = useRef(null);
     const modulesRef = useRef(null);
@@ -109,6 +107,8 @@ export default function IeltsToeflPteView({ heroData, modules, scoreInfo }) {
         });
         return () => ctx.revert();
     }, []);
+
+    if (!heroData) return null;
 
     const moduleIcons = ['mdi:headphones', 'mdi:book-open-variant', 'mdi:pencil-outline', 'mdi:microphone-outline'];
     const moduleIllustrations = ['noto:headphone', 'noto:open-book', 'noto:writing-hand', 'noto:microphone'];
@@ -327,24 +327,15 @@ export default function IeltsToeflPteView({ heroData, modules, scoreInfo }) {
                         <h2 className="text-3xl lg:text-5xl font-black text-slate-900 tracking-tight">Skills We Master</h2>
                     </div>
 
-                    {/* Bento grid: 2x2 with varied sizes */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-5 auto-rows-[minmax(200px,auto)]">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {modules.map((mod, idx) => {
                             const title = typeof mod === 'string' ? mod : mod.title;
                             const desc = typeof mod === 'string' ? moduleDescs[idx] : mod.desc;
-                            // Bento sizing: first card spans 2 cols, last card spans 2 cols
-                            const spanClass = idx === 0
-                                ? 'md:col-span-2 md:row-span-1'
-                                : idx === 1
-                                    ? 'md:col-span-1 md:row-span-2'
-                                    : idx === 2
-                                        ? 'md:col-span-1 md:row-span-1'
-                                        : 'md:col-span-2 md:row-span-1';
 
                             return (
                                 <div
                                     key={idx}
-                                    className={`ielts-bento-card invisible ${spanClass} group relative rounded-2xl p-8 lg:p-10 overflow-hidden bg-white border border-slate-100 hover:border-transparent hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-500`}
+                                    className={`ielts-bento-card invisible group relative rounded-2xl p-8 lg:p-10 overflow-hidden bg-white border border-slate-100 hover:border-transparent hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-500`}
                                 >
                                     {/* Gradient overlay on hover */}
                                     <div className={`absolute inset-0 bg-gradient-to-br ${moduleColors[idx]} opacity-0 group-hover:opacity-[0.04] transition-opacity duration-500`} />

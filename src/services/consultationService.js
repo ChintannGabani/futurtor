@@ -15,7 +15,7 @@ export const consultationService = {
             const urlWithParams = `${GOOGLE_SCRIPT_WEBHOOK_URL}?${formBody.toString()}`;
 
             // We use 'no-cors' mode so the browser doesn't block the request if Google redirects it
-            await fetch(urlWithParams, {
+            await fetch(urlWithParams, {                
                 method: 'POST',
                 mode: 'no-cors',
                 headers: {
