@@ -83,11 +83,11 @@ export default function HomeView({ data }) {
 
     const countries = [
         { name: 'Germany', flag: 'twemoji:flag-germany', color: 'from-yellow-400 to-red-500' },
-        { name: 'Canada', flag: 'twemoji:flag-canada', color: 'from-red-500 to-red-700' },
-        { name: 'Australia', flag: 'twemoji:flag-australia', color: 'from-blue-600 to-blue-800' },
-        { name: 'United Kingdom', flag: 'twemoji:flag-united-kingdom', color: 'from-blue-700 to-red-600' },
-        { name: 'United States', flag: 'twemoji:flag-united-states', color: 'from-blue-600 to-red-500' },
-        { name: 'New Zealand', flag: 'twemoji:flag-new-zealand', color: 'from-blue-800 to-red-600' },
+        { name: 'Finland', flag: 'twemoji:flag-finland', color: 'from-blue-400 to-blue-600' },
+        { name: 'Switzerland', flag: 'twemoji:flag-switzerland', color: 'from-red-500 to-red-700' },
+        { name: 'Ireland', flag: 'twemoji:flag-ireland', color: 'from-green-500 to-orange-400' },
+        { name: 'France', flag: 'twemoji:flag-france', color: 'from-blue-600 to-red-500' },
+        { name: 'Netherlands', flag: 'twemoji:flag-netherlands', color: 'from-red-500 to-blue-600' },
     ];
 
     return (
