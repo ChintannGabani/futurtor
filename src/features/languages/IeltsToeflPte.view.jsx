@@ -153,17 +153,17 @@ export default function IeltsToeflPteView({ heroData, modules, scoreInfo }) {
                 <div className="relative max-w-7xl mx-auto z-20 w-full grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                     {/* Left: Text content */}
                     <div className="text-left">
-                        <div className="ielts-hero-text invisible inline-flex items-center gap-2 px-4 py-1.5 rounded-md bg-orange-500/10 border border-orange-500/25 mb-6 text-sm text-orange-400 font-mono tracking-wider">
+                        <div className="ielts-hero-text inline-flex items-center gap-2 px-4 py-1.5 rounded-md bg-orange-500/10 border border-orange-500/25 mb-6 text-sm text-orange-400 font-mono tracking-wider">
                             <Icon icon="mdi:trophy-outline" width={16} className="text-orange-500" />
                             <span>EXPERT TEST PREP</span>
                         </div>
-                        <h1 className="ielts-hero-text invisible text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-6 text-white leading-[1.1]">
+                        <h1 className="ielts-hero-text text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight mb-6 text-white leading-[1.1]">
                             {heroData.title}
                         </h1>
-                        <p className="ielts-hero-text invisible text-lg text-slate-300 max-w-xl leading-relaxed mb-8">
+                        <p className="ielts-hero-text text-lg text-slate-300 max-w-xl leading-relaxed mb-8">
                             {heroData.description}
                         </p>
-                        <div className="ielts-hero-text invisible flex flex-wrap gap-4">
+                        <div className="ielts-hero-text flex flex-wrap gap-4">
                             <Link to="/contact-us">
                                 <button className="group px-8 py-4 rounded-lg bg-gradient-to-r from-orange-500 to-amber-500 text-white font-bold flex items-center gap-2 shadow-2xl shadow-orange-500/25 hover:shadow-orange-500/40 transition-all duration-300 hover:-translate-y-0.5">
                                     Start Preparation <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -176,7 +176,7 @@ export default function IeltsToeflPteView({ heroData, modules, scoreInfo }) {
                     </div>
 
                     {/* Right: Floating stats card */}
-                    <div className="ielts-hero-card invisible relative">
+                    <div className="ielts-hero-card relative">
                         <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-purple-500/10 blur-3xl rounded-3xl" />
                         {/* Floating illustrations around card */}
                         <Icon icon="noto:graduation-cap" width={72} className="absolute -top-10 -left-6 z-20 drop-shadow-2xl -rotate-12" />
@@ -233,7 +233,7 @@ export default function IeltsToeflPteView({ heroData, modules, scoreInfo }) {
                             const ringColors = ['#f97316', '#3b82f6', '#10b981', '#8b5cf6'];
 
                             return (
-                                <div key={idx} className="ielts-stat-ring invisible flex flex-col items-center">
+                                <div key={idx} className="ielts-stat-ring flex flex-col items-center">
                                     <div className="relative w-36 h-36 lg:w-44 lg:h-44">
                                         <svg className="w-full h-full -rotate-90" viewBox="0 0 120 120">
                                             {/* Background ring */}
@@ -269,7 +269,7 @@ export default function IeltsToeflPteView({ heroData, modules, scoreInfo }) {
                 <div className="absolute bottom-0 left-0 w-80 h-80 bg-blue-500/[0.03] rounded-full blur-[100px]" />
 
                 <div className="max-w-4xl mx-auto relative z-10">
-                    <div className="ielts-score-section invisible">
+                    <div className="ielts-score-section">
                         <div className="text-center mb-12">
                             <span className="text-orange-500 font-bold uppercase tracking-[0.2em] text-xs mb-3 block font-mono">Score Breakdown</span>
                             <h2 className="text-3xl lg:text-5xl font-black text-slate-900 tracking-tight">IELTS Score Overview</h2>
@@ -335,7 +335,7 @@ export default function IeltsToeflPteView({ heroData, modules, scoreInfo }) {
                             return (
                                 <div
                                     key={idx}
-                                    className={`ielts-bento-card invisible group relative rounded-2xl p-8 lg:p-10 overflow-hidden bg-white border border-slate-100 hover:border-transparent hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-500`}
+                                    className={`ielts-bento-card group relative rounded-2xl p-8 lg:p-10 overflow-hidden bg-white border border-slate-100 hover:border-transparent hover:shadow-2xl hover:shadow-slate-200/50 transition-all duration-500`}
                                 >
                                     {/* Gradient overlay on hover */}
                                     <div className={`absolute inset-0 bg-gradient-to-br ${moduleColors[idx]} opacity-0 group-hover:opacity-[0.04] transition-opacity duration-500`} />
@@ -382,7 +382,7 @@ export default function IeltsToeflPteView({ heroData, modules, scoreInfo }) {
                 />
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-orange-500/[0.06] rounded-full blur-[150px]" />
 
-                <div className="ielts-cta-content invisible max-w-3xl mx-auto relative z-10">
+                <div className="ielts-cta-content max-w-3xl mx-auto relative z-10">
                     <div className="bg-gradient-to-br from-white/[0.06] to-white/[0.02] backdrop-blur-xl border border-white/10 rounded-3xl p-10 lg:p-16 text-center shadow-2xl">
                         <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center mx-auto mb-8 shadow-xl shadow-orange-500/20">
                             <Icon icon="mdi:school-outline" width={32} className="text-white" />

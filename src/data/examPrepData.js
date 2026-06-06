@@ -11,7 +11,7 @@ export const IELTS_DATA = {
         description: 'IELTS is a globally recognized English language proficiency test that assesses your communication skills. Whether you\'re studying abroad, immigrating, or advancing your career, IELTS opens doors worldwide.',
         testFormat: {
             components: ['Listening', 'Reading', 'Writing', 'Speaking'],
-            duration: '3 hours (approximately)',
+            // duration: '3 hours (approximately)',
             scoringScale: '0-9 (Band Scale)',
             validity: '2 years',
         },

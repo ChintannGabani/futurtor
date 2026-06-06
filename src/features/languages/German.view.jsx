@@ -39,44 +39,6 @@ export default function GermanView({ heroData, whyChooseUs, benefits, testimonia
                 { y: 80, autoAlpha: 0 },
                 { y: 0, autoAlpha: 1, duration: 0.9, stagger: 0.15, ease: 'power4.out', delay: 0.6 }
             );
-
-            // Why Choose Us: alternating rows slide from left/right
-            gsap.utils.toArray('.de-why-row').forEach((row, idx) => {
-                gsap.fromTo(row,
-                    { x: idx % 2 === 0 ? -120 : 120, autoAlpha: 0 },
-                    {
-                        x: 0, autoAlpha: 1, duration: 0.8, ease: 'power3.out',
-                        scrollTrigger: { trigger: row, start: 'top 85%', once: true }
-                    }
-                );
-            });
-
-            // Benefits: horizontal stagger with scale pop
-            gsap.fromTo('.de-benefit-item',
-                { scale: 0.6, autoAlpha: 0, y: 40 },
-                {
-                    scale: 1, autoAlpha: 1, y: 0, duration: 0.5, stagger: 0.08, ease: 'back.out(1.7)',
-                    scrollTrigger: { trigger: benefitsRef.current, start: 'top 80%', once: true }
-                }
-            );
-
-            // Testimonial section fade up
-            gsap.fromTo('.de-testimonial-wrap',
-                { y: 60, autoAlpha: 0 },
-                {
-                    y: 0, autoAlpha: 1, duration: 0.8, ease: 'power3.out',
-                    scrollTrigger: { trigger: testimonialRef.current, start: 'top 80%', once: true }
-                }
-            );
-
-            // CTA: clip-path reveal
-            gsap.fromTo('.de-cta-inner',
-                { autoAlpha: 0, scale: 0.9 },
-                {
-                    autoAlpha: 1, scale: 1, duration: 0.7, ease: 'power3.out',
-                    scrollTrigger: { trigger: ctaRef.current, start: 'top 85%', once: true }
-                }
-            );
         });
         return () => ctx.revert();
     }, []);
@@ -123,24 +85,24 @@ export default function GermanView({ heroData, whyChooseUs, benefits, testimonia
 
                 <div className="relative z-20 flex flex-col items-center text-center max-w-4xl mx-auto w-full">
                     {/* Large flag emblem */}
-                    <div className="de-hero-flag invisible mb-8 w-28 h-28 sm:w-36 sm:h-36 rounded-full border-4 border-yellow-400/60 shadow-2xl shadow-yellow-400/20 flex items-center justify-center bg-black/40 backdrop-blur-md">
+                    <div className="de-hero-flag mb-8 w-28 h-28 sm:w-36 sm:h-36 rounded-full border-4 border-yellow-400/60 shadow-2xl shadow-yellow-400/20 flex items-center justify-center bg-black/40 backdrop-blur-md">
                         <span className="text-6xl sm:text-7xl select-none">🇩🇪</span>
                     </div>
 
-                    <div className="de-hero-text invisible inline-flex items-center gap-2 px-5 py-2 rounded-full bg-yellow-400/10 border border-yellow-400/30 mb-6 text-sm text-yellow-300 font-semibold backdrop-blur-sm">
+                    <div className="de-hero-text inline-flex items-center gap-2 px-5 py-2 rounded-full bg-yellow-400/10 border border-yellow-400/30 mb-6 text-sm text-yellow-300 font-semibold backdrop-blur-sm">
                         <Icon icon="mdi:map-marker-radius-outline" width={16} className="text-yellow-400" />
                         <span>Goethe-Aligned Curriculum</span>
                     </div>
 
-                    <h1 className="de-hero-text invisible text-4xl sm:text-5xl lg:text-7xl font-black tracking-tight mb-6 text-white leading-tight">
+                    <h1 className="de-hero-text text-4xl sm:text-5xl lg:text-7xl font-black tracking-tight mb-6 text-white leading-tight">
                         {heroData.title}
                     </h1>
 
-                    <p className="de-hero-text invisible text-base sm:text-lg lg:text-xl text-stone-300 max-w-2xl leading-relaxed mb-10">
+                    <p className="de-hero-text text-base sm:text-lg lg:text-xl text-stone-300 max-w-2xl leading-relaxed mb-10">
                         Master German from A1 to C1 with native-level fluency. Expert-crafted modules designed for Indian students pursuing higher education and careers in Germany.
                     </p>
 
-                    <div className="de-hero-text invisible flex flex-col sm:flex-row items-center gap-4">
+                    <div className="de-hero-text flex flex-col sm:flex-row items-center gap-4">
                         <Link to="/contact-us">
                             <button className="px-8 py-4 rounded-full bg-gradient-to-r from-red-600 to-yellow-500 text-white font-bold flex items-center gap-2 shadow-xl shadow-red-600/30 hover:shadow-red-600/50 hover:scale-105 transition-all duration-300">
                                 Begin Your Journey <ArrowRight size={18} />
@@ -191,7 +153,7 @@ export default function GermanView({ heroData, whyChooseUs, benefits, testimonia
                         {whyChooseUs.points.map((point, idx) => (
                             <div
                                 key={idx}
-                                className={`de-why-row invisible flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-14 items-center`}
+                                className={`de-why-row flex flex-col ${idx % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 lg:gap-14 items-center`}
                             >
                                 {/* Illustration side */}
                                 <div className="w-full lg:w-5/12 flex-shrink-0">
@@ -262,7 +224,7 @@ export default function GermanView({ heroData, whyChooseUs, benefits, testimonia
                             return (
                                 <div
                                     key={idx}
-                                    className={`de-benefit-item invisible group ${idx % 2 === 1 ? 'md:mt-8' : ''}`}
+                                    className={`de-benefit-item group ${idx % 2 === 1 ? 'md:mt-8' : ''}`}
                                 >
                                     <div className="relative bg-white/[0.04] border border-white/[0.08] rounded-2xl p-7 sm:p-8 hover:bg-white/[0.08] hover:border-yellow-400/30 transition-all duration-500 h-full">
                                         {/* Large number watermark */}
@@ -321,7 +283,7 @@ export default function GermanView({ heroData, whyChooseUs, benefits, testimonia
                         </p>
                     </div>
 
-                    <div className="de-testimonial-wrap invisible">
+                    <div className="de-testimonial-wrap">
                         {testimonials && testimonials.length > 0 && (
                             <TestimonialMarquee testimonials={testimonials} />
                         )}
@@ -339,7 +301,7 @@ export default function GermanView({ heroData, whyChooseUs, benefits, testimonia
                     <div className="absolute top-2/3 left-0 w-full h-1/3 bg-yellow-400" />
                 </div>
 
-                <div className="de-cta-inner invisible relative z-10 max-w-4xl mx-auto">
+                <div className="de-cta-inner relative z-10 max-w-4xl mx-auto">
                     <div className="bg-white/[0.06] backdrop-blur-md border border-white/10 rounded-3xl p-10 sm:p-16 text-center">
                         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-yellow-400/10 border border-yellow-400/20 text-yellow-300 text-sm font-semibold mb-8">
                             <Icon icon="mdi:rocket-launch-outline" width={16} />

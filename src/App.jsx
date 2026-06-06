@@ -19,6 +19,7 @@ import EducationalLoanGuidanceContainer from './features/services/EducationalLoa
 import AdmissionAdvicesContainer from './features/services/AdmissionAdvicesContainer';
 import AfterArrivalSupportContainer from './features/services/AfterArrivalSupportContainer';
 import CountryPageContainer from './features/countries/CountryPage.container';
+import SuccessStoriesContainer from './features/success-stories/SuccessStories.container';
 import './index.css';
 
 function ScrollToTop() {
@@ -52,6 +53,7 @@ function App() {
                         <Route path="/services/visa-services" element={<VisaServicesContainer />} />
                         <Route path="/services/after-arrival-support" element={<AfterArrivalSupportContainer />} />
                         <Route path="/study-abroad/:slug" element={<CountryPageContainer />} />
+                        <Route path="/success-stories" element={<SuccessStoriesContainer />} />
                         <Route path="/about-us" element={<AboutContainer />} />
                         <Route path="/contact-us" element={<ContactContainer />} />
                         <Route path="*" element={<HomeContainer />} />

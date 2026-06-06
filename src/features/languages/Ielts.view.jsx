@@ -24,9 +24,6 @@ export default function IeltsView({ data = IELTS_DATA }) {
     useEffect(() => {
         const ctx = gsap.context(() => {
             gsap.fromTo('.ielts-hero-el', { y: 40, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.9, stagger: 0.15, ease: 'power3.out', delay: 0.2 });
-            gsap.fromTo('.ielts-mode-card', { y: 50, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.7, stagger: 0.12, ease: 'power3.out', scrollTrigger: { trigger: '.ielts-modes', start: 'top 85%', once: true } });
-            gsap.fromTo('.ielts-section', { x: -40, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 0.6, stagger: 0.08, ease: 'power3.out', scrollTrigger: { trigger: '.ielts-sections', start: 'top 85%', once: true } });
-            gsap.fromTo('.ielts-type', { scale: 0.9, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: 0.6, stagger: 0.1, ease: 'power3.out', scrollTrigger: { trigger: '.ielts-types', start: 'top 85%', once: true } });
         }, pageRef);
         return () => ctx.revert();
     }, []);
@@ -40,13 +37,13 @@ export default function IeltsView({ data = IELTS_DATA }) {
                 <PlaneAnimation />
                 <FlightRoute className="bottom-[15%] left-0 w-full h-[150px]" color="#f97316" />
                 <div className="relative max-w-5xl mx-auto z-20 text-center w-full">
-                    <div className="ielts-hero-el invisible inline-flex items-center gap-2 px-5 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6 text-sm text-orange-400 font-semibold backdrop-blur-sm">
+                    <div className="ielts-hero-el inline-flex items-center gap-2 px-5 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6 text-sm text-orange-400 font-semibold backdrop-blur-sm">
                         <Icon icon="mdi:language-html5" width={20} /><span>IELTS - International Proficiency</span>
                     </div>
-                    <h1 className="ielts-hero-el invisible text-4xl sm:text-5xl md:text-6xl font-black tracking-tight mb-5 text-white leading-[1.08]">{IELTS_DATA.hero.heading}</h1>
-                    <p className="ielts-hero-el invisible text-base sm:text-lg text-stone-300/90 max-w-3xl mx-auto leading-relaxed mb-8">{IELTS_DATA.hero.subHeading}</p>
+                    <h1 className="ielts-hero-el text-4xl sm:text-5xl md:text-6xl font-black tracking-tight mb-5 text-white leading-[1.08]">{IELTS_DATA.hero.heading}</h1>
+                    <p className="ielts-hero-el text-base sm:text-lg text-stone-300/90 max-w-3xl mx-auto leading-relaxed mb-8">{IELTS_DATA.hero.subHeading}</p>
                     <Link to="/contact-us">
-                        <button className="ielts-hero-el invisible px-8 py-3.5 rounded-full bg-orange-500 text-white font-bold hover:bg-orange-600 shadow-xl shadow-orange-500/25 transition-all inline-flex items-center gap-2">
+                        <button className="ielts-hero-el px-8 py-3.5 rounded-full bg-orange-500 text-white font-bold hover:bg-orange-600 shadow-xl shadow-orange-500/25 transition-all inline-flex items-center gap-2">
                             {IELTS_DATA.hero.cta} <ArrowRight size={20} />
                         </button>
                     </Link>
@@ -61,9 +58,9 @@ export default function IeltsView({ data = IELTS_DATA }) {
             {/* TEST FORMAT INFO */}
             <section className="relative py-12 sm:py-16 px-4 sm:px-6 lg:px-8 w-full bg-stone-50 z-10">
                 <div className="max-w-7xl mx-auto">
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                         {Object.entries(IELTS_DATA.overview.testFormat).map(([key, value]) => (
-                            <div key={key} className="ielts-hero-el invisible bg-white rounded-lg p-4 border border-stone-200 text-center flex flex-col justify-center">
+                            <div key={key} className="ielts-hero-el bg-white rounded-lg p-4 border border-stone-200 text-center flex flex-col justify-center">
                                 <p className="text-stone-500 text-xs font-semibold uppercase tracking-wider mb-1">{key.replace(/([A-Z])/g, ' $1')}</p>
                                 <p className="text-base sm:text-lg font-bold text-stone-900">{Array.isArray(value) ? value.join(', ') : value}</p>
                             </div>
@@ -82,7 +79,7 @@ export default function IeltsView({ data = IELTS_DATA }) {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {IELTS_DATA.modes.map((mode, idx) => (
-                            <div key={idx} className="ielts-mode-card invisible group relative">
+                            <div key={idx} className="ielts-mode-card group relative">
                                 <div className={`${mode.color} absolute inset-0 rounded-2xl blur-xl opacity-20 group-hover:opacity-40 transition-opacity duration-500`} />
                                 <div className="relative bg-white rounded-2xl p-8 border-2 border-stone-100 group-hover:border-orange-300 transition-all duration-300">
                                     <div className={`w-16 h-16 rounded-xl ${mode.color} flex items-center justify-center mb-6 shadow-lg`}>
@@ -114,7 +111,7 @@ export default function IeltsView({ data = IELTS_DATA }) {
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                         {IELTS_DATA.types.map((type, idx) => (
-                            <div key={idx} className="ielts-type invisible bg-white rounded-xl p-6 border border-stone-100 hover:shadow-xl hover:border-orange-200 transition-all">
+                            <div key={idx} className="ielts-type bg-white rounded-xl p-6 border border-stone-100 hover:shadow-xl hover:border-orange-200 transition-all">
                                 <div className="w-12 h-12 rounded-lg bg-orange-500/10 flex items-center justify-center mb-4">
                                     <Icon icon={type.icon} width={24} className="text-orange-600" />
                                 </div>
@@ -135,7 +132,7 @@ export default function IeltsView({ data = IELTS_DATA }) {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {IELTS_DATA.sections.map((section, idx) => (
-                            <div key={idx} className="ielts-section invisible">
+                            <div key={idx} className="ielts-section">
                                 <div className="bg-gradient-to-br from-orange-50 to-white rounded-xl p-6 border border-orange-200/50 h-full">
                                     <div className="flex items-start justify-between mb-4">
                                         <div className="text-3xl font-black text-orange-500">{idx + 1}</div>
@@ -161,7 +158,7 @@ export default function IeltsView({ data = IELTS_DATA }) {
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         <div className="space-y-4">
                             {IELTS_DATA.scoring.bands.map((band, idx) => (
-                                <div key={idx} className="ielts-section invisible bg-white rounded-lg p-6 border border-stone-200 hover:border-orange-300 transition-all">
+                                <div key={idx} className="ielts-section bg-white rounded-lg p-6 border border-stone-200 hover:border-orange-300 transition-all">
                                     <div className="flex items-center gap-4">
                                         <div className="w-14 h-14 rounded-full bg-orange-500 flex items-center justify-center text-white font-black text-xl">{band.band}</div>
                                         <div>
@@ -211,7 +208,7 @@ export default function IeltsView({ data = IELTS_DATA }) {
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {IELTS_DATA.trainingFeatures.map((feature, idx) => (
-                            <div key={idx} className="ielts-section invisible bg-gradient-to-br from-orange-50/50 to-white rounded-lg p-6 border border-orange-200/30 hover:border-orange-300 transition-all">
+                            <div key={idx} className="ielts-section bg-gradient-to-br from-orange-50/50 to-white rounded-lg p-6 border border-orange-200/30 hover:border-orange-300 transition-all">
                                 <div className="flex items-center gap-4 mb-4">
                                     <div className="w-12 h-12 rounded-lg bg-orange-500/10 flex items-center justify-center">
                                         <Icon icon={feature.icon} width={24} className="text-orange-600" />

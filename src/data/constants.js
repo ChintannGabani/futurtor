@@ -35,6 +35,7 @@ export const NAV_LINKS = [
             // { label: 'Australia', href: '/study-abroad/australia', icon: 'flag:au-4x3', comingSoon: true },
         ],
     },
+    { label: 'Success Stories', href: '/success-stories' },
     { label: 'About Us', href: '/about-us' },
     { label: 'Contact Us', href: '/contact-us' },
 ];

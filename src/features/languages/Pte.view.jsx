@@ -24,9 +24,6 @@ export default function PteView({ data = PTE_DATA }) {
     useEffect(() => {
         const ctx = gsap.context(() => {
             gsap.fromTo('.pte-hero-el', { y: 40, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.9, stagger: 0.15, ease: 'power3.out', delay: 0.2 });
-            gsap.fromTo('.pte-type-card', { y: 50, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.7, stagger: 0.12, ease: 'power3.out', scrollTrigger: { trigger: '.pte-types', start: 'top 85%', once: true } });
-            gsap.fromTo('.pte-section-accordion', { x: -40, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 0.6, stagger: 0.1, ease: 'power3.out', scrollTrigger: { trigger: '.pte-sections', start: 'top 85%', once: true } });
-            gsap.fromTo('.pte-feature', { scale: 0.9, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: 0.6, stagger: 0.08, ease: 'back.out(1.5)', scrollTrigger: { trigger: '.pte-features-grid', start: 'top 85%', once: true } });
         }, pageRef);
         return () => ctx.revert();
     }, []);
@@ -39,13 +36,13 @@ export default function PteView({ data = PTE_DATA }) {
                 <PlaneAnimation />
                 <FlightRoute className="bottom-[15%] left-0 w-full h-[150px]" color="#f97316" />
                 <div className="relative max-w-5xl mx-auto z-20 text-center w-full">
-                    <div className="pte-hero-el invisible inline-flex items-center gap-2 px-5 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6 text-sm text-orange-400 font-semibold backdrop-blur-sm">
+                    <div className="pte-hero-el inline-flex items-center gap-2 px-5 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6 text-sm text-orange-400 font-semibold backdrop-blur-sm">
                         <Zap size={18} /><span>PTE - Fast Results in 48 Hours</span>
                     </div>
-                    <h1 className="pte-hero-el invisible text-4xl sm:text-5xl md:text-6xl font-black tracking-tight mb-5 text-white leading-[1.08]">{PTE_DATA.hero.heading}</h1>
-                    <p className="pte-hero-el invisible text-base sm:text-lg text-stone-300/90 max-w-3xl mx-auto leading-relaxed mb-8">{PTE_DATA.hero.subHeading}</p>
+                    <h1 className="pte-hero-el text-4xl sm:text-5xl md:text-6xl font-black tracking-tight mb-5 text-white leading-[1.08]">{PTE_DATA.hero.heading}</h1>
+                    <p className="pte-hero-el text-base sm:text-lg text-stone-300/90 max-w-3xl mx-auto leading-relaxed mb-8">{PTE_DATA.hero.subHeading}</p>
                     <Link to="/contact-us">
-                        <button className="pte-hero-el invisible px-8 py-3.5 rounded-full bg-orange-500 text-white font-bold hover:bg-orange-600 shadow-xl shadow-orange-500/25 transition-all inline-flex items-center gap-2">
+                        <button className="pte-hero-el px-8 py-3.5 rounded-full bg-orange-500 text-white font-bold hover:bg-orange-600 shadow-xl shadow-orange-500/25 transition-all inline-flex items-center gap-2">
                             {PTE_DATA.hero.cta} <ArrowRight size={20} />
                         </button>
                     </Link>
@@ -61,19 +58,19 @@ export default function PteView({ data = PTE_DATA }) {
             <section className="relative py-12 sm:py-16 px-4 sm:px-6 lg:px-8 w-full bg-white z-10">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <div className="pte-hero-el invisible text-center p-4 bg-gradient-to-br from-orange-50 to-white rounded-lg border-2 border-orange-200">
+                        <div className="pte-hero-el text-center p-4 bg-gradient-to-br from-orange-50 to-white rounded-lg border-2 border-orange-200">
                             <p className="text-3xl font-black text-orange-600">48 Hrs</p>
                             <p className="text-xs font-semibold text-stone-600 mt-2">Result Declaration</p>
                         </div>
-                        <div className="pte-hero-el invisible text-center p-4 bg-gradient-to-br from-orange-50 to-white rounded-lg border-2 border-orange-200">
+                        <div className="pte-hero-el text-center p-4 bg-gradient-to-br from-orange-50 to-white rounded-lg border-2 border-orange-200">
                             <p className="text-3xl font-black text-orange-600">35,000+</p>
                             <p className="text-xs font-semibold text-stone-600 mt-2">Universities Worldwide</p>
                         </div>
-                        <div className="pte-hero-el invisible text-center p-4 bg-gradient-to-br from-orange-50 to-white rounded-lg border-2 border-orange-200">
+                        <div className="pte-hero-el text-center p-4 bg-gradient-to-br from-orange-50 to-white rounded-lg border-2 border-orange-200">
                             <p className="text-3xl font-black text-orange-600">10-90</p>
                             <p className="text-xs font-semibold text-stone-600 mt-2">Scoring Scale</p>
                         </div>
-                        <div className="pte-hero-el invisible text-center p-4 bg-gradient-to-br from-orange-50 to-white rounded-lg border-2 border-orange-200">
+                        <div className="pte-hero-el text-center p-4 bg-gradient-to-br from-orange-50 to-white rounded-lg border-2 border-orange-200">
                             <p className="text-3xl font-black text-orange-600">62+</p>
                             <p className="text-xs font-semibold text-stone-600 mt-2">Test Centers in India</p>
                         </div>
@@ -90,7 +87,7 @@ export default function PteView({ data = PTE_DATA }) {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {PTE_DATA.testTypes.map((type, idx) => (
-                            <div key={idx} className="pte-type-card invisible group h-full">
+                            <div key={idx} className="pte-type-card group h-full">
                                 <div className={`bg-white rounded-xl p-8 border-2 border-stone-200 group-hover:border-orange-300 transition-all h-full flex flex-col`}>
                                     <div className="w-14 h-14 rounded-lg bg-orange-500/10 flex items-center justify-center mb-6">
                                         <Icon icon={type.icon} width={28} className="text-orange-600" />
@@ -120,7 +117,7 @@ export default function PteView({ data = PTE_DATA }) {
                     </div>
                     <div className="space-y-4">
                         {PTE_DATA.sections.map((section, idx) => (
-                            <details key={idx} className="pte-section-accordion invisible group bg-white rounded-lg border-2 border-stone-200 group-hover:border-orange-300 transition-all cursor-pointer overflow-hidden">
+                            <details key={idx} className="pte-section-accordion group bg-white rounded-lg border-2 border-stone-200 group-hover:border-orange-300 transition-all cursor-pointer overflow-hidden">
                                 <summary className="flex items-center justify-between p-6 font-bold text-lg text-stone-900 hover:bg-stone-50">
                                     <div className="flex items-center gap-4">
                                         <div className="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center">
@@ -173,7 +170,7 @@ export default function PteView({ data = PTE_DATA }) {
                     </div>
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                         {PTE_DATA.scoring.bands.map((band, idx) => (
-                            <div key={idx} className="pte-feature invisible bg-white rounded-lg p-6 border-2 border-stone-200 hover:border-orange-300 transition-all">
+                            <div key={idx} className="pte-feature bg-white rounded-lg p-6 border-2 border-stone-200 hover:border-orange-300 transition-all">
                                 <div className="mb-4">
                                     <div className="flex items-center gap-3 mb-3">
                                         <div className="w-16 h-16 rounded-lg bg-orange-500 flex items-center justify-center text-white font-black text-2xl">{band.range.split('-')[0]}</div>
@@ -202,7 +199,7 @@ export default function PteView({ data = PTE_DATA }) {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {PTE_DATA.uniqueFeatures.map((feature, idx) => (
-                            <div key={idx} className="pte-feature invisible group bg-gradient-to-br from-orange-50/50 to-white rounded-lg p-6 border border-orange-200/30 hover:border-orange-300 hover:shadow-lg transition-all">
+                            <div key={idx} className="pte-feature group bg-gradient-to-br from-orange-50/50 to-white rounded-lg p-6 border border-orange-200/30 hover:border-orange-300 hover:shadow-lg transition-all">
                                 <div className="flex items-center gap-4 mb-4">
                                     <div className="w-12 h-12 rounded-lg bg-orange-500/10 flex items-center justify-center group-hover:bg-orange-500/20 transition-all">
                                         <Icon icon={feature.icon} width={24} className="text-orange-600" />
@@ -225,7 +222,7 @@ export default function PteView({ data = PTE_DATA }) {
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {PTE_DATA.trainingFeatures.map((feature, idx) => (
-                            <div key={idx} className="pte-feature invisible group bg-white rounded-lg p-6 border-2 border-stone-200 group-hover:border-orange-300 group-hover:shadow-lg transition-all">
+                            <div key={idx} className="pte-feature group bg-white rounded-lg p-6 border-2 border-stone-200 group-hover:border-orange-300 group-hover:shadow-lg transition-all">
                                 <div className="flex items-center gap-4 mb-4">
                                     <div className="w-12 h-12 rounded-lg bg-orange-500/10 flex items-center justify-center">
                                         <Icon icon={feature.icon} width={24} className="text-orange-600" />
@@ -250,7 +247,7 @@ export default function PteView({ data = PTE_DATA }) {
                         </div>
                         <div className="space-y-3">
                             {PTE_DATA.timings.map((timing, idx) => (
-                                <div key={idx} className="pte-section-accordion invisible bg-gradient-to-r from-orange-50 to-white rounded-lg p-4 border-2 border-orange-200/50 hover:border-orange-300">
+                                <div key={idx} className="pte-section-accordion bg-gradient-to-r from-orange-50 to-white rounded-lg p-4 border-2 border-orange-200/50 hover:border-orange-300">
                                     <p className="font-bold text-stone-900">{timing.duration}</p>
                                     <p className="text-orange-600 font-semibold text-sm mt-2">{timing.schedule}</p>
                                 </div>
@@ -266,7 +263,7 @@ export default function PteView({ data = PTE_DATA }) {
                         </div>
                         <div className="space-y-3">
                             {Object.entries(PTE_DATA.fees).map(([key, value]) => (
-                                <div key={key} className="pte-section-accordion invisible bg-white rounded-lg p-4 border-2 border-stone-200 hover:border-orange-300 flex justify-between items-center">
+                                <div key={key} className="pte-section-accordion bg-white rounded-lg p-4 border-2 border-stone-200 hover:border-orange-300 flex justify-between items-center">
                                     <p className="font-medium text-stone-700">{key.replace(/([A-Z])/g, ' $1').trim()}</p>
                                     <p className="font-bold text-orange-600 text-lg">{value}</p>
                                 </div>
@@ -289,7 +286,7 @@ export default function PteView({ data = PTE_DATA }) {
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {PTE_DATA.upcomingDates.map((dateObj, idx) => (
-                            <div key={idx} className="pte-feature invisible text-center bg-white rounded-lg p-6 border-2 border-stone-200 hover:border-orange-300 hover:shadow-lg transition-all">
+                            <div key={idx} className="pte-feature text-center bg-white rounded-lg p-6 border-2 border-stone-200 hover:border-orange-300 hover:shadow-lg transition-all">
                                 <p className="font-bold text-stone-900 text-lg mb-3">{dateObj.month}</p>
                                 <div className="flex flex-wrap gap-2 justify-center">
                                     {dateObj.dates.split(', ').map((date, dIdx) => (

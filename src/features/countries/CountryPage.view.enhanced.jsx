@@ -25,10 +25,6 @@ export default function CountryPageView({ data }) {
         const ctx = gsap.context(() => {
             gsap.fromTo('.country-hero-el', { y: 40, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.9, stagger: 0.15, ease: 'power3.out', delay: 0.2 });
             gsap.fromTo('.hero-stat', { scale: 0.8, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: 0.7, stagger: 0.1, ease: 'back.out(1.5)' });
-            gsap.fromTo('.country-card', { y: 50, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.7, stagger: 0.12, ease: 'power3.out', scrollTrigger: { trigger: '.country-cards', start: 'top 85%', once: true } });
-            gsap.fromTo('.country-feature', { x: -40, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 0.6, stagger: 0.1, ease: 'power3.out', scrollTrigger: { trigger: '.country-features', start: 'top 85%', once: true } });
-            gsap.fromTo('.country-step', { y: 30, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.6, stagger: 0.08, ease: 'power3.out', scrollTrigger: { trigger: '.country-steps', start: 'top 85%', once: true } });
-            gsap.fromTo('.uni-card', { y: 40, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.6, stagger: 0.08, ease: 'power3.out', scrollTrigger: { trigger: '.universities-grid', start: 'top 85%', once: true } });
         }, pageRef);
         return () => ctx.revert();
     }, []);
@@ -46,14 +42,14 @@ export default function CountryPageView({ data }) {
                 <PlaneAnimation />
                 <FlightRoute className="bottom-[15%] left-0 w-full h-[150px]" color="#f97316" />
                 <div className="relative max-w-5xl mx-auto z-20 text-center w-full">
-                    <div className="country-hero-el invisible inline-flex items-center gap-2 px-5 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6 text-sm text-orange-400 font-semibold backdrop-blur-sm">
+                    <div className="country-hero-el inline-flex items-center gap-2 px-5 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6 text-sm text-orange-400 font-semibold backdrop-blur-sm">
                         <Icon icon={data.heroIcon} width={20} /><span>{data.name}</span>
                     </div>
-                    <h1 className="country-hero-el invisible text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-5 text-white leading-[1.08]">{data.hero.title}</h1>
-                    <p className="country-hero-el invisible text-base sm:text-lg text-stone-300/90 max-w-3xl mx-auto leading-relaxed mb-8">{data.hero.description}</p>
+                    <h1 className="country-hero-el text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-5 text-white leading-[1.08]">{data.hero.title}</h1>
+                    <p className="country-hero-el text-base sm:text-lg text-stone-300/90 max-w-3xl mx-auto leading-relaxed mb-8">{data.hero.description}</p>
 
                     {/* CTA Buttons */}
-                    <div className="country-hero-el invisible flex flex-wrap gap-4 justify-center">
+                    <div className="country-hero-el flex flex-wrap gap-4 justify-center">
                         <button onClick={handleConsultationClick} className="px-8 py-3.5 rounded-full bg-orange-500 text-white font-bold hover:bg-orange-600 shadow-xl shadow-orange-500/25 transition-all inline-flex items-center gap-2">
                             <span>{data.ctas.primary}</span>
                             <ArrowRight size={18} />
@@ -75,7 +71,7 @@ export default function CountryPageView({ data }) {
                 <div className="max-w-6xl mx-auto">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                         {data.heroStats.map((stat, idx) => (
-                            <div key={idx} className="hero-stat invisible text-center">
+                            <div key={idx} className="hero-stat text-center">
                                 <div className="text-3xl sm:text-4xl font-black text-orange-600 mb-2">{stat.value}</div>
                                 <div className="text-sm sm:text-base font-semibold text-stone-700">{stat.label}</div>
                             </div>
@@ -92,7 +88,7 @@ export default function CountryPageView({ data }) {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
                         {data.whyStudy.points.map((point, idx) => (
-                            <div key={idx} className="country-feature invisible bg-gradient-to-br from-orange-50 to-stone-50 rounded-2xl p-8 border border-orange-200/30 hover:shadow-lg transition-all">
+                            <div key={idx} className="country-feature bg-gradient-to-br from-orange-50 to-stone-50 rounded-2xl p-8 border border-orange-200/30 hover:shadow-lg transition-all">
                                 <h3 className="text-xl font-bold text-stone-900 mb-3">{point.title}</h3>
                                 <p className="text-stone-600 text-[15px] leading-relaxed">{point.description}</p>
                             </div>
@@ -111,7 +107,7 @@ export default function CountryPageView({ data }) {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {data.topUniversities.map((university, idx) => (
-                            <div key={idx} className="uni-card invisible bg-white rounded-xl p-6 border border-stone-200 hover:shadow-lg hover:border-orange-300 transition-all">
+                            <div key={idx} className="uni-card bg-white rounded-xl p-6 border border-stone-200 hover:shadow-lg hover:border-orange-300 transition-all">
                                 <div className="flex items-start justify-between mb-4">
                                     <div>
                                         {university.logo && (
@@ -140,7 +136,7 @@ export default function CountryPageView({ data }) {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {data.popularCourses.map((course, idx) => (
-                            <div key={idx} className="country-card invisible bg-gradient-to-br from-orange-50 to-stone-50 rounded-xl p-8 border border-orange-200/30 hover:shadow-lg transition-all text-center">
+                            <div key={idx} className="country-card bg-gradient-to-br from-orange-50 to-stone-50 rounded-xl p-8 border border-orange-200/30 hover:shadow-lg transition-all text-center">
                                 <Icon icon={course.icon} width={48} className="text-orange-500 mx-auto mb-4" />
                                 <h3 className="font-bold text-stone-900">{course.name}</h3>
                             </div>
@@ -158,7 +154,7 @@ export default function CountryPageView({ data }) {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {/* Tuition Fees */}
-                        <div className="country-card invisible bg-white rounded-2xl p-8 border border-stone-100 hover:shadow-lg transition-all">
+                        <div className="country-card bg-white rounded-2xl p-8 border border-stone-100 hover:shadow-lg transition-all">
                             <h3 className="text-lg font-bold text-stone-900 mb-6 flex items-center gap-2">
                                 <BookOpen size={24} className="text-orange-500" />
                                 Tuition Fees
@@ -174,7 +170,7 @@ export default function CountryPageView({ data }) {
                         </div>
 
                         {/* Living Expenses */}
-                        <div className="country-card invisible bg-white rounded-2xl p-8 border border-stone-100 hover:shadow-lg transition-all">
+                        <div className="country-card bg-white rounded-2xl p-8 border border-stone-100 hover:shadow-lg transition-all">
                             <h3 className="text-lg font-bold text-stone-900 mb-6 flex items-center gap-2">
                                 <Briefcase size={24} className="text-orange-500" />
                                 Living Expenses
@@ -198,12 +194,12 @@ export default function CountryPageView({ data }) {
                     <div className="text-center mb-8">
                         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-stone-900 tracking-tight">{data.scholarships.heading}</h2>
                     </div>
-                    <div className="country-feature invisible bg-gradient-to-r from-orange-50 to-stone-50 rounded-2xl p-8 border border-orange-200/30 mb-8">
+                    <div className="country-feature bg-gradient-to-r from-orange-50 to-stone-50 rounded-2xl p-8 border border-orange-200/30 mb-8">
                         <p className="text-stone-700 leading-relaxed">{data.scholarships.description}</p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         {data.scholarships.organizations.map((org, idx) => (
-                            <a key={idx} href={org.url} target="_blank" rel="noopener noreferrer" className="country-card invisible bg-white rounded-xl p-6 border border-stone-100 hover:border-orange-300 hover:shadow-lg transition-all text-center group">
+                            <a key={idx} href={org.url} target="_blank" rel="noopener noreferrer" className="country-card bg-white rounded-xl p-6 border border-stone-100 hover:border-orange-300 hover:shadow-lg transition-all text-center group">
                                 <h3 className="font-bold text-stone-900 mb-2 group-hover:text-orange-600 transition-colors">{org.name}</h3>
                                 <p className="text-stone-500 text-sm truncate group-hover:text-orange-500">{org.url}</p>
                             </a>
@@ -222,7 +218,7 @@ export default function CountryPageView({ data }) {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {data.careerProspects.sectors.map((sector, idx) => (
-                            <div key={idx} className="country-card invisible bg-white rounded-xl p-8 border border-stone-100 hover:shadow-lg hover:border-orange-300 transition-all text-center">
+                            <div key={idx} className="country-card bg-white rounded-xl p-8 border border-stone-100 hover:shadow-lg hover:border-orange-300 transition-all text-center">
                                 <Icon icon={sector.icon} width={48} className="text-orange-500 mx-auto mb-4" />
                                 <h3 className="font-bold text-stone-900">{sector.name}</h3>
                             </div>
@@ -240,7 +236,7 @@ export default function CountryPageView({ data }) {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {/* General Documents */}
-                        <div className="country-feature invisible">
+                        <div className="country-feature">
                             <h3 className="text-lg font-bold text-stone-900 mb-6 flex items-center gap-2">
                                 <FileText size={24} className="text-orange-500" />
                                 General Documents
@@ -256,7 +252,7 @@ export default function CountryPageView({ data }) {
                         </div>
 
                         {/* Financial Proof */}
-                        <div className="country-feature invisible">
+                        <div className="country-feature">
                             <h3 className="text-lg font-bold text-stone-900 mb-6 flex items-center gap-2">
                                 <Briefcase size={24} className="text-orange-500" />
                                 Financial Proof
@@ -283,7 +279,7 @@ export default function CountryPageView({ data }) {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {data.visaProcess.steps.map((step, idx) => (
-                            <div key={idx} className="country-step invisible flex gap-4">
+                            <div key={idx} className="country-step flex gap-4">
                                 <div className="flex-shrink-0">
                                     <div className="w-10 h-10 rounded-full bg-orange-500 text-white font-bold flex items-center justify-center">{idx + 1}</div>
                                 </div>
@@ -307,7 +303,7 @@ export default function CountryPageView({ data }) {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {data.successStories.map((story, idx) => (
-                            <div key={idx} className="country-card invisible bg-white rounded-xl p-8 border border-stone-100 shadow-sm hover:shadow-lg transition-all">
+                            <div key={idx} className="country-card bg-white rounded-xl p-8 border border-stone-100 shadow-sm hover:shadow-lg transition-all">
                                 <div className="mb-6">
                                     <div className="flex items-center gap-0.5 text-orange-500 mb-3">
                                         {[...Array(5)].map((_, i) => <span key={i}>★</span>)}

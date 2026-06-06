@@ -48,35 +48,10 @@ export default function HomeView({ data }) {
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            // HERO - Stagger in
+            // HERO - Stagger in (Keep this as it runs once on load)
             gsap.fromTo('.hero-element', { y: 40, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 1, stagger: 0.18, ease: 'power3.out', delay: 0.3 });
-            gsap.to('.hero-bg-img', { yPercent: 25, ease: 'none', scrollTrigger: { trigger: '.hero-section', start: 'top top', end: 'bottom top', scrub: 1 } });
-
-            // SERVICES - Rotate in from different directions
-            gsap.fromTo('.service-card', { y: 60, autoAlpha: 0, rotateY: 15 }, { y: 0, autoAlpha: 1, rotateY: 0, duration: 0.9, stagger: 0.2, ease: 'power3.out', scrollTrigger: { trigger: '.services-section', start: 'top 85%', once: true } });
-
-            // STATS - Scale up with bounce
-            gsap.fromTo('.stat-item', { scale: 0.5, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: 0.6, stagger: 0.1, ease: 'back.out(1.7)', scrollTrigger: { trigger: '.stats-section', start: 'top 85%', once: true } });
-
-            // VISION - Clip reveal
-            gsap.fromTo('.vision-content', { x: -60, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 1.2, ease: 'power3.out', scrollTrigger: { trigger: '.vision-section', start: 'top 80%', once: true } });
-            gsap.fromTo('.vision-img-wrap', { x: 60, autoAlpha: 0, scale: 0.9 }, { x: 0, autoAlpha: 1, scale: 1, duration: 1.2, ease: 'power3.out', scrollTrigger: { trigger: '.vision-section', start: 'top 80%', once: true } });
-
-            // JOURNEY - Draw line + stagger steps
-            gsap.fromTo('.journey-line-fill', { scaleY: 0 }, { scaleY: 1, duration: 2, ease: 'power2.out', scrollTrigger: { trigger: '.journey-section', start: 'top 85%', once: true } });
-            gsap.fromTo('.journey-step', { x: -40, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 0.7, stagger: 0.25, ease: 'power3.out', scrollTrigger: { trigger: '.journey-section', start: 'top 85%', once: true } });
-
-            // COUNTRIES - Zoom in cards
-            gsap.fromTo('.country-card', { scale: 0.8, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: 0.6, stagger: 0.1, ease: 'power3.out', scrollTrigger: { trigger: '.countries-section', start: 'top 85%', once: true } });
-
-            // TESTIMONIALS - Slide from alternate sides
-            document.querySelectorAll('.testimonial-card').forEach((card, i) => {
-                gsap.fromTo(card, { x: i % 2 === 0 ? -50 : 50, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 0.8, ease: 'power3.out', scrollTrigger: { trigger: card, start: 'top 88%', once: true } });
-            });
-
-            // CONTACT - Rise up
-            gsap.fromTo('.contact-element', { y: 40, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.8, stagger: 0.12, ease: 'power3.out', scrollTrigger: { trigger: '.contact-section', start: 'top 85%', once: true } });
-
+            // Remove heavy scrub animation
+            // gsap.to('.hero-bg-img', { yPercent: 25, ease: 'none', scrollTrigger: { trigger: '.hero-section', start: 'top top', end: 'bottom top', scrub: 1 } });
         }, pageRef);
         return () => ctx.revert();
     }, []);
@@ -103,21 +78,21 @@ export default function HomeView({ data }) {
 
                 <div className="relative max-w-7xl mx-auto z-20 w-full">
                     <div className="max-w-3xl mx-auto text-center lg:text-left lg:mx-0">
-                        <div className="hero-element invisible inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6 text-xs sm:text-sm text-orange-400 font-semibold backdrop-blur-sm">
+                        <div className="hero-element inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6 text-xs sm:text-sm text-orange-400 font-semibold backdrop-blur-sm">
                             <Star size={14} className="text-orange-500 fill-orange-500" />
                             <span>India's Trusted Overseas Consultancy</span>
                         </div>
-                        <h1 className="hero-element invisible text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] xl:text-6xl font-black tracking-tight mb-5 text-white leading-[1.1]">
+                        <h1 className="hero-element text-3xl sm:text-4xl md:text-5xl lg:text-[3.5rem] xl:text-6xl font-black tracking-tight mb-5 text-white leading-[1.1]">
                             Step Beyond Borders with <span className="text-orange-500">Professional Overseas</span> Support
                         </h1>
-                        <p className="hero-element invisible text-base sm:text-lg text-stone-300/90 mb-3 leading-relaxed max-w-2xl lg:max-w-none">
+                        <p className="hero-element text-base sm:text-lg text-stone-300/90 mb-3 leading-relaxed max-w-2xl lg:max-w-none">
                             {hero.subHeading}
                         </p>
-                        <div className="hero-element invisible flex items-center gap-2 mb-8 justify-center lg:justify-start">
+                        <div className="hero-element flex items-center gap-2 mb-8 justify-center lg:justify-start">
                             <span className="text-yellow-400 text-lg tracking-wider">★★★★★</span>
                             <span className="text-stone-300 text-sm">{hero.description}</span>
                         </div>
-                        <div className="hero-element invisible flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                        <div className="hero-element flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
                             <Link to={hero.buttonLink}>
                                 <button className="btn-premium px-8 py-3.5 rounded-full bg-orange-500 text-white font-bold text-base flex items-center justify-center gap-2 shadow-xl shadow-orange-500/25 hover:bg-orange-600 hover:-translate-y-1 transition-all w-full sm:w-auto">
                                     {hero.buttonText} <ArrowRight size={18} />
@@ -152,7 +127,7 @@ export default function HomeView({ data }) {
                             { val: '5', suf: '+', label: 'Years Experience', icon: 'mdi:trophy-outline' },
                             { display: '24/7', label: 'Support', icon: 'mdi:headset' },
                         ].map((s, i) => (
-                            <div key={i} className="stat-item invisible flex items-center gap-3 sm:gap-4">
+                            <div key={i} className="stat-item flex items-center gap-3 sm:gap-4">
                                 <div className="w-11 h-11 sm:w-14 sm:h-14 rounded-xl bg-orange-50 border border-orange-100 flex items-center justify-center shrink-0">
                                     <Icon icon={s.icon} width={24} className="text-orange-500" />
                                 </div>
@@ -191,7 +166,7 @@ export default function HomeView({ data }) {
                             {whatWeDo.services.map((service, idx) => {
                                 const illustrations = ['noto:passport-control', 'noto:graduation-cap', 'noto:airplane-departure'];
                                 return (
-                                    <MagneticCard key={idx} intensity={6} className="service-card invisible">
+                                    <MagneticCard key={idx} intensity={6} className="service-card">
                                         <div className="group flex flex-col sm:flex-row gap-6 p-6 sm:p-8 bg-white rounded-2xl border border-stone-100 hover:shadow-xl hover:border-orange-200 transition-all duration-500 cursor-pointer overflow-hidden">
                                             <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl bg-orange-50 border border-orange-100 flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500">
                                                 <Icon icon={illustrations[idx]} width={56} className="drop-shadow-md" />
@@ -224,7 +199,7 @@ export default function HomeView({ data }) {
 
                     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6">
                         {countries.map((country, idx) => (
-                            <div key={idx} className="country-card invisible group text-center p-5 sm:p-6 rounded-2xl bg-stone-50 border border-stone-100 hover:border-orange-200 hover:shadow-lg hover:-translate-y-2 transition-all duration-500 cursor-pointer">
+                            <div key={idx} className="country-card group text-center p-5 sm:p-6 rounded-2xl bg-stone-50 border border-stone-100 hover:border-orange-200 hover:shadow-lg hover:-translate-y-2 transition-all duration-500 cursor-pointer">
                                 <div className="w-14 h-14 sm:w-16 sm:h-16 mx-auto mb-3 rounded-xl overflow-hidden flex items-center justify-center bg-white shadow-sm group-hover:scale-110 transition-transform">
                                     <Icon icon={country.flag} width={40} height={40} />
                                 </div>
@@ -246,7 +221,7 @@ export default function HomeView({ data }) {
                 <WorldMapBg className="inset-0 w-full h-full text-white" opacity={0.025} />
 
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-0 relative">
-                    <div className="vision-content invisible lg:col-span-3 p-8 sm:p-12 lg:p-20 flex flex-col justify-center relative z-10 order-2 lg:order-1">
+                    <div className="vision-content lg:col-span-3 p-8 sm:p-12 lg:p-20 flex flex-col justify-center relative z-10 order-2 lg:order-1">
                         <div className="flex items-center gap-3 mb-6">
                             <div className="w-10 h-10 rounded-lg bg-orange-500/10 border border-orange-500/20 flex items-center justify-center">
                                 <Icon icon="mdi:eye-outline" width={20} className="text-orange-500" />
@@ -263,7 +238,7 @@ export default function HomeView({ data }) {
                             About Us <ArrowRight size={18} />
                         </Link>
                     </div>
-                    <div className="vision-img-wrap invisible lg:col-span-2 relative min-h-[300px] sm:min-h-[400px] flex items-center justify-center order-1 lg:order-2 p-8">
+                    <div className="vision-img-wrap lg:col-span-2 relative min-h-[300px] sm:min-h-[400px] flex items-center justify-center order-1 lg:order-2 p-8">
                         {/* Glow */}
                         <div className="absolute w-72 h-72 sm:w-96 sm:h-96 rounded-full bg-orange-500/10 blur-[100px]" />
                         {/* Dotted ring */}
@@ -299,7 +274,7 @@ export default function HomeView({ data }) {
                             { step: '04', title: 'Visa Approval', desc: 'Complete visa file, financial guidance, and mock interview coaching.', icon: 'mdi:passport', color: 'bg-purple-500' },
                             { step: '05', title: 'Arrival & Settlement', desc: 'Airport pickup, accommodation, bank setup, and job guidance.', icon: 'mdi:airplane-landing', color: 'bg-emerald-500' },
                         ].map((item, idx) => (
-                            <div key={idx} className="journey-step invisible flex gap-4 sm:gap-8 mb-8 sm:mb-12 last:mb-0 relative items-start">
+                            <div key={idx} className="journey-step flex gap-4 sm:gap-8 mb-8 sm:mb-12 last:mb-0 relative items-start">
                                 <div className={`w-14 sm:w-16 h-14 sm:h-16 rounded-xl ${item.color} text-white flex items-center justify-center shrink-0 shadow-lg relative z-10`}>
                                     <Icon icon={item.icon} width={26} />
                                 </div>
@@ -336,7 +311,7 @@ export default function HomeView({ data }) {
             {/* ========== CONTACT (Split design) ========== */}
             <section className="contact-section relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 w-full z-10 bg-white overflow-hidden">
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-16 items-start relative z-10">
-                    <div className="contact-element invisible bg-stone-50 border border-stone-100 rounded-2xl p-8 sm:p-10">
+                    <div className="contact-element bg-stone-50 border border-stone-100 rounded-2xl p-8 sm:p-10">
                         <h2 className="text-xl sm:text-2xl font-black text-stone-900 mb-2 tracking-tight">Submit Your Inquiry</h2>
                         <p className="text-stone-500 mb-6 text-sm">Get in touch for personalized training, exam preparation, and consultancy.</p>
                         <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
@@ -354,7 +329,7 @@ export default function HomeView({ data }) {
                             </button>
                         </form>
                     </div>
-                    <div className="contact-element invisible lg:sticky lg:top-36 space-y-5">
+                    <div className="contact-element lg:sticky lg:top-36 space-y-5">
                         <h2 className="text-2xl sm:text-3xl font-black text-stone-900 tracking-tight mb-4">Get in Touch</h2>
                         {[
                             { icon: <MapPin size={20} />, label: 'Visit Us', value: FOOTER_DATA.address },

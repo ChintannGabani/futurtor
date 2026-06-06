@@ -22,11 +22,6 @@ export default function LanguagesView({ title, description }) {
     useEffect(() => {
         const ctx = gsap.context(() => {
             gsap.fromTo('.lang-hero-el', { y: 40, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.9, stagger: 0.15, ease: 'power3.out', delay: 0.2 });
-            gsap.fromTo('.lang-card',
-                { y: 50, autoAlpha: 0, rotateX: 10 },
-                { y: 0, autoAlpha: 1, rotateX: 0, duration: 0.8, stagger: 0.2, ease: 'power3.out',
-                    scrollTrigger: { trigger: '.lang-cards', start: 'top 85%', once: true } }
-            );
         }, pageRef);
         return () => ctx.revert();
     }, []);
@@ -61,12 +56,12 @@ export default function LanguagesView({ title, description }) {
                 <FlightRoute className="bottom-[15%] left-0 w-full h-[150px]" color="#f97316" />
 
                 <div className="relative max-w-5xl mx-auto z-20 text-center w-full">
-                    <div className="lang-hero-el invisible inline-flex items-center gap-2 px-5 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6 text-xs sm:text-sm text-orange-400 font-semibold backdrop-blur-sm">
+                    <div className="lang-hero-el inline-flex items-center gap-2 px-5 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6 text-xs sm:text-sm text-orange-400 font-semibold backdrop-blur-sm">
                         <Icon icon="mdi:translate" width={16} />
                         <span>Language Programs</span>
                     </div>
-                    <h1 className="lang-hero-el invisible text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-5 text-white leading-[1.08]">{title || 'Our Languages'}</h1>
-                    <p className="lang-hero-el invisible text-base sm:text-lg text-stone-300 max-w-2xl mx-auto leading-relaxed">
+                    <h1 className="lang-hero-el text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-5 text-white leading-[1.08]">{title || 'Our Languages'}</h1>
+                    <p className="lang-hero-el text-base sm:text-lg text-stone-300 max-w-2xl mx-auto leading-relaxed">
                         {description || 'Comprehensive language programs designed to help you communicate confidently and succeed on the global stage.'}
                     </p>
                 </div>
@@ -82,7 +77,7 @@ export default function LanguagesView({ title, description }) {
                 <div className="max-w-5xl mx-auto space-y-8">
                     {courses.map((course, idx) => (
                         <Link key={idx} to={course.link} className="block">
-                            <div className="lang-card invisible group bg-white rounded-2xl border border-stone-100 overflow-hidden hover:shadow-xl hover:border-orange-200 transition-all duration-500" style={{ perspective: '800px' }}>
+                            <div className="lang-card group bg-white rounded-2xl border border-stone-100 overflow-hidden hover:shadow-xl hover:border-orange-200 transition-all duration-500" style={{ perspective: '800px' }}>
                                 <div className="flex flex-col sm:flex-row">
                                     {/* Left - colored accent */}
                                     <div className={`sm:w-48 bg-gradient-to-br ${course.gradient} p-6 sm:p-8 flex flex-row sm:flex-col items-center sm:items-start justify-between sm:justify-center gap-4 shrink-0`}>

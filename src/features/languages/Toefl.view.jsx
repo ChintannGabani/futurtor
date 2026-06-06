@@ -24,9 +24,6 @@ export default function ToeflView({ data = TOEFL_DATA }) {
     useEffect(() => {
         const ctx = gsap.context(() => {
             gsap.fromTo('.toefl-hero-el', { y: 40, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.9, stagger: 0.15, ease: 'power3.out', delay: 0.2 });
-            gsap.fromTo('.toefl-format-card', { rotateY: 90, autoAlpha: 0 }, { rotateY: 0, autoAlpha: 1, duration: 0.8, stagger: 0.2, ease: 'power3.out', scrollTrigger: { trigger: '.toefl-formats', start: 'top 85%', once: true } });
-            gsap.fromTo('.toefl-section-card', { y: 50, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.6, stagger: 0.08, ease: 'power3.out', scrollTrigger: { trigger: '.toefl-sections-grid', start: 'top 85%', once: true } });
-            gsap.fromTo('.toefl-skill', { scale: 0.8, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: 0.6, stagger: 0.1, ease: 'back.out(1.5)', scrollTrigger: { trigger: '.toefl-skills', start: 'top 85%', once: true } });
         }, pageRef);
         return () => ctx.revert();
     }, []);
@@ -40,13 +37,13 @@ export default function ToeflView({ data = TOEFL_DATA }) {
                 <PlaneAnimation />
                 <FlightRoute className="bottom-[15%] left-0 w-full h-[150px]" color="#f97316" />
                 <div className="relative max-w-5xl mx-auto z-20 text-center w-full">
-                    <div className="toefl-hero-el invisible inline-flex items-center gap-2 px-5 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6 text-sm text-orange-400 font-semibold backdrop-blur-sm">
+                    <div className="toefl-hero-el inline-flex items-center gap-2 px-5 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6 text-sm text-orange-400 font-semibold backdrop-blur-sm">
                         <Icon icon="mdi:school" width={20} /><span>TOEFL - USA & Global Study</span>
                     </div>
-                    <h1 className="toefl-hero-el invisible text-4xl sm:text-5xl md:text-6xl font-black tracking-tight mb-5 text-white leading-[1.08]">{TOEFL_DATA.hero.heading}</h1>
-                    <p className="toefl-hero-el invisible text-base sm:text-lg text-stone-300/90 max-w-3xl mx-auto leading-relaxed mb-8">{TOEFL_DATA.hero.subHeading}</p>
+                    <h1 className="toefl-hero-el text-4xl sm:text-5xl md:text-6xl font-black tracking-tight mb-5 text-white leading-[1.08]">{TOEFL_DATA.hero.heading}</h1>
+                    <p className="toefl-hero-el text-base sm:text-lg text-stone-300/90 max-w-3xl mx-auto leading-relaxed mb-8">{TOEFL_DATA.hero.subHeading}</p>
                     <Link to="/contact-us">
-                        <button className="toefl-hero-el invisible px-8 py-3.5 rounded-full bg-orange-500 text-white font-bold hover:bg-orange-600 shadow-xl shadow-orange-500/25 transition-all inline-flex items-center gap-2">
+                        <button className="toefl-hero-el px-8 py-3.5 rounded-full bg-orange-500 text-white font-bold hover:bg-orange-600 shadow-xl shadow-orange-500/25 transition-all inline-flex items-center gap-2">
                             {TOEFL_DATA.hero.cta} <ArrowRight size={20} />
                         </button>
                     </Link>
@@ -61,19 +58,19 @@ export default function ToeflView({ data = TOEFL_DATA }) {
             {/* QUICK STATS */}
             <section className="relative py-12 sm:py-16 px-4 sm:px-6 lg:px-8 w-full bg-white z-10">
                 <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                    <div className="toefl-hero-el invisible">
+                    <div className="toefl-hero-el">
                         <p className="text-3xl font-black text-orange-500">11,500+</p>
                         <p className="text-xs font-semibold text-stone-600 mt-1">Universities Accept TOEFL</p>
                     </div>
-                    <div className="toefl-hero-el invisible">
+                    <div className="toefl-hero-el">
                         <p className="text-3xl font-black text-orange-500">160+</p>
                         <p className="text-xs font-semibold text-stone-600 mt-1">Countries</p>
                     </div>
-                    <div className="toefl-hero-el invisible">
+                    <div className="toefl-hero-el">
                         <p className="text-3xl font-black text-orange-500">30-40</p>
                         <p className="text-xs font-semibold text-stone-600 mt-1">Test Dates/Year</p>
                     </div>
-                    <div className="toefl-hero-el invisible">
+                    <div className="toefl-hero-el">
                         <p className="text-3xl font-black text-orange-500">2 Hours</p>
                         <p className="text-xs font-semibold text-stone-600 mt-1">Test Duration</p>
                     </div>
@@ -90,7 +87,7 @@ export default function ToeflView({ data = TOEFL_DATA }) {
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {TOEFL_DATA.formats.map((format, idx) => (
-                            <div key={idx} className="toefl-format-card invisible group perspective">
+                            <div key={idx} className="toefl-format-card group perspective">
                                 <div className={`${format.color} absolute -inset-1 rounded-2xl blur-2xl opacity-25 group-hover:opacity-50 transition-opacity duration-500`} />
                                 <div className="relative bg-white rounded-2xl p-8 border-2 border-stone-100 group-hover:border-orange-300 transition-all h-full flex flex-col">
                                     <div className="flex items-start justify-between mb-6">
@@ -125,7 +122,7 @@ export default function ToeflView({ data = TOEFL_DATA }) {
                     </div>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                         {TOEFL_DATA.sections.map((section, idx) => (
-                            <div key={idx} className="toefl-section-card invisible group">
+                            <div key={idx} className="toefl-section-card group">
                                 <div className="bg-gradient-to-br from-white to-stone-50 rounded-xl p-8 border-2 border-stone-200 group-hover:border-orange-300 transition-all h-full">
                                     <div className="flex items-center gap-4 mb-6">
                                         <div className="w-14 h-14 rounded-lg bg-orange-500/10 flex items-center justify-center">
@@ -172,7 +169,7 @@ export default function ToeflView({ data = TOEFL_DATA }) {
                         {/* Score Breakdown */}
                         <div className="space-y-4">
                             {TOEFL_DATA.scoring.breakdown.map((score, idx) => (
-                                <div key={idx} className="toefl-skill invisible group bg-white rounded-lg p-6 border border-stone-200 hover:shadow-lg hover:border-orange-300 transition-all">
+                                <div key={idx} className="toefl-skill group bg-white rounded-lg p-6 border border-stone-200 hover:shadow-lg hover:border-orange-300 transition-all">
                                     <div className="flex items-center justify-between mb-2">
                                         <div className="flex items-center gap-3">
                                             <div className="w-12 h-12 rounded-lg bg-orange-500/10 flex items-center justify-center font-bold text-orange-600">{score.range}</div>
@@ -188,7 +185,7 @@ export default function ToeflView({ data = TOEFL_DATA }) {
 
                         {/* Key Info */}
                         <div className="space-y-4">
-                            <div className="toefl-skill invisible bg-gradient-to-br from-orange-100 to-orange-50 rounded-xl p-8 border-2 border-orange-200">
+                            <div className="toefl-skill bg-gradient-to-br from-orange-100 to-orange-50 rounded-xl p-8 border-2 border-orange-200">
                                 <div className="flex items-center gap-3 mb-4">
                                     <Globe className="text-orange-600" size={28} />
                                     <h3 className="text-xl font-bold text-stone-900">Score Range</h3>
@@ -196,7 +193,7 @@ export default function ToeflView({ data = TOEFL_DATA }) {
                                 <p className="text-4xl font-black text-orange-600 mb-4">{TOEFL_DATA.scoring.scale}</p>
                                 <p className="text-stone-700 font-semibold">{TOEFL_DATA.scoring.breakdown[1].description}</p>
                             </div>
-                            <div className="toefl-skill invisible bg-white rounded-lg p-6 border-2 border-stone-200">
+                            <div className="toefl-skill bg-white rounded-lg p-6 border-2 border-stone-200">
                                 <p className="text-sm font-bold text-orange-600 uppercase tracking-wide mb-3">Note</p>
                                 <p className="text-stone-700 font-medium">{TOEFL_DATA.scoring.noNegativeMarking}</p>
                             </div>
@@ -214,7 +211,7 @@ export default function ToeflView({ data = TOEFL_DATA }) {
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {TOEFL_DATA.trainingFeatures.map((feature, idx) => (
-                            <div key={idx} className="toefl-skill invisible group bg-gradient-to-br from-orange-50/50 to-white rounded-lg p-6 border border-orange-200/30 hover:border-orange-300 hover:shadow-lg transition-all">
+                            <div key={idx} className="toefl-skill group bg-gradient-to-br from-orange-50/50 to-white rounded-lg p-6 border border-orange-200/30 hover:border-orange-300 hover:shadow-lg transition-all">
                                 <div className="flex items-center gap-4 mb-4">
                                     <div className="w-12 h-12 rounded-lg bg-orange-500/10 flex items-center justify-center group-hover:bg-orange-500/20 transition-all">
                                         <Icon icon={feature.icon} width={24} className="text-orange-600" />
@@ -244,7 +241,7 @@ export default function ToeflView({ data = TOEFL_DATA }) {
                             '4 free score reports to institutions',
                             'USA universities prefer TOEFL',
                         ].map((feature, idx) => (
-                            <div key={idx} className="toefl-skill invisible flex gap-3 items-start bg-white rounded-lg p-6 border border-stone-200 hover:border-orange-300">
+                            <div key={idx} className="toefl-skill flex gap-3 items-start bg-white rounded-lg p-6 border border-stone-200 hover:border-orange-300">
                                 <CheckCircle2 size={24} className="text-orange-500 shrink-0 mt-1" />
                                 <p className="text-stone-700 font-medium">{feature}</p>
                             </div>
@@ -264,7 +261,7 @@ export default function ToeflView({ data = TOEFL_DATA }) {
                         </h3>
                         <div className="space-y-3">
                             {TOEFL_DATA.upcomingDates.map((dateObj, idx) => (
-                                <div key={idx} className="toefl-section-card invisible bg-gradient-to-r from-orange-50 to-white rounded-lg p-4 border border-orange-200/50 hover:border-orange-300">
+                                <div key={idx} className="toefl-section-card bg-gradient-to-r from-orange-50 to-white rounded-lg p-4 border border-orange-200/50 hover:border-orange-300">
                                     <p className="font-bold text-stone-900">{dateObj.month}</p>
                                     <p className="text-orange-600 font-semibold text-sm mt-2">{dateObj.dates}</p>
                                 </div>
@@ -280,7 +277,7 @@ export default function ToeflView({ data = TOEFL_DATA }) {
                         </h3>
                         <div className="space-y-3">
                             {Object.entries(TOEFL_DATA.fees).map(([key, value]) => (
-                                <div key={key} className="toefl-section-card invisible bg-white rounded-lg p-4 border border-stone-200 hover:border-orange-300 flex justify-between items-center">
+                                <div key={key} className="toefl-section-card bg-white rounded-lg p-4 border border-stone-200 hover:border-orange-300 flex justify-between items-center">
                                     <p className="font-medium text-stone-700">{key.replace(/([A-Z])/g, ' $1').trim()}</p>
                                     <p className="font-bold text-orange-600 text-lg">{value}</p>
                                 </div>

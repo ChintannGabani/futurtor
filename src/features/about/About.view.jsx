@@ -46,19 +46,6 @@ export default function AboutView({ data }) {
     useEffect(() => {
         const ctx = gsap.context(() => {
             gsap.fromTo('.ab-hero-el', { y: 40, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 1, stagger: 0.15, ease: 'power3.out', delay: 0.3 });
-
-            gsap.fromTo('.ab-story-img', { x: -60, autoAlpha: 0, scale: 0.95 }, { x: 0, autoAlpha: 1, scale: 1, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: '.ab-story', start: 'top 80%', once: true } });
-            gsap.fromTo('.ab-story-text', { x: 60, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: '.ab-story', start: 'top 80%', once: true } });
-
-            gsap.fromTo('.ab-value', { y: 50, autoAlpha: 0, rotateY: 15 }, { y: 0, autoAlpha: 1, rotateY: 0, duration: 0.7, stagger: 0.15, ease: 'power3.out', scrollTrigger: { trigger: '.ab-values', start: 'top 85%', once: true } });
-
-            gsap.fromTo('.ab-promise-item', { x: -30, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 0.5, stagger: 0.1, ease: 'power3.out', scrollTrigger: { trigger: '.ab-promise', start: 'top 85%', once: true } });
-
-            gsap.fromTo('.ab-reason', { scale: 0.8, autoAlpha: 0 }, { scale: 1, autoAlpha: 1, duration: 0.6, stagger: 0.15, ease: 'back.out(1.5)', scrollTrigger: { trigger: '.ab-reasons', start: 'top 85%', once: true } });
-
-            gsap.fromTo('.ab-stat', { y: 30, autoAlpha: 0, scale: 0.8 }, { y: 0, autoAlpha: 1, scale: 1, duration: 0.5, stagger: 0.1, ease: 'back.out(1.7)', scrollTrigger: { trigger: '.ab-stats', start: 'top 85%', once: true } });
-
-            gsap.fromTo('.ab-team-card', { y: 40, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.7, stagger: 0.12, ease: 'power3.out', scrollTrigger: { trigger: '.ab-team', start: 'top 85%', once: true } });
         }, pageRef);
         return () => ctx.revert();
     }, []);
@@ -75,13 +62,13 @@ export default function AboutView({ data }) {
                 <FlightRoute className="bottom-[20%] left-0 w-full h-[180px]" color="#f97316" />
 
                 <div className="relative max-w-5xl mx-auto z-20 text-center w-full">
-                    <div className="ab-hero-el invisible inline-flex items-center gap-2 px-5 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6 text-sm text-orange-400 font-semibold backdrop-blur-sm">
+                    <div className="ab-hero-el inline-flex items-center gap-2 px-5 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6 text-sm text-orange-400 font-semibold backdrop-blur-sm">
                         <Icon icon="mdi:hand-heart-outline" width={16} /><span>Experts Since 2019</span>
                     </div>
-                    <h1 className="ab-hero-el invisible text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-5 text-white leading-[1.08]">
+                    <h1 className="ab-hero-el text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-5 text-white leading-[1.08]">
                         About <span className="text-orange-500">Futuretor</span>
                     </h1>
-                    <p className="ab-hero-el invisible text-base sm:text-lg text-stone-300/90 max-w-3xl mx-auto leading-relaxed">
+                    <p className="ab-hero-el text-base sm:text-lg text-stone-300/90 max-w-3xl mx-auto leading-relaxed">
                         When candidates like you, eager to build a prosperous career abroad and achieve success, search for terms like <span className="text-orange-300 italic">"India's Leading Language Academy and consultant,"</span> you are faced with millions of results in just a few seconds. Futuretor is one of those countless immigration companies in India, and we may not always appear on the first page of search results. However, you're here now, pursuing your dream of studying and working abroad.
                     </p>
                 </div>
@@ -97,7 +84,7 @@ export default function AboutView({ data }) {
             <section className="ab-story relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8 w-full z-10 bg-stone-50 overflow-hidden">
                 <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16 items-center">
                     {/* Illustration - 2 cols */}
-                    <div className="ab-story-img invisible lg:col-span-2 relative">
+                    <div className="ab-story-img lg:col-span-2 relative">
                         <div className="absolute -inset-4 bg-orange-500/10 blur-3xl rounded-3xl" />
                         <div className="relative bg-gradient-to-br from-white to-stone-100 rounded-2xl shadow-2xl border border-stone-200 overflow-hidden">
                             {/* Illustration scene */}
@@ -125,7 +112,7 @@ export default function AboutView({ data }) {
                     </div>
 
                     {/* Text - 3 cols */}
-                    <div className="ab-story-text invisible lg:col-span-3">
+                    <div className="ab-story-text lg:col-span-3">
                         <span className="text-orange-500 font-bold uppercase tracking-widest text-xs mb-3 block">Our Story</span>
                         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-stone-900 tracking-tight mb-6 leading-tight">
                             Built on <span className="text-orange-500">Trust</span>, Driven by Results
@@ -166,7 +153,7 @@ export default function AboutView({ data }) {
                             { icon: 'mdi:lightbulb-on-outline', title: 'Innovation', desc: 'Technology-driven approach combining deep domain knowledge with modern tools.', color: 'bg-amber-500' },
                             { icon: 'mdi:handshake-outline', title: 'Commitment', desc: 'We are here to see our success in your success. We are here. Always.', color: 'bg-emerald-500' },
                         ].map((value, idx) => (
-                            <div key={idx} className="ab-value invisible bg-stone-50 rounded-2xl p-7 border border-stone-100 hover:shadow-xl hover:border-orange-200 hover:-translate-y-2 transition-all duration-500 group">
+                            <div key={idx} className="ab-value bg-stone-50 rounded-2xl p-7 border border-stone-100 hover:shadow-xl hover:border-orange-200 hover:-translate-y-2 transition-all duration-500 group">
                                 <div className={`w-14 h-14 rounded-xl ${value.color} flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transition-transform`}>
                                     <Icon icon={value.icon} width={28} className="text-white" />
                                 </div>
@@ -191,7 +178,7 @@ export default function AboutView({ data }) {
                         <p className="text-stone-300 text-[15px] leading-relaxed mb-8">{data.promise.text}</p>
                         <div className="space-y-4">
                             {data.promise.points.map((point, idx) => (
-                                <div key={idx} className="ab-promise-item invisible flex gap-3 items-center group">
+                                <div key={idx} className="ab-promise-item flex gap-3 items-center group">
                                     <div className="w-8 h-8 rounded-lg bg-orange-500/20 flex items-center justify-center shrink-0 group-hover:bg-orange-500 transition-all">
                                         <CheckCircle2 size={16} className="text-orange-500 group-hover:text-white" />
                                     </div>
@@ -207,7 +194,7 @@ export default function AboutView({ data }) {
                             <h3 className="text-xl font-black text-white mb-6">{data.reasons.heading}</h3>
                             <div className="space-y-4">
                                 {data.reasons.list.map((reason, idx) => (
-                                    <div key={idx} className="ab-reason invisible flex gap-4 items-center p-4 rounded-xl bg-white/[0.04] border border-white/[0.06] hover:border-orange-500/30 transition-all group">
+                                    <div key={idx} className="ab-reason flex gap-4 items-center p-4 rounded-xl bg-white/[0.04] border border-white/[0.06] hover:border-orange-500/30 transition-all group">
                                         <div className="w-12 h-12 rounded-xl bg-orange-500 flex items-center justify-center shrink-0 shadow-lg group-hover:scale-110 transition-transform">
                                             <Icon icon={idx === 0 ? 'mdi:office-building-outline' : 'mdi:currency-eur'} width={24} className="text-white" />
                                         </div>
@@ -230,7 +217,7 @@ export default function AboutView({ data }) {
                             { val: '5', suf: '+', label: 'Years Experience', icon: 'mdi:trophy-outline' },
                             { display: '24/7', label: 'Support', icon: 'mdi:headset' },
                         ].map((s, i) => (
-                            <div key={i} className="ab-stat invisible flex items-center gap-3 sm:gap-4">
+                            <div key={i} className="ab-stat flex items-center gap-3 sm:gap-4">
                                 <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-orange-50 border border-orange-100 flex items-center justify-center shrink-0">
                                     <Icon icon={s.icon} width={24} className="text-orange-500" />
                                 </div>
@@ -278,7 +265,7 @@ export default function AboutView({ data }) {
                                 accents: ['noto:airplane', 'noto:passport-control'],
                             },
                         ].map((item, idx) => (
-                            <MagneticCard key={idx} intensity={5} className="ab-team-card invisible">
+                            <MagneticCard key={idx} intensity={5} className="ab-team-card">
                                 <div className="bg-white rounded-2xl overflow-hidden border border-stone-100 hover:shadow-xl hover:border-orange-200 transition-all duration-500 group">
                                     <div className="relative h-48 overflow-hidden bg-gradient-to-br from-orange-50 via-white to-amber-50 flex items-center justify-center">
                                         {/* Decorative dotted ring */}

@@ -16,22 +16,6 @@ export default function ServicePageLayout({ title, badge, badgeIcon, description
     useEffect(() => {
         const ctx = gsap.context(() => {
             gsap.fromTo('.sp-hero-el', { y: 40, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.9, stagger: 0.15, ease: 'power3.out', delay: 0.2 });
-
-            if (variant === 'grid') {
-                gsap.fromTo('.sp-card', { y: 50, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.7, stagger: 0.1, ease: 'power3.out', scrollTrigger: { trigger: contentRef.current, start: 'top 85%', once: true } });
-            } else if (variant === 'timeline') {
-                gsap.fromTo('.sp-timeline-line', { scaleY: 0 }, { scaleY: 1, duration: 1.5, ease: 'power2.out', scrollTrigger: { trigger: contentRef.current, start: 'top 85%', once: true } });
-                gsap.fromTo('.sp-step', { x: -40, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 0.6, stagger: 0.15, ease: 'power3.out', scrollTrigger: { trigger: contentRef.current, start: 'top 85%', once: true } });
-            } else if (variant === 'split') {
-                gsap.fromTo('.sp-left', { x: -50, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 0.8, ease: 'power3.out', scrollTrigger: { trigger: contentRef.current, start: 'top 85%', once: true } });
-                gsap.fromTo('.sp-right', { x: 50, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 0.8, ease: 'power3.out', scrollTrigger: { trigger: contentRef.current, start: 'top 85%', once: true } });
-            } else if (variant === 'numbered') {
-                gsap.fromTo('.sp-num-item', { y: 40, autoAlpha: 0, scale: 0.95 }, { y: 0, autoAlpha: 1, scale: 1, duration: 0.6, stagger: 0.12, ease: 'back.out(1.4)', scrollTrigger: { trigger: contentRef.current, start: 'top 85%', once: true } });
-            } else if (variant === 'checklist') {
-                gsap.fromTo('.sp-check', { x: -30, autoAlpha: 0 }, { x: 0, autoAlpha: 1, duration: 0.5, stagger: 0.08, ease: 'power3.out', scrollTrigger: { trigger: contentRef.current, start: 'top 85%', once: true } });
-            } else if (variant === 'cards-alt') {
-                gsap.fromTo('.sp-alt-card', { y: 50, autoAlpha: 0, rotateX: 8 }, { y: 0, autoAlpha: 1, rotateX: 0, duration: 0.7, stagger: 0.12, ease: 'power3.out', scrollTrigger: { trigger: contentRef.current, start: 'top 85%', once: true } });
-            }
         }, pageRef);
         return () => ctx.revert();
     }, [variant]);
@@ -51,7 +35,7 @@ export default function ServicePageLayout({ title, badge, badgeIcon, description
                         {points.map((point, idx) => {
                             const isObj = typeof point === 'object';
                             return (
-                                <div key={idx} className="sp-step invisible flex gap-5 sm:gap-8 mb-8 last:mb-0 items-start">
+                                <div key={idx} className="sp-step flex gap-5 sm:gap-8 mb-8 last:mb-0 items-start">
                                     <div className={`w-14 h-14 rounded-xl ${stepColors[idx % stepColors.length]} text-white flex items-center justify-center shrink-0 shadow-lg relative z-10 text-lg font-black`}>
                                         {String(idx + 1).padStart(2, '0')}
                                     </div>
@@ -69,7 +53,7 @@ export default function ServicePageLayout({ title, badge, badgeIcon, description
             case 'split':
                 return (
                     <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                        <div className="sp-left invisible space-y-4">
+                        <div className="sp-left space-y-4">
                             {points.map((point, idx) => {
                                 const isObj = typeof point === 'object';
                                 return (
@@ -85,7 +69,7 @@ export default function ServicePageLayout({ title, badge, badgeIcon, description
                                 );
                             })}
                         </div>
-                        <div className="sp-right invisible bg-[#0B1121] rounded-2xl p-8 sm:p-10 relative overflow-hidden">
+                        <div className="sp-right bg-[#0B1121] rounded-2xl p-8 sm:p-10 relative overflow-hidden">
                             <div className="absolute inset-0 pattern-grid opacity-15" />
                             <div className="relative z-10">
                                 <Icon icon="mdi:lightbulb-on-outline" width={36} className="text-orange-500 mb-4" />
@@ -106,7 +90,7 @@ export default function ServicePageLayout({ title, badge, badgeIcon, description
                         {points.map((point, idx) => {
                             const isObj = typeof point === 'object';
                             return (
-                                <div key={idx} className="sp-num-item invisible flex gap-5 items-start group">
+                                <div key={idx} className="sp-num-item flex gap-5 items-start group">
                                     <div className="text-4xl sm:text-5xl font-black text-orange-500/20 group-hover:text-orange-500/40 transition-colors leading-none pt-1 select-none shrink-0 w-16 text-right">
                                         {String(idx + 1).padStart(2, '0')}
                                     </div>
@@ -130,7 +114,7 @@ export default function ServicePageLayout({ title, badge, badgeIcon, description
                                 {points.map((point, idx) => {
                                     const isObj = typeof point === 'object';
                                     return (
-                                        <div key={idx} className="sp-check invisible flex gap-4 items-start group">
+                                        <div key={idx} className="sp-check flex gap-4 items-start group">
                                             <div className="w-8 h-8 rounded-full bg-orange-50 border border-orange-100 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-orange-500 group-hover:border-orange-500 transition-all">
                                                 <Icon icon="mdi:check" width={16} className="text-orange-500 group-hover:text-white transition-colors" />
                                             </div>
@@ -154,7 +138,7 @@ export default function ServicePageLayout({ title, badge, badgeIcon, description
                             const isObj = typeof point === 'object';
                             const isEven = idx % 2 === 0;
                             return (
-                                <div key={idx} className={`sp-alt-card invisible flex flex-col sm:flex-row gap-5 items-start ${isEven ? '' : 'sm:flex-row-reverse'}`}>
+                                <div key={idx} className={`sp-alt-card flex flex-col sm:flex-row gap-5 items-start ${isEven ? '' : 'sm:flex-row-reverse'}`}>
                                     <div className={`w-14 h-14 rounded-xl ${stepColors[idx % stepColors.length]} flex items-center justify-center shrink-0 shadow-lg`}>
                                         <Icon icon={pointIcons[idx % pointIcons.length]} width={26} className="text-white" />
                                     </div>
@@ -175,7 +159,7 @@ export default function ServicePageLayout({ title, badge, badgeIcon, description
                         {points.map((point, idx) => {
                             const isObj = typeof point === 'object';
                             return (
-                                <div key={idx} className="sp-card invisible premium-card rounded-xl sm:rounded-2xl p-6 sm:p-8 group relative overflow-hidden">
+                                <div key={idx} className="sp-card premium-card rounded-xl sm:rounded-2xl p-6 sm:p-8 group relative overflow-hidden">
                                     <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-orange-500 to-amber-500 opacity-0 group-hover:opacity-100 transition-opacity" />
                                     <div className="w-10 sm:w-12 h-10 sm:h-12 rounded-lg sm:rounded-xl bg-orange-50 border border-orange-100 flex items-center justify-center mb-4 sm:mb-6 group-hover:bg-orange-500 group-hover:border-orange-500 transition-all duration-300">
                                         <Icon icon={pointIcons[idx % pointIcons.length]} width={22} className="text-orange-500 group-hover:text-white transition-colors" />
@@ -206,12 +190,12 @@ export default function ServicePageLayout({ title, badge, badgeIcon, description
                 <Icon icon={sideIllustrations[1] || 'noto:passport-control'} width={70} className="absolute right-[14%] bottom-[28%] z-10 drop-shadow-xl hidden xl:block opacity-80" />
 
                 <div className="relative max-w-5xl mx-auto z-20 text-center w-full px-4">
-                    <div className="sp-hero-el invisible inline-flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6 text-xs sm:text-sm text-orange-400 font-semibold backdrop-blur-sm">
+                    <div className="sp-hero-el inline-flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full bg-orange-500/10 border border-orange-500/20 mb-6 text-xs sm:text-sm text-orange-400 font-semibold backdrop-blur-sm">
                         <Icon icon={badgeIcon || 'mdi:briefcase-outline'} width={16} />
                         <span>{badge || 'Expert Service'}</span>
                     </div>
-                    <h1 className="sp-hero-el invisible text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-4 sm:mb-6 text-white leading-[1.08]">{title}</h1>
-                    <p className="sp-hero-el invisible text-base sm:text-lg text-stone-300/90 max-w-3xl mx-auto leading-relaxed">{description}</p>
+                    <h1 className="sp-hero-el text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-4 sm:mb-6 text-white leading-[1.08]">{title}</h1>
+                    <p className="sp-hero-el text-base sm:text-lg text-stone-300/90 max-w-3xl mx-auto leading-relaxed">{description}</p>
                 </div>
 
                 <div className="wave-divider" style={{ bottom: '-2px' }}>
